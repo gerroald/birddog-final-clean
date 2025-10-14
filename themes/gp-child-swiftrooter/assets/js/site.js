@@ -1,6 +1,7 @@
 /* SwiftRooter Site JavaScript */
 
 document.addEventListener('DOMContentLoaded', function() {
+<<<<<<< HEAD
     const header = document.querySelector('.header--stuck');
     const hamburger = document.querySelector('.hamburger');
     const drawer = document.getElementById('drawer');
@@ -95,6 +96,66 @@ document.addEventListener('DOMContentLoaded', function() {
         const syncScrolled = () => header.classList.toggle('is-scrolled', window.scrollY > 8);
         syncScrolled();
         window.addEventListener('scroll', syncScrolled, { passive: true });
+=======
+    const navToggle = document.querySelector('.nav-toggle');
+    const body = document.body;
+    const navMenu = document.querySelector('.site-nav');
+    const navLinks = document.querySelectorAll('.site-nav a');
+
+    if (!navToggle || !navMenu) return;
+
+    // Toggle mobile menu
+    navToggle.addEventListener('click', function() {
+        const isOpen = body.classList.contains('is-nav-open');
+        
+        if (isOpen) {
+            closeMenu();
+        } else {
+            openMenu();
+        }
+    });
+
+    // Close menu when clicking nav links
+    navLinks.forEach(link => {
+        link.addEventListener('click', closeMenu);
+    });
+
+    // Close menu on Escape key
+    document.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape' && body.classList.contains('is-nav-open')) {
+            closeMenu();
+        }
+    });
+
+    // Close menu when clicking outside
+    document.addEventListener('click', function(e) {
+        if (body.classList.contains('is-nav-open') && 
+            !navMenu.contains(e.target) && 
+            !navToggle.contains(e.target)) {
+            closeMenu();
+        }
+    });
+
+    function openMenu() {
+        body.classList.add('is-nav-open');
+        navToggle.setAttribute('aria-expanded', 'true');
+        navToggle.setAttribute('aria-label', 'Close menu');
+        
+        // Trap focus in mobile menu
+        const firstFocusable = navMenu.querySelector('a');
+        if (firstFocusable) {
+            firstFocusable.focus();
+        }
+    }
+
+    function closeMenu() {
+        body.classList.remove('is-nav-open');
+        navToggle.setAttribute('aria-expanded', 'false');
+        navToggle.setAttribute('aria-label', 'Open menu');
+        
+        // Return focus to toggle button
+        navToggle.focus();
+>>>>>>> 1ef29258 (initial)
     }
 });
 
@@ -136,6 +197,18 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 })();
 
+<<<<<<< HEAD
+=======
+// Elevate header on scroll (if not already added)
+(function(){
+  const header = document.querySelector('.site-header');
+  if (!header) return;
+  const onScroll = () => document.body.classList.toggle('is-scrolled', window.scrollY > 8);
+  window.addEventListener('scroll', onScroll, {passive:true});
+  onScroll();
+})();
+
+>>>>>>> 1ef29258 (initial)
 // Sticky callbar padding helper
 (function(){
   const callbar = document.querySelector('.callbar');
@@ -211,6 +284,7 @@ document.addEventListener('DOMContentLoaded', function() {
   });
 })();
 
+<<<<<<< HEAD
 (function(){
   const fab = document.querySelector('.fab');
   if (!fab) return;
@@ -306,6 +380,8 @@ document.addEventListener('DOMContentLoaded', function() {
   });
 })();
 
+=======
+>>>>>>> 1ef29258 (initial)
 // UI Fix Pack: Enforce call button nowrap and FAB clickability
 (function(){
   // Enforce no wrap on header call button
@@ -314,6 +390,7 @@ document.addEventListener('DOMContentLoaded', function() {
     callBtn.style.whiteSpace = 'nowrap';
   }
 
+<<<<<<< HEAD
   // Ensure FAB stays clickable and visible without overpowering overlays
   const fab = document.querySelector('.fab, .fab-toggle, .fab-panel-mobile');
   if (fab) {
@@ -321,5 +398,12 @@ document.addEventListener('DOMContentLoaded', function() {
     const currentZ = parseInt(window.getComputedStyle(fab).zIndex, 10);
     const safeZ = Number.isNaN(currentZ) ? 1000 : Math.max(currentZ, 1000);
     fab.style.zIndex = String(safeZ);
+=======
+  // Ensure FAB stays clickable and visible
+  const fab = document.querySelector('.fab, .fab-toggle, .fab-panel-mobile');
+  if (fab) {
+    fab.style.pointerEvents = 'auto';
+    fab.style.zIndex = '9999';
+>>>>>>> 1ef29258 (initial)
   }
 })();

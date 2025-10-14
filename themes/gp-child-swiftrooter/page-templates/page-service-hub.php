@@ -1,6 +1,10 @@
 <?php
 /**
+<<<<<<< HEAD
  * Template Name: Primary Pillar Service Hub (Residential, Commercial, Specialty)
+=======
+ * Template Name: Service Hub
+>>>>>>> 1ef29258 (initial)
  * Description: Main services overview page with grid of service cards
  *
  * @package Bird_Dog_Moving
@@ -21,16 +25,28 @@ get_header();
 					<p class="service-hero__eyebrow">Bird Dog's Delivery & Moving, Inc</p>
 
 					<h1 class="service-hero__title">
+<<<<<<< HEAD
 						Moving Services for Every Need in Oklahoma City
 					</h1>
 
 					<p class="service-hero__lede">
 						Explore Bird Dog’s full range of moving services in Oklahoma City. Whether you're moving your family home, your entire office, or just one heavy item, we have a service that fits. Let's make it easy with your trusted moving company in Oklahoma City.
+=======
+						Professional Moving Services in Oklahoma City
+					</h1>
+
+					<p class="service-hero__lede">
+						From residential moves to commercial relocations, we provide comprehensive moving solutions with transparent pricing and exceptional service.
+>>>>>>> 1ef29258 (initial)
 					</p>
 
 					<div class="service-hero__actions">
 						<a href="/contact/#estimate" class="c-button c-button--primary">
+<<<<<<< HEAD
 							Get My Free Quote Now
+=======
+							Get Free Quote
+>>>>>>> 1ef29258 (initial)
 						</a>
 						<a href="tel:<?php echo esc_attr(get_option('birddog_phone', '(405) 535-4554')); ?>" class="c-button c-button--ghost">
 							Call <?php echo esc_html(get_option('birddog_phone', '(405) 535-4554')); ?>
@@ -135,6 +151,7 @@ get_header();
 
 		</div>
 	</section>
+<<<<<<< HEAD
 <main id="main" class="site-main" role="main">
 
 <!-- HERO SECTION -->
@@ -218,6 +235,10 @@ get_header();
 
 
 <!-- CTA Band -->
+=======
+
+	<!-- CTA Band -->
+>>>>>>> 1ef29258 (initial)
 	<section class="service-section">
 		<div class="l-container">
 			<div class="service-cta-band">

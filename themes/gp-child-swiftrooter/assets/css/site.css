@@ -422,7 +422,11 @@ html body .hero__lead {
 }
 
 .services-preview__card {
+<<<<<<< HEAD
   text-align: lef;
+=======
+  text-align: left;
+>>>>>>> 1ef29258 (initial)
   height: 100%;
   display: flex;
   flex-direction: column;
@@ -3155,8 +3159,12 @@ body.is-scrolled .site-header{ box-shadow: var(--elev-1); }
 	@media (max-width: 991.98px){
 	  .site-nav{ justify-self: start; }
 	  /* If your JS opens an off-canvas, hide the inline list by default: */
+<<<<<<< HEAD
   /* Fix: only hide the menu when the off-canvas panel is closed so it renders once data-open="true". */
   .site-nav:not([data-open="true"]) .menu{ display: none; }
+=======
+	  .site-nav .menu{ display: none; }
+>>>>>>> 1ef29258 (initial)
 	}
 	/* 2) Hero inner container centered + two columns */
 	.hero .l-container{
@@ -5432,6 +5440,7 @@ body.is-scrolled .site-header{ box-shadow: var(--elev-1); }
   display: block;
   filter: grayscale(100%);
 }
+<<<<<<< HEAD
 /* =========================
    HEADER POLISH — P1 APPEND
    ========================= */
@@ -5532,3 +5541,6 @@ body.is-scrolled .site-header{ box-shadow: var(--elev-1); }
   outline-offset: 3px;
   border-radius: 6px;
 }
+=======
+
+>>>>>>> 1ef29258 (initial)

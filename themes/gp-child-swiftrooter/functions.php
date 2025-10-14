@@ -1,5 +1,6 @@
 <?php
 require_once get_stylesheet_directory() . '/business-info.php';
+<<<<<<< HEAD
 
 if (!class_exists('BirdDog_Header_Walker')) {
   class BirdDog_Header_Walker extends Walker_Nav_Menu {
@@ -241,6 +242,58 @@ add_action('wp_enqueue_scripts', function () {
     wp_enqueue_style('patch-p1', $uri . '/assets/css/patch-p1.css', [], filemtime($patch_path));
   }
 }, 99);
+=======
+add_action('wp_enqueue_scripts', function () {
+  // Parent styles
+  wp_enqueue_style('generatepress', get_template_directory_uri().'/style.css', [], null);
+
+    // Child styles - tokens first, then professional themes, then site styles
+    wp_enqueue_style('sr-tokens', get_stylesheet_directory_uri().'/assets/css/tokens.css', [], '1.0.1');
+    // wp_enqueue_style('sr-professional-themes', get_stylesheet_directory_uri().'/assets/css/professional-themes.css', ['sr-tokens'], '1.0.1');
+    wp_enqueue_style('sr-site', get_stylesheet_directory_uri().'/assets/css/site.css', ['sr-tokens'], '1.0.1');
+
+    // Header styles (loaded after site.css to override)
+    wp_enqueue_style('sr-header', get_stylesheet_directory_uri().'/assets/css/header.css', ['sr-site'], '1.0.0');
+
+    // Service page templates (only load on service pages)
+    if (is_page_template('page-templates/page-service-hub.php') ||
+        is_page_template('page-templates/page-service-detail.php') ||
+        is_page_template('page-templates/page-service-area.php')) {
+        wp_enqueue_style('sr-services', get_stylesheet_directory_uri().'/assets/css/templates/services.css', ['sr-site'], '1.0.0');
+    }
+
+    // Blog templates (blog page and single posts)
+    if (is_page_template('page-templates/page-blog.php') || is_single() || is_home() || is_archive()) {
+        wp_enqueue_style('sr-blog', get_stylesheet_directory_uri().'/assets/css/templates/blog.css', ['sr-site'], '1.0.0');
+    }
+
+    // About & Contact pages
+    if (is_page_template('page-templates/page-about.php') || is_page_template('page-templates/page-contact.php')) {
+        wp_enqueue_style('sr-about-contact', get_stylesheet_directory_uri().'/assets/css/templates/about-contact.css', ['sr-site'], '1.0.0');
+    }
+
+    // WPForms custom styling to match HTML forms
+    wp_enqueue_style('sr-wpforms-custom', get_stylesheet_directory_uri().'/assets/css/wpforms-custom.css', ['sr-site'], '1.0.8');
+	
+    // Custom styling for cards
+    wp_enqueue_style('sr-cards', get_stylesheet_directory_uri().'/assets/css/cards.css', ['sr-site'], '1.0.0');
+	
+    // Styling for the graphite theme
+    wp_enqueue_style('sr-graphite', get_stylesheet_directory_uri().'/assets/css/graphite.css', ['sr-site'], '1.0.0');
+
+  // Child scripts with defer
+  wp_enqueue_script('sr-site', get_stylesheet_directory_uri().'/assets/js/site.js', [], '1.0.1', true);
+  // wp_enqueue_script('sr-simple-theme-switcher', get_stylesheet_directory_uri().'/assets/js/simple-theme-switcher.js', [], '1.0.1', true);
+
+  // Header navigation script
+  wp_enqueue_script('sr-header', get_stylesheet_directory_uri().'/assets/js/header.js', [], '1.0.0', true);
+
+  // Blog filtering script
+  if (is_page_template('page-templates/page-blog.php')) {
+      wp_enqueue_script('sr-blog', get_stylesheet_directory_uri().'/assets/js/blog.js', [], '1.0.0', true);
+  }
+}, 999); // High priority to load after other styles
+>>>>>>> 1ef29258 (initial)
 
 add_action('after_setup_theme', function () {
   register_nav_menus([
@@ -762,7 +815,11 @@ return ob_get_clean();
 /* ---------- Modern header ---------- */
 add_shortcode('bd_modern_header', function(){
   ob_start(); ?>
+<<<<<<< HEAD
   <header class="modern-header bdm_header">
+=======
+  <header class="modern-header">
+>>>>>>> 1ef29258 (initial)
     <div class="modern-header__container l-container">
       <a class="modern-header__logo" href="<?php echo esc_url(home_url('/')); ?>">
         <span aria-hidden="true"></span> Bird Dog's Delivery &amp; Moving Service
@@ -780,6 +837,7 @@ add_shortcode('bd_modern_header', function(){
         <a href="#estimate" class="c-button c-button--primary">Get Free Quote</a>
       </div>
     </div>
+<<<<<<< HEAD
 	<!-- Fonts: no FOUT + faster paint -->
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="preload" as="style" href="/assets/fonts/your-font.css">
@@ -789,6 +847,8 @@ add_shortcode('bd_modern_header', function(){
 <!-- Preload hero image to kill the last flash -->
 <link rel="preload" as="image" href="<?php echo esc_url( get_stylesheet_directory_uri().'/assets/img/bird-dog-moving-van-branded.jpg' ); ?>">
 
+=======
+>>>>>>> 1ef29258 (initial)
   </header>
   <?php return ob_get_clean();
 });
@@ -904,3 +964,9 @@ add_filter('nav_menu_item_title', function($title, $item) {
   }
   return $title;
 }, 10, 2);
+<<<<<<< HEAD
+=======
+
+
+
+>>>>>>> 1ef29258 (initial)

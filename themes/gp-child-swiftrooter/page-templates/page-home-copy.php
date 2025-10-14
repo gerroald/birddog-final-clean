@@ -1,6 +1,10 @@
 <?php
 /*
+<<<<<<< HEAD
 Template Name: Home – Long Form Bottom SEO Teal Gradient Hero
+=======
+Template Name: Home – Black/Yellow/Teal
+>>>>>>> 1ef29258 (initial)
 */
 
 get_header(); ?>

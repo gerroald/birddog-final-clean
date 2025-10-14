@@ -71,6 +71,7 @@
     </div>
 </footer>
 
+<<<<<<< HEAD
 <div class="fab" aria-live="polite">
   <button class="fab__main" aria-expanded="false" aria-controls="fab-menu" aria-label="Open quick actions">＋</button>
   <ul id="fab-menu" class="fab__menu" hidden>
@@ -133,6 +134,8 @@
   });
 })();
 </script>
+=======
+>>>>>>> 1ef29258 (initial)
 <?php wp_footer(); ?>
 </body>
 </html>

@@ -1,0 +1,5 @@
+.DS_Store
+uploads/
+backups-dup-pro/
+plugins/**/.DS_Store
+_anchor-build-phases/.DS_Store

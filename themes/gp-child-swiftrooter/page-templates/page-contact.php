@@ -1,6 +1,10 @@
 <?php
 /**
+<<<<<<< HEAD
  * Template Name: Live Prod Version Contact
+=======
+ * Template Name: Contact
+>>>>>>> 1ef29258 (initial)
  * Description: Contact page with multi-contact options, quick estimate, and SEO content
  *
  * @package Bird_Dog_Moving

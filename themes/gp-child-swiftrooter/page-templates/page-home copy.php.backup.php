@@ -1,6 +1,10 @@
 <?php
 /*
+<<<<<<< HEAD
 Template Name: Live Prod Version Home – 
+=======
+Template Name: Home – Black/Yellow/Teal
+>>>>>>> 1ef29258 (initial)
 */
 
 get_header(); ?>
