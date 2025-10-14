@@ -1,0 +1,223 @@
+/* ==== Card system: base + variants ==== */
+.card{position:relative;background:#fff;border:1px solid var(--line);border-radius:var(--radius);box-shadow:var(--shadow);padding:18px;transition:transform .18s ease, box-shadow .18s ease}
+.card:hover{transform:translateY(-2px);box-shadow:var(--shadow-lg)}
+.card h3{margin:8px 0 6px;font-weight:800}
+.card .sub{margin:0 0 10px}
+.card .price{font-weight:900;font-size:22px;margin:2px 0 10px;color:var(--navy)}
+.card .cta-row{display:flex;gap:10px;align-items:center;flex-wrap:wrap;margin-top:12px}
+.card ul{margin:8px 0 14px;padding-left:18px}
+.card ul li{margin:6px 0}
+.card .tag{display:inline-block;border:1px solid var(--line);background:#fff;border-radius:999px;padding:.2rem .6rem;font-size:.78rem;font-weight:800}
+.card .ribbon{position:absolute;top:12px;right:-8px;background:var(--magenta);color:#fff;font-weight:900;padding:.35rem .7rem;border-radius:10px 10px 0 10px;box-shadow:0 8px 20px rgba(210,0,161,.25)}
+
+/* Floating content box */
+.card--floating{border-radius:var(--radius-lg);padding:24px 22px}
+.card--floating::before{content:"";position:absolute;inset:-1px;border-radius:inherit;padding:1px;background:linear-gradient(180deg,#eaeef5,#e7f9ea);-webkit-mask:linear-gradient(#000 0 0) content-box,linear-gradient(#000 0 0);-webkit-mask-composite:xor;mask-composite:exclude}
+
+/* Outline accent (left bar) */
+.card--outline{border:1px solid var(--line)}
+.card--outline::after{content:"";position:absolute;left:0;top:12px;bottom:12px;width:4px;border-radius:999px;background:#cdeccb}
+
+/* Price card */
+.card--price .overline{font-weight:900;font-size:.8rem;letter-spacing:.08em;text-transform:uppercase;color:#3a4a5a}
+.card--price .price{font-size:28px}
+.card--price .disclaimer{font-size:.85rem;color:#6b7a89;margin-top:6px}
+
+/* Checklist card */
+.card--checklist ul{list-style:none;padding-left:0}
+.card--checklist li{position:relative;padding-left:26px}
+.card--checklist li::before{content:"";position:absolute;left:0;top:.35rem;width:14px;height:14px;border-radius:50%;border:2px solid #cdeccb;background:#f4fff3}
+
+/* Split feature card (media + copy) */
+.card--split{display:grid;grid-template-columns:120px 1fr;gap:14px;align-items:center}
+.card--split .media{border-radius:14px;overflow:hidden}
+@media (max-width:520px){.card--split{grid-template-columns:1fr}.card--split .media{order:-1}}
+
+/* Stat card */
+.card--stat{display:flex;align-items:baseline;gap:12px}
+.card--stat .num{font-weight:900;font-size:42px;line-height:1}
+.card--stat .label{color:var(--muted)}
+
+/* Testimonial card */
+.card--testimonial{padding:22px}
+.card--testimonial .quote-mark{font-size:40px;line-height:0;color:#bcd1ff}
+.card--testimonial .who{margin-top:10px;color:#607082;font-weight:700}
+
+/* Promo strip */
+.card--promo{background:linear-gradient(90deg,#0D1A2F 0%,#0D1A2F 70%,#0A1729 70%);color:#eaf2ff;display:flex;align-items:center;justify-content:space-between;gap:16px}
+.card--promo .btn{background:#23FF0A;border-color:#23FF0A;color:#042012}
+
+/* Theming modifiers */
+.is-lawn .card,.card.is-lawn{--accent:#21cf0a}
+.is-lawn .card::after,.card.is-lawn::after{background:#cdeccb}
+.is-pest .card,.card.is-pest{--accent:var(--magenta)}
+.card.is-pest .ribbon{background:var(--magenta)}
+.card.is-irrigation{background:linear-gradient(180deg,var(--irrigation-soft),#fff)}
+.card.is-commercial{border-color:#203148}
+.card.is-commercial .price{color:#203148}
+/* Reduced motion */
+@media (prefers-reduced-motion:reduce){.card,.card:hover{transition:none;transform:none}}
+
+.section{padding:38px 0}
+h2.section-title{margin-bottom:14px}
+/* Bird Dog: shared card/grid polish */
+.grid-2{display:grid;gap:var(--space-lg);}
+.grid-3{display:grid;gap:var(--space-lg);}
+.grid-4{display:grid;gap:var(--space-lg);}
+@media(min-width:780px){.grid-2{grid-template-columns:repeat(2,1fr)}}
+@media(min-width:960px){.grid-3{grid-template-columns:repeat(3,1fr)} .grid-4{grid-template-columns:repeat(4,1fr)}}
+
+.c-card{background:#fff;border:1px solid var(--color-border);border-radius:var(--radius-lg);box-shadow:var(--shadow-sm);padding:var(--space-lg);transition:.18s ease;}
+@media(hover:hover){.c-card:hover,.c-card:focus-within{box-shadow:var(--shadow-md);transform:translateY(-2px)}}
+
+.trustbar{display:grid;grid-auto-flow:column;gap:var(--space-lg);align-items:center;overflow:auto;padding-block:var(--space-md)}
+.trustbar__item{display:flex;align-items:center;gap:.5rem;white-space:nowrap;color:var(--color-muted);font-weight:700}
+
+.pricegrid{display:grid;gap:var(--space-lg)}
+@media(min-width:960px){.pricegrid{grid-template-columns:repeat(3,1fr)}}
+.pricecard{position:relative;background:#fff;border:1px solid var(--color-border);border-radius:var(--radius-lg);padding:var(--space-lg)}
+.pricecard--feature::before{content:"Most Popular";position:absolute;top:-10px;left:16px;background:var(--color-accent);color:var(--color-text);padding:.25rem .6rem;border-radius:999px;font:800 .75rem/1 var(--font-sans)}
+.pricecard__price{font:800 var(--fs-700)/1 var(--font-sans);color:var(--color-text)}
+.pricecard__desc{font-size:var(--fs-400);color:var(--color-muted)}
+.pricecard__list{list-style:none;margin:var(--space-sm) 0 0;padding:0;display:grid;gap:.35rem}
+.pricecard__list li{display:flex;gap:.5rem;align-items:flex-start}
+.pricecard__list li::before{content:"✓";color:var(--color-accent-2);font-weight:800}
+
+.band--graphite{background:#1E232B;color:#fff}
+.band--graphite .c-card{background:color-mix(in srgb,#fff 6%,#1E232B);border-color:color-mix(in srgb,#fff 14%,#1E232B);color:#fff}
+/* =========================================================
+   OPTION A: Add to END of cards.css
+
+   PROS:
+   - Keeps all card styles in one file
+   - Easier to maintain
+   - Clear separation of concerns
+
+   CONS:
+   - cards.css loads after site.css (may need !important)
+
+   INSTRUCTIONS:
+   Copy everything below and paste at END of cards.css
+   ========================================================= */
+
+/* Light-Mid Hybrid Theme: Dark cards on light background */
+
+/* Base card styles - dark cards */
+.c-card,
+.services-preview__card,
+.areas-preview__card,
+.testimonials-teaser__card {
+  background: var(--color-surface) !important;
+  color: var(--color-text-on-dark) !important;
+  border: 1px solid var(--color-border-dark) !important;
+}
+
+/* Card headings - off-white on dark */
+.c-card h3,
+.c-card h2,
+.services-preview__card h3,
+.services-preview__card-title,
+.areas-preview__card h3,
+.areas-preview__card-title,
+.testimonials-teaser__card h3 {
+  color: var(--color-text-on-dark) !important;
+}
+
+/* Card body text - light gray on dark */
+.c-card p,
+.c-card li,
+.services-preview__card p,
+.services-preview__features li,
+.areas-preview__card p,
+.areas-preview__description,
+.testimonials-teaser__card blockquote,
+.testimonials-teaser__quote {
+  color: var(--color-muted-on-dark) !important;
+}
+
+/* Links inside cards - maintain sky blue but brighter */
+.c-card a,
+.services-preview__card a,
+.areas-preview__card a,
+.testimonials-teaser__card a {
+  color: var(--color-accent-2);
+}
+
+.c-card a:hover,
+.services-preview__card a:hover,
+.areas-preview__card a:hover,
+.testimonials-teaser__card a:hover {
+  color: #38BDF8; /* Lighter blue on hover */
+}
+
+/* Light card variant - for forms, CTAs, special emphasis */
+.c-card--light,
+.hero-form-card {
+  background: var(--color-surface-light) !important;
+  color: var(--color-text) !important;
+  border-color: var(--color-border) !important;
+  box-shadow: var(--shadow-lg) !important;
+}
+
+.c-card--light h3,
+.c-card--light h2,
+.hero-form-card h3 {
+  color: var(--color-text) !important;
+}
+
+.c-card--light p,
+.c-card--light li,
+.hero-form-card p {
+  color: var(--color-muted) !important;
+}
+
+/* Override existing cards.css white backgrounds */
+.card,
+.pricecard {
+  background: var(--color-surface) !important;
+  color: var(--color-text-on-dark) !important;
+  border-color: var(--color-border-dark) !important;
+}
+
+.card h3,
+.pricecard h3,
+.card__title {
+  color: var(--color-text-on-dark) !important;
+}
+
+.card p,
+.card li,
+.card .sub,
+.pricecard__desc {
+  color: var(--color-muted-on-dark) !important;
+}
+
+.pricecard__price {
+  color: var(--color-text-on-dark) !important;
+}
+
+/* Promo card (already has dark background) - keep as-is but adjust text */
+.card--promo {
+  /* Already dark - keep existing gradient */
+  color: var(--color-text-on-dark) !important;
+}
+
+/* Graphite band cards - keep dark-on-dark style */
+.band--graphite .c-card {
+  background: color-mix(in srgb, #fff 6%, #1E232B) !important;
+  border-color: color-mix(in srgb, #fff 14%, #1E232B) !important;
+  color: #fff !important;
+}
+
+/* Hover states - lighten dark cards slightly */
+.c-card:hover,
+.card:hover,
+.services-preview__card:hover,
+.areas-preview__card:hover,
+.testimonials-teaser__card:hover {
+  background: color-mix(in srgb, var(--color-surface) 95%, white) !important;
+}
+
+/* =========================================================
+   END OF PATCH - Remove everything below this line
+   ========================================================= */

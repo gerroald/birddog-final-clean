@@ -1,0 +1,615 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="pro-core" data-mode="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Professional Theme Demo - Moving Company</title>
+    <link rel="stylesheet" href="assets/css/professional-themes.css">
+    <style>
+        body {
+            font-family: system-ui, -apple-system, sans-serif;
+            margin: 0;
+            padding: 2rem;
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .theme-controls {
+            position: fixed;
+            top: 1rem;
+            right: 1rem;
+            background: var(--color-surface);
+            border: 1px solid var(--color-border);
+            border-radius: 0.5rem;
+            padding: 1rem;
+            box-shadow: var(--shadow-lg);
+            z-index: 1000;
+            min-width: 250px;
+        }
+        
+        .theme-controls h3 {
+            margin: 0 0 1rem 0;
+            font-size: 1rem;
+            color: var(--color-text);
+        }
+        
+        .theme-controls select,
+        .theme-controls button {
+            width: 100%;
+            margin-bottom: 0.5rem;
+            padding: 0.75rem;
+            border: 1px solid var(--color-border);
+            border-radius: 0.375rem;
+            background: var(--color-surface);
+            color: var(--color-text);
+            font-size: 0.875rem;
+        }
+        
+        .theme-controls button {
+            background: var(--color-primary);
+            color: var(--color-text-inverse);
+            border: none;
+            cursor: pointer;
+            font-weight: 600;
+        }
+        
+        .theme-controls button:hover {
+            background: var(--color-primary-600);
+            transform: translateY(-1px);
+        }
+        
+        .theme-info {
+            background: var(--color-surface);
+            border: 1px solid var(--color-border);
+            border-radius: 0.75rem;
+            padding: 2rem;
+            margin-bottom: 3rem;
+            box-shadow: var(--shadow-md);
+        }
+        
+        .theme-info h2 {
+            margin-top: 0;
+            color: var(--color-text);
+            font-size: 1.875rem;
+        }
+        
+        .theme-info p {
+            color: var(--color-text-muted);
+            font-size: 1.125rem;
+            line-height: 1.6;
+        }
+        
+        .demo-section {
+            margin-bottom: 4rem;
+            padding: 3rem;
+            background: var(--color-surface);
+            border: 1px solid var(--color-border);
+            border-radius: 0.75rem;
+            box-shadow: var(--shadow-md);
+        }
+        
+        .demo-section h2 {
+            margin-top: 0;
+            color: var(--color-text);
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+        }
+        
+        .demo-section p {
+            color: var(--color-text-muted);
+            margin-bottom: 2rem;
+            font-size: 1rem;
+            line-height: 1.6;
+        }
+        
+        .button-group {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+            margin: 2rem 0;
+        }
+        
+        .btn {
+            padding: 1rem 2rem;
+            border-radius: 0.5rem;
+            border: 1px solid transparent;
+            font-weight: 600;
+            text-decoration: none;
+            display: inline-block;
+            transition: all 0.2s ease;
+            cursor: pointer;
+            font-size: 1rem;
+        }
+        
+        .btn-primary {
+            background: var(--color-primary);
+            color: var(--color-text-inverse);
+        }
+        
+        .btn-primary:hover {
+            background: var(--color-primary-600);
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-lg);
+        }
+        
+        .btn-secondary {
+            background: var(--color-accent);
+            color: var(--color-text-inverse);
+        }
+        
+        .btn-secondary:hover {
+            background: var(--color-accent-600);
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-lg);
+        }
+        
+        .btn-ghost {
+            background: transparent;
+            color: var(--color-primary);
+            border-color: var(--color-primary);
+        }
+        
+        .btn-ghost:hover {
+            background: var(--color-primary-50);
+            color: var(--color-primary-600);
+            border-color: var(--color-primary-600);
+        }
+        
+        .card-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+            margin: 2rem 0;
+        }
+        
+        .card {
+            background: var(--color-surface-elevated);
+            border: 1px solid var(--color-border);
+            border-radius: 0.75rem;
+            padding: 2rem;
+            box-shadow: var(--shadow-sm);
+            transition: all 0.3s ease;
+        }
+        
+        .card:hover {
+            box-shadow: var(--shadow-lg);
+            transform: translateY(-4px);
+            border-color: var(--color-primary);
+        }
+        
+        .card h3 {
+            margin-top: 0;
+            color: var(--color-text);
+            font-size: 1.25rem;
+            margin-bottom: 1rem;
+        }
+        
+        .card p {
+            color: var(--color-text-muted);
+            margin-bottom: 1.5rem;
+            line-height: 1.6;
+        }
+        
+        .status-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+            margin: 2rem 0;
+        }
+        
+        .status {
+            padding: 1.5rem;
+            border-radius: 0.5rem;
+            border: 1px solid;
+            font-weight: 500;
+        }
+        
+        .status-success {
+            background: var(--color-success-bg);
+            color: var(--color-success-text);
+            border-color: var(--color-success);
+        }
+        
+        .status-warning {
+            background: var(--color-warning-bg);
+            color: var(--color-warning-text);
+            border-color: var(--color-warning);
+        }
+        
+        .status-error {
+            background: var(--color-error-bg);
+            color: var(--color-error-text);
+            border-color: var(--color-error);
+        }
+        
+        .status-info {
+            background: var(--color-info-bg);
+            color: var(--color-info-text);
+            border-color: var(--color-info);
+        }
+        
+        .color-palette {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 1rem;
+            margin: 2rem 0;
+        }
+        
+        .color-swatch {
+            text-align: center;
+            padding: 1.5rem;
+            border-radius: 0.5rem;
+            border: 1px solid var(--color-border);
+            font-weight: 600;
+        }
+        
+        .color-swatch.primary {
+            background: var(--color-primary);
+            color: var(--color-text-inverse);
+        }
+        
+        .color-swatch.accent {
+            background: var(--color-accent);
+            color: var(--color-text-inverse);
+        }
+        
+        .color-swatch.success {
+            background: var(--color-success);
+            color: var(--color-text-inverse);
+        }
+        
+        .color-swatch.warning {
+            background: var(--color-warning);
+            color: var(--color-text-inverse);
+        }
+        
+        .color-swatch.error {
+            background: var(--color-error);
+            color: var(--color-text-inverse);
+        }
+        
+        .color-swatch.surface {
+            background: var(--color-surface);
+            color: var(--color-text);
+            border-color: var(--color-border);
+        }
+        
+        .color-swatch.text {
+            background: var(--color-text);
+            color: var(--color-bg);
+        }
+        
+        .color-swatch.muted {
+            background: var(--color-text-muted);
+            color: var(--color-bg);
+        }
+        
+        .form-demo {
+            max-width: 600px;
+            margin: 2rem 0;
+        }
+        
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+        
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            color: var(--color-text);
+            font-weight: 500;
+        }
+        
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            width: 100%;
+            padding: 1rem;
+            border: 1px solid var(--color-border);
+            border-radius: 0.5rem;
+            background: var(--color-surface);
+            color: var(--color-text);
+            font-size: 1rem;
+        }
+        
+        .form-group input:focus,
+        .form-group select:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: var(--color-focus);
+            box-shadow: var(--color-focus-ring);
+        }
+        
+        .typography-demo h1 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--color-text);
+            margin-bottom: 1rem;
+        }
+        
+        .typography-demo h2 {
+            font-size: 2rem;
+            font-weight: 600;
+            color: var(--color-text);
+            margin-bottom: 1rem;
+        }
+        
+        .typography-demo h3 {
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: var(--color-text);
+            margin-bottom: 1rem;
+        }
+        
+        .typography-demo p {
+            font-size: 1.125rem;
+            line-height: 1.6;
+            color: var(--color-text);
+            margin-bottom: 1rem;
+        }
+        
+        .typography-demo small {
+            font-size: 0.875rem;
+            color: var(--color-text-muted);
+        }
+        
+        .typography-demo a {
+            color: var(--color-link);
+            text-decoration: none;
+        }
+        
+        .typography-demo a:hover {
+            color: var(--color-link-hover);
+            text-decoration: underline;
+        }
+        
+        @media (max-width: 768px) {
+            .theme-controls {
+                position: static;
+                margin-bottom: 2rem;
+            }
+            
+            .button-group {
+                flex-direction: column;
+            }
+            
+            .btn {
+                width: 100%;
+            }
+            
+            .demo-section {
+                padding: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="theme-info">
+            <h2 id="theme-title">Pro Core Theme</h2>
+            <p id="theme-description">Professional, trustworthy, energetic theme with teal primary and yellow accent colors. Perfect for professional service pages and pricing tables.</p>
+        </div>
+        
+        <div class="theme-controls">
+            <h3>Theme Controls</h3>
+            <select data-theme-select>
+                <option value="pro-core">Pro Core</option>
+                <option value="modern-teal">Modern Teal</option>
+                <option value="industrial-yellow">Industrial Yellow</option>
+                <option value="executive-dark">Executive Dark</option>
+                <option value="clean-contrast">Clean Contrast</option>
+            </select>
+            <button data-mode-toggle>Toggle Dark Mode</button>
+            <button data-random-theme>Random Theme</button>
+        </div>
+        
+        <div class="demo-section">
+            <h2>Color Palette</h2>
+            <p>Each theme includes a complete color palette with 50-900 scales for primary, accent, and neutral colors.</p>
+            <div class="color-palette">
+                <div class="color-swatch primary">
+                    <strong>Primary</strong><br>
+                    <small>Trust & Reliability</small>
+                </div>
+                <div class="color-swatch accent">
+                    <strong>Accent</strong><br>
+                    <small>Energy & Urgency</small>
+                </div>
+                <div class="color-swatch success">
+                    <strong>Success</strong><br>
+                    <small>Positive Actions</small>
+                </div>
+                <div class="color-swatch warning">
+                    <strong>Warning</strong><br>
+                    <small>Cautions & Alerts</small>
+                </div>
+                <div class="color-swatch error">
+                    <strong>Error</strong><br>
+                    <small>Errors & Failures</small>
+                </div>
+                <div class="color-swatch surface">
+                    <strong>Surface</strong><br>
+                    <small>Cards & Sections</small>
+                </div>
+                <div class="color-swatch text">
+                    <strong>Text</strong><br>
+                    <small>Primary Content</small>
+                </div>
+                <div class="color-swatch muted">
+                    <strong>Muted</strong><br>
+                    <small>Secondary Content</small>
+                </div>
+            </div>
+        </div>
+        
+        <div class="demo-section">
+            <h2>Service Cards</h2>
+            <p>Professional moving services with hover effects, proper contrast, and theme-appropriate styling.</p>
+            <div class="card-grid">
+                <div class="card">
+                    <h3>Local Moving</h3>
+                    <p>Professional moving services for your home and business. Licensed and insured crews available same-day with transparent pricing and careful handling.</p>
+                    <button class="btn btn-primary">Get Free Estimate</button>
+                </div>
+                <div class="card">
+                    <h3>Labor-Only Services</h3>
+                    <p>You provide the truck or pod—we load, unload, and stage safely. Perfect for DIY moves with professional labor assistance.</p>
+                    <button class="btn btn-secondary">Learn More</button>
+                </div>
+                <div class="card">
+                    <h3>Furniture Delivery</h3>
+                    <p>Store-to-home or room-to-room delivery with careful placement. We handle the heavy lifting and ensure proper setup.</p>
+                    <button class="btn btn-ghost">Schedule Delivery</button>
+                </div>
+            </div>
+        </div>
+        
+        <div class="demo-section">
+            <h2>Interactive Buttons</h2>
+            <p>Professional button styles with hover effects, focus states, and proper contrast ratios.</p>
+            <div class="button-group">
+                <button class="btn btn-primary">Primary Button</button>
+                <button class="btn btn-secondary">Secondary Button</button>
+                <button class="btn btn-ghost">Ghost Button</button>
+            </div>
+        </div>
+        
+        <div class="demo-section">
+            <h2>Status Messages</h2>
+            <p>Clear status indicators with proper contrast and semantic color usage.</p>
+            <div class="status-grid">
+                <div class="status status-success">
+                    <strong>Success!</strong><br>
+                    Your estimate request has been submitted successfully. We'll contact you within 2 hours.
+                </div>
+                <div class="status status-warning">
+                    <strong>Warning</strong><br>
+                    Please note that weekend moves may incur additional fees. Contact us for details.
+                </div>
+                <div class="status status-error">
+                    <strong>Error</strong><br>
+                    There was a problem submitting your request. Please try again or call us directly.
+                </div>
+                <div class="status status-info">
+                    <strong>Info</strong><br>
+                    Same-day service is available for most local moves within our service area.
+                </div>
+            </div>
+        </div>
+        
+        <div class="demo-section">
+            <h2>Contact Form</h2>
+            <p>Professional contact form with focus states, validation styling, and proper accessibility.</p>
+            <div class="form-demo">
+                <form>
+                    <div class="form-group">
+                        <label for="name">Full Name</label>
+                        <input type="text" id="name" name="name" placeholder="Enter your full name">
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email Address</label>
+                        <input type="email" id="email" name="email" placeholder="Enter your email">
+                    </div>
+                    <div class="form-group">
+                        <label for="phone">Phone Number</label>
+                        <input type="tel" id="phone" name="phone" placeholder="Enter your phone number">
+                    </div>
+                    <div class="form-group">
+                        <label for="service">Service Needed</label>
+                        <select id="service" name="service">
+                            <option value="">Select a service</option>
+                            <option value="local-moving">Local Moving</option>
+                            <option value="labor-only">Labor-Only Services</option>
+                            <option value="furniture-delivery">Furniture Delivery</option>
+                            <option value="packing">Packing Services</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="message">Additional Details</label>
+                        <textarea id="message" name="message" rows="4" placeholder="Tell us about your moving needs"></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Request Free Estimate</button>
+                </form>
+            </div>
+        </div>
+        
+        <div class="demo-section">
+            <h2>Typography</h2>
+            <p>Professional typography hierarchy with proper contrast and readability.</p>
+            <div class="typography-demo">
+                <h1>Heading 1 - Main Page Title</h1>
+                <h2>Heading 2 - Section Headers</h2>
+                <h3>Heading 3 - Subsection Headers</h3>
+                <p>This is a paragraph with regular text. It demonstrates the body text color and readability across different themes with proper line height and spacing.</p>
+                <p><small>This is small text used for captions, labels, and secondary information with appropriate contrast.</small></p>
+                <p><a href="#">This is a link</a> that demonstrates the link color and hover states with smooth transitions.</p>
+            </div>
+        </div>
+    </div>
+    
+    <script src="assets/js/simple-theme-switcher.js"></script>
+    <script>
+        // Theme descriptions
+        const themeDescriptions = {
+            'pro-core': 'Professional, trustworthy, energetic theme with teal primary and yellow accent colors. Perfect for professional service pages and pricing tables.',
+            'modern-teal': 'Clean, modern theme with deeper teal primary and warmer yellow accent colors. Ideal for sophisticated corporate pages and service details.',
+            'industrial-yellow': 'Energetic, action-oriented theme with industrial yellow primary and cyan accent colors. Perfect for emergency services and urgent CTAs.',
+            'executive-dark': 'Premium, sophisticated theme with dark gray primary and emerald accent colors. Excellent for high-end clients and executive pages.',
+            'clean-contrast': 'High contrast, accessible theme with pure black primary and blue accent colors. Perfect for accessibility-focused pages and detailed information.'
+        };
+        
+        // Theme controls
+        const themeSelect = document.querySelector('[data-theme-select]');
+        const modeToggle = document.querySelector('[data-mode-toggle]');
+        const randomTheme = document.querySelector('[data-random-theme]');
+        const themeTitle = document.getElementById('theme-title');
+        const themeDescription = document.getElementById('theme-description');
+        
+        // Set initial theme
+        const currentTheme = getCurrentTheme();
+        const currentMode = getCurrentMode();
+        
+        themeSelect.value = currentTheme;
+        modeToggle.textContent = currentMode === 'dark' ? 'Toggle Light Mode' : 'Toggle Dark Mode';
+        updateThemeInfo(currentTheme);
+        
+        // Theme selection
+        themeSelect.addEventListener('change', (e) => {
+            setTheme(e.target.value);
+            updateThemeInfo(e.target.value);
+        });
+        
+        // Mode toggle
+        modeToggle.addEventListener('click', () => {
+            toggleMode();
+            const newMode = getCurrentMode();
+            modeToggle.textContent = newMode === 'dark' ? 'Toggle Light Mode' : 'Toggle Dark Mode';
+        });
+        
+        // Random theme
+        randomTheme.addEventListener('click', () => {
+            const themes = ['pro-core', 'modern-teal', 'industrial-yellow', 'executive-dark', 'clean-contrast'];
+            const randomThemeName = themes[Math.floor(Math.random() * themes.length)];
+            setTheme(randomThemeName);
+            themeSelect.value = randomThemeName;
+            updateThemeInfo(randomThemeName);
+        });
+        
+        // Update theme info
+        function updateThemeInfo(theme) {
+            themeTitle.textContent = theme.replace('-', ' ').replace(/\b\w/g, l => l.toUpperCase());
+            themeDescription.textContent = themeDescriptions[theme];
+        }
+        
+        // Listen for theme changes
+        document.addEventListener('themechange', (e) => {
+            console.log('Theme changed:', e.detail);
+            updateThemeInfo(e.detail.theme);
+        });
+    </script>
+</body>
+</html>

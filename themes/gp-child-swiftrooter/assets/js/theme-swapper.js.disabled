@@ -1,0 +1,104 @@
+(function(){
+  const THEME_KEY='demo.theme';
+  const TONE_KEY ='demo.tone';
+  const THEMES = ['pro-core','modern-teal','industrial-yellow','executive-dark','clean-contrast'];
+  const TONES  = ['light-lean','mid','dark-lean'];
+
+  const $root = document.documentElement;
+
+  function getTheme(){ return $root.dataset.theme || localStorage.getItem(THEME_KEY) || 'pro-core'; }
+  function getTone(){  return $root.dataset.tone  || localStorage.getItem(TONE_KEY)  || 'mid'; }
+
+  function setTheme(t){
+    if(!THEMES.includes(t)) return;
+    $root.dataset.theme = t;
+    localStorage.setItem(THEME_KEY, t);
+    dispatch();
+  }
+  function setTone(t){
+    if(!TONES.includes(t)) return;
+    $root.dataset.tone = t;
+    localStorage.setItem(TONE_KEY, t);
+    dispatch();
+  }
+  function cycleTone(){
+    const i = TONES.indexOf(getTone());
+    setTone(TONES[(i+1)%TONES.length]);
+  }
+  function dispatch(){
+    const detail={ theme:getTheme(), tone:getTone() };
+    document.dispatchEvent(new CustomEvent('themechange', { detail }));
+  }
+
+  // initialize from storage
+  const st = localStorage.getItem(THEME_KEY);
+  const sn = localStorage.getItem(TONE_KEY);
+  if(st) $root.dataset.theme = st;
+  if(sn) $root.dataset.tone  = sn;
+  dispatch();
+
+  // hook up your existing controls
+  document.addEventListener('DOMContentLoaded', ()=>{
+    const themeSelect = document.querySelector('[data-theme-select]');
+    const modeToggle  = document.querySelector('[data-mode-toggle]'); // repurposed as tone toggle
+    const randomBtn   = document.querySelector('[data-random-theme]');
+    const toneSelect  = document.querySelector('[data-tone-select]');  // optional second select if you add one
+
+    if(themeSelect){
+      // populate if needed
+      if(!themeSelect.options.length){
+        THEMES.forEach(t => {
+          const o=document.createElement('option');
+          o.value=t; o.textContent=t.replace('-', ' ').replace('-', ' ');
+          themeSelect.appendChild(o);
+        });
+      }
+      themeSelect.value = getTheme();
+      themeSelect.addEventListener('change', e=> setTheme(e.target.value));
+    }
+
+    if(toneSelect){
+      if(!toneSelect.options.length){
+        TONES.forEach(t=>{
+          const o=document.createElement('option');
+          o.value=t; o.textContent=t.replace('-', ' ');
+          toneSelect.appendChild(o);
+        });
+      }
+      toneSelect.value = getTone();
+      toneSelect.addEventListener('change', e=> setTone(e.target.value));
+    }
+
+    if(modeToggle){
+      // use your existing button to cycle tone
+      modeToggle.title = 'Cycle tone (light-lean → mid → dark-lean)';
+      modeToggle.addEventListener('click', cycleTone);
+      // update its label on changes (optional)
+      document.addEventListener('themechange', (e)=>{
+        const tone = e.detail.tone;
+        modeToggle.textContent = tone.replace('-', ' ');
+      });
+    }
+
+    if(randomBtn){
+      randomBtn.addEventListener('click', ()=>{
+        const randTheme = THEMES[Math.floor(Math.random()*THEMES.length)];
+        const randTone  = TONES[Math.floor(Math.random()*TONES.length)];
+        setTheme(randTheme); setTone(randTone);
+        if(themeSelect) themeSelect.value = randTheme;
+        if(toneSelect)  toneSelect.value  = randTone;
+      });
+    }
+
+    // apply current on load
+    setTheme(getTheme());
+    setTone(getTone());
+  });
+
+  // expose (if your inline script references them)
+  window.getCurrentTheme = getTheme;
+  window.getCurrentTone  = getTone;
+  window.setTheme        = setTheme;
+  window.setTone         = setTone;
+  window.cycleTone       = cycleTone;
+})();

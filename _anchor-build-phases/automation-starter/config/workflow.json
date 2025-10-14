@@ -1,0 +1,20 @@
+{
+  "env": "staging",
+  "ping_services": [
+    "indexnow"
+  ],
+  "hub_refresh_sla_days": 60,
+  "orphan_link_sla_hours": 72,
+  "heartbeat_schedule": "daily",
+  "max_lane_change_per_publish": 3,
+  "slack_webhook_url": "https://hooks.slack.com/services/REPLACE/ME/PLEASE",
+  "notion": {
+    "database_id": "REPLACE_ME",
+    "api_token": "REPLACE_ME"
+  },
+  "indexnow": {
+    "key": "REPLACE_ME",
+    "key_location": "https://yourdomain.com/REPLACE_ME.txt"
+  },
+  "staging_no_external_pings": true
+}

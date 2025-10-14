@@ -1,0 +1,30 @@
+{
+  "version": 2,
+  "settings": {
+    "color": {
+      "palette": [
+        { "slug": "teal-900", "name": "Brand Teal", "color": "#0A4E56" },
+        { "slug": "teal-700", "name": "Teal Secondary", "color": "#0F6C74" },
+        { "slug": "teal-400", "name": "Teal Light", "color": "#2CA3A8" },
+        { "slug": "gold",     "name": "Accent Gold", "color": "#FFD700" },
+        { "slug": "ink",      "name": "Ink", "color": "#0F172A" },
+        { "slug": "paper",    "name": "Paper", "color": "#F6FAFA" }
+      ]
+    },
+    "spacing": { "units": [ "px", "rem", "em", "%" ] },
+    "typography": {
+      "fontFamilies": [
+        { "slug": "inter", "name": "Inter, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif" }
+      ],
+      "dropCap": false
+    }
+  },
+  "styles": {
+    "elements": {
+      "button": {
+        "border": { "radius": "999px" },
+        "typography": { "fontWeight": "700" }
+      }
+    }
+  }
+}

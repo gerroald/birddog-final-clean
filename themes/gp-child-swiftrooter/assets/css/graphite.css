@@ -1,0 +1,213 @@
+/* =========================================================
+   Bird Dog – Graphite & Gold (balanced middle-ground)
+   Scope: applies when <html class="theme--graphite"> or
+          <body class="theme--graphite"> is present
+   ========================================================= */
+
+/* 1) Semantic aliases (keep tokens as source of truth) */
+html.theme--graphite,
+body.theme--graphite{
+  --bg: var(--color-bg);
+  --surface: #FFFFFF;
+  --ink: #111418;
+  --muted: var(--color-muted);
+  --cta: #FFD60A;          /* brighter yellow pop */
+  --cta-ink: #0B0B0C;      /* dark text on yellow */
+  --link: var(--color-accent-2); /* your teal */
+  --band: #1E232B;         /* graphite band */
+  --band-ink: #F7F8FA;
+  --rule: var(--color-border);
+}
+
+/* 2) Base color usage */
+html.theme--graphite body,
+body.theme--graphite{
+  background:var(--bg);
+  color:var(--ink);
+}
+html.theme--graphite h1,
+html.theme--graphite h2,
+html.theme--graphite h3,
+body.theme--graphite h1,
+body.theme--graphite h2,
+body.theme--graphite h3{
+  color:var(--ink);
+}
+html.theme--graphite p,
+html.theme--graphite li,
+html.theme--graphite small,
+body.theme--graphite p,
+body.theme--graphite li,
+body.theme--graphite small{
+  color:var(--muted);
+}
+
+/* 3) Sections & layout */
+html.theme--graphite .l-container,
+body.theme--graphite .l-container{
+  max-width:1120px; margin-inline:auto; padding-inline:var(--space-md);
+}
+html.theme--graphite .section,
+body.theme--graphite .section{
+  padding-block:var(--space-2xl);
+}
+html.theme--graphite .section--light,
+body.theme--graphite .section--light{
+  background:var(--bg);
+}
+html.theme--graphite .section--surface,
+body.theme--graphite .section--surface{
+  background:var(--surface);
+  border-top:1px solid var(--rule);
+}
+html.theme--graphite .band--graphite,
+body.theme--graphite .band--graphite{
+  background:var(--band);
+  color:var(--band-ink);
+}
+
+/* 4) Buttons */
+html.theme--graphite .c-button,
+body.theme--graphite .c-button{
+  display:inline-flex; align-items:center; justify-content:center; gap:.5rem;
+  padding:.875rem 1.125rem; min-height:44px; border-radius:var(--radius-lg);
+  font:700 var(--fs-500)/1 var(--font-sans); text-decoration:none; transition:.18s ease;
+  border:1px solid var(--color-border-dark);
+}
+html.theme--graphite .c-button:focus-visible,
+body.theme--graphite .c-button:focus-visible{ outline:var(--focus-ring); outline-offset:2px; }
+html.theme--graphite .c-button--primary,
+body.theme--graphite .c-button--primary{ background:var(--cta); color:var(--cta-ink); border-color:var(--cta); }
+html.theme--graphite .c-button--secondary,
+body.theme--graphite .c-button--secondary{ background:var(--link); color:var(--color-text-light); border-color:var(--link); }
+html.theme--graphite .c-button--ghost,
+body.theme--graphite .c-button--ghost{ background:transparent; color:var(--link); border-color:var(--link); }
+@media(hover:hover){
+  html.theme--graphite .c-button--primary:hover,
+  body.theme--graphite .c-button--primary:hover{ background:color-mix(in srgb, var(--cta) 92%, black); }
+  html.theme--graphite .c-button--secondary:hover,
+  body.theme--graphite .c-button--secondary:hover{ background:color-mix(in srgb, var(--link) 92%, black); }
+}
+
+/* 5) Cards */
+html.theme--graphite .c-card,
+body.theme--graphite .c-card{
+  background:#fff; border:1px solid var(--rule); border-radius:var(--radius-lg);
+  box-shadow:var(--shadow-sm); padding:var(--space-lg);
+}
+@media(hover:hover){
+  html.theme--graphite .c-card:hover, html.theme--graphite .c-card:focus-within,
+  body.theme--graphite .c-card:hover, body.theme--graphite .c-card:focus-within{
+    box-shadow:var(--shadow-md); transform:translateY(-2px);
+  }
+}
+
+/* 6) Hero – image-friendly split */
+html.theme--graphite .hero--split .l-container,
+body.theme--graphite .hero--split .l-container{
+  display:grid; gap:var(--space-2xl);
+}
+@media(min-width:900px){
+  html.theme--graphite .hero--split .l-container,
+  body.theme--graphite .hero--split .l-container{
+    grid-template-columns:minmax(0,1.05fr) minmax(0,0.95fr); align-items:center;
+  }
+}
+html.theme--graphite .hero__lead,
+body.theme--graphite .hero__lead{
+  font-size:var(--fs-600); color:var(--muted); margin:0 0 var(--space-lg);
+}
+html.theme--graphite .hero__media,
+body.theme--graphite .hero__media{
+  position:relative; min-height:320px; border-radius:var(--radius-lg); overflow:hidden;
+  box-shadow:var(--shadow-sm); border:1px solid var(--rule); background:#0b0d11;
+}
+html.theme--graphite .hero__media img,
+body.theme--graphite .hero__media img{
+  width:100%; height:100%; object-fit:cover; display:block;
+}
+html.theme--graphite .hero__media::after,
+body.theme--graphite .hero__media::after{
+  content:""; position:absolute; inset:0;
+  background:linear-gradient(90deg, color-mix(in srgb, var(--band) 38%, transparent) 0%, transparent 55%);
+  pointer-events:none;
+}
+
+/* 7) Trust bar */
+html.theme--graphite .trustbar,
+body.theme--graphite .trustbar{
+  display:grid; grid-auto-flow:column; gap:var(--space-lg); align-items:center; overflow:auto; padding-block:var(--space-md);
+}
+html.theme--graphite .trustbar__item,
+body.theme--graphite .trustbar__item{
+  display:flex; align-items:center; gap:.5rem; white-space:nowrap; color:var(--muted); font-weight:600;
+}
+html.theme--graphite .trustbar__badge,
+body.theme--graphite .trustbar__badge{
+  height:28px; width:28px; border-radius:50%; background:var(--cta);
+}
+
+/* 8) Pricing */
+html.theme--graphite .pricegrid,
+body.theme--graphite .pricegrid{
+  display:grid; gap:var(--space-lg);
+}
+@media(min-width:960px){
+  html.theme--graphite .pricegrid,
+  body.theme--graphite .pricegrid{ grid-template-columns:repeat(3,1fr); }
+}
+html.theme--graphite .pricecard,
+body.theme--graphite .pricecard{
+  position:relative; background:#fff; border:1px solid var(--rule); border-radius:var(--radius-lg); padding:var(--space-lg);
+}
+html.theme--graphite .pricecard--feature::before,
+body.theme--graphite .pricecard--feature::before{
+  content:"Most Popular"; position:absolute; top:-10px; left:16px;
+  background:var(--cta); color:var(--cta-ink); padding:.25rem .6rem; border-radius:999px; font:800 .75rem/1 var(--font-sans);
+}
+html.theme--graphite .pricecard__price,
+body.theme--graphite .pricecard__price{
+  font:800 var(--fs-700)/1 var(--font-sans); color:var(--ink);
+}
+html.theme--graphite .pricecard__desc,
+body.theme--graphite .pricecard__desc{
+  font-size:var(--fs-400); color:var(--muted);
+}
+html.theme--graphite .pricecard__list,
+body.theme--graphite .pricecard__list{
+  list-style:none; margin:var(--space-sm) 0 0; padding:0; display:grid; gap:.35rem;
+}
+html.theme--graphite .pricecard__list li,
+body.theme--graphite .pricecard__list li{
+  display:flex; gap:.5rem; align-items:flex-start;
+}
+html.theme--graphite .pricecard__list li::before,
+body.theme--graphite .pricecard__list li::before{
+  content:"✓"; color:var(--link); font-weight:800;
+}
+
+/* 9) Graphite band cards */
+html.theme--graphite .band--graphite .c-card,
+body.theme--graphite .band--graphite .c-card{
+  background:color-mix(in srgb, var(--band-ink) 6%, var(--band));
+  border-color:color-mix(in srgb, var(--band-ink) 14%, var(--band));
+  color:var(--band-ink);
+}
+
+/* 10) Inputs focus */
+html.theme--graphite input,
+html.theme--graphite select,
+html.theme--graphite textarea,
+body.theme--graphite input,
+body.theme--graphite select,
+body.theme--graphite textarea{
+  border-radius:var(--radius-md);
+}
+html.theme--graphite input:focus-visible,
+html.theme--graphite select:focus-visible,
+html.theme--graphite textarea:focus-visible,
+body.theme--graphite input:focus-visible,
+body.theme--graphite select:focus-visible,
+body.theme--graphite textarea:focus-visible{
+  outline:var(--focus-ring);
+}

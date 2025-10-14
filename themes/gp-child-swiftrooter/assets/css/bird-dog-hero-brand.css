@@ -1,0 +1,63 @@
+
+/* Bird Dog – Hero Brand Add‑On v1 */
+/* Variants: .hero--watermark (default), .hero--photo */
+/* Use with a wrapper <section class="hero hero--watermark hero--light"> or hero--dark/hero--teal */
+
+/* Base hero */
+.hero{
+  position:relative;
+  padding: var(--space-3xl) var(--space-xl);
+  overflow:hidden;
+}
+
+/* Color themes */
+.hero--light{ background: var(--color-surface); color: var(--color-text); }
+.hero--dark{ background: #0f1115; color: var(--color-text-light); }
+.hero--teal{ background: var(--color-primary); color: var(--color-text-light); }
+
+/* --- Watermark variant (fast, low LCP) --- */
+.hero--watermark::before{
+  content:"";
+  position:absolute; inset:0;
+  background-repeat:no-repeat;
+  background-position: right 8% center;
+  background-size: clamp(320px, 52vw, 720px);
+  opacity:.08; mix-blend-mode:multiply; pointer-events:none;
+  animation: dogFloat 14s ease-in-out infinite alternate;
+}
+/* choose the right asset per theme */
+.hero--watermark.hero--light::before{ background-image:url('/assets/logo-icon-1024-teal.png'); }
+.hero--watermark.hero--dark::before{ background-image:url('/assets/logo-icon-1024-white.png'); opacity:.12; }
+.hero--watermark.hero--teal::before{ background-image:url('/assets/logo-icon-1024-white.png'); opacity:.12; }
+/* reduced motion */
+@media (prefers-reduced-motion:reduce){ .hero--watermark::before{ animation:none; } }
+
+@keyframes dogFloat{
+  from{ transform: translateY(0) scale(1); }
+  to  { transform: translateY(-10px) scale(1.03); }
+}
+
+/* Optional content wrapper for contrast on photos */
+.hero__overlay{
+  position:absolute; inset:0; z-index:1;
+  background: linear-gradient(90deg, rgba(255,255,255,.95) 0%, rgba(255,255,255,.55) 45%, rgba(255,255,255,0) 80%);
+}
+.hero__content{ position:relative; z-index:2; max-width: 72ch; }
+
+/* --- Photo variant (use a branded background image) --- */
+.hero--photo{
+  color: var(--color-text);
+  background: var(--color-bg); /* fallback color while image loads */
+}
+.hero--photo .hero__bg{
+  position:absolute; inset:0; z-index:0;
+  background: center/cover no-repeat;
+  filter: saturate(1.05);
+}
+/* overlay for readability */
+.hero--photo .hero__overlay{
+  background: linear-gradient(90deg, rgba(255,255,255,.95) 0%, rgba(255,255,255,.6) 40%, rgba(255,255,255,0) 80%);
+}
+
+/* Example sizes for logo in header if used there */
+.site-logo img{ height: clamp(48px, 8vw, 72px); width:auto; display:block; }

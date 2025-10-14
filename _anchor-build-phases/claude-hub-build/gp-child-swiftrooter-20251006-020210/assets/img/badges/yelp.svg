@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 72 72" width="72" height="72" role="img" aria-label="HomeAdvisor">
+  <rect width="72" height="72" rx="10" fill="#f68b1f"/>
+  <path fill="#fff" d="M36 12l21 14v20L36 60 15 46V26l21-14zm0 9L21 29v14l15 10 15-10V29L36 21z"/>
+  <text x="36" y="64" font-family="Arial,Helvetica,sans-serif" font-size="8" text-anchor="middle" fill="#fff">HomeAdvisor</text>
+</svg>

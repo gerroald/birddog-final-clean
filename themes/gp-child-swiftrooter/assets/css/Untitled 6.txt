@@ -1,0 +1,696 @@
+
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="profile" href="https://gmpg.org/xfn/11">
+    <title>Bird Dog&#039;s &#x2d; Delivery &amp; Moving Service LLC</title>
+	<style>img:is([sizes="auto" i], [sizes^="auto," i]) { contain-intrinsic-size: 3000px 1500px }</style>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+<!-- The SEO Framework by Sybre Waaijer -->
+<meta name="robots" content="max-snippet:-1,max-image-preview:large,max-video-preview:-1" />
+<link rel="canonical" href="http://localhost:10070/" />
+<meta property="og:type" content="website" />
+<meta property="og:locale" content="en_US" />
+<meta property="og:site_name" content="Bird Dog&#039;s" />
+<meta property="og:title" content="Bird Dog&#039;s" />
+<meta property="og:url" content="http://localhost:10070/" />
+<meta property="og:image" content="http://localhost:10070/wp-content/uploads/2025/09/logo-icon-48-teal.png" />
+<meta property="og:image:width" content="48" />
+<meta property="og:image:height" content="36" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Bird Dog&#039;s" />
+<meta name="twitter:image" content="http://localhost:10070/wp-content/uploads/2025/09/logo-icon-48-teal.png" />
+<script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"WebSite","@id":"http://localhost:10070/#/schema/WebSite","url":"http://localhost:10070/","name":"Bird Dog&#039;s","description":"Delivery &amp; Moving Service LLC","inLanguage":"en-US","potentialAction":{"@type":"SearchAction","target":{"@type":"EntryPoint","urlTemplate":"http://localhost:10070/search/{search_term_string}/"},"query-input":"required name=search_term_string"},"publisher":{"@id":"http://localhost:10070/#/schema/Organization"}},{"@type":"WebPage","@id":"http://localhost:10070/","url":"http://localhost:10070/","name":"Bird Dog&#039;s &#x2d; Delivery &amp; Moving Service LLC","inLanguage":"en-US","isPartOf":{"@id":"http://localhost:10070/#/schema/WebSite"},"breadcrumb":{"@type":"BreadcrumbList","@id":"http://localhost:10070/#/schema/BreadcrumbList","itemListElement":{"@type":"ListItem","position":1,"name":"Bird Dog&#039;s"}},"potentialAction":{"@type":"ReadAction","target":"http://localhost:10070/"},"about":{"@id":"http://localhost:10070/#/schema/Organization"}},{"@type":"Organization","@id":"http://localhost:10070/#/schema/Organization","name":"Bird Dog&#039;s","url":"http://localhost:10070/","logo":{"@type":"ImageObject","url":"http://localhost:10070/wp-content/uploads/2025/09/logo-icon-48-teal.png","contentUrl":"http://localhost:10070/wp-content/uploads/2025/09/logo-icon-48-teal.png","width":48,"height":36,"contentSize":"1608"}}]}</script>
+<!-- / The SEO Framework by Sybre Waaijer | 27.43ms meta | 15.54ms boot -->
+
+<link rel="alternate" type="application/rss+xml" title="Bird Dog&#039;s &raquo; Feed" href="http://localhost:10070/feed/" />
+<link rel="alternate" type="application/rss+xml" title="Bird Dog&#039;s &raquo; Comments Feed" href="http://localhost:10070/comments/feed/" />
+<script>
+window._wpemojiSettings = {"baseUrl":"https:\/\/s.w.org\/images\/core\/emoji\/16.0.1\/72x72\/","ext":".png","svgUrl":"https:\/\/s.w.org\/images\/core\/emoji\/16.0.1\/svg\/","svgExt":".svg","source":{"concatemoji":"http:\/\/localhost:10070\/wp-includes\/js\/wp-emoji-release.min.js?ver=6.8.2"}};
+/*! This file is auto-generated */
+!function(s,n){var o,i,e;function c(e){try{var t={supportTests:e,timestamp:(new Date).valueOf()};sessionStorage.setItem(o,JSON.stringify(t))}catch(e){}}function p(e,t,n){e.clearRect(0,0,e.canvas.width,e.canvas.height),e.fillText(t,0,0);var t=new Uint32Array(e.getImageData(0,0,e.canvas.width,e.canvas.height).data),a=(e.clearRect(0,0,e.canvas.width,e.canvas.height),e.fillText(n,0,0),new Uint32Array(e.getImageData(0,0,e.canvas.width,e.canvas.height).data));return t.every(function(e,t){return e===a[t]})}function u(e,t){e.clearRect(0,0,e.canvas.width,e.canvas.height),e.fillText(t,0,0);for(var n=e.getImageData(16,16,1,1),a=0;a<n.data.length;a++)if(0!==n.data[a])return!1;return!0}function f(e,t,n,a){switch(t){case"flag":return n(e,"\ud83c\udff3\ufe0f\u200d\u26a7\ufe0f","\ud83c\udff3\ufe0f\u200b\u26a7\ufe0f")?!1:!n(e,"\ud83c\udde8\ud83c\uddf6","\ud83c\udde8\u200b\ud83c\uddf6")&&!n(e,"\ud83c\udff4\udb40\udc67\udb40\udc62\udb40\udc65\udb40\udc6e\udb40\udc67\udb40\udc7f","\ud83c\udff4\u200b\udb40\udc67\u200b\udb40\udc62\u200b\udb40\udc65\u200b\udb40\udc6e\u200b\udb40\udc67\u200b\udb40\udc7f");case"emoji":return!a(e,"\ud83e\udedf")}return!1}function g(e,t,n,a){var r="undefined"!=typeof WorkerGlobalScope&&self instanceof WorkerGlobalScope?new OffscreenCanvas(300,150):s.createElement("canvas"),o=r.getContext("2d",{willReadFrequently:!0}),i=(o.textBaseline="top",o.font="600 32px Arial",{});return e.forEach(function(e){i[e]=t(o,e,n,a)}),i}function t(e){var t=s.createElement("script");t.src=e,t.defer=!0,s.head.appendChild(t)}"undefined"!=typeof Promise&&(o="wpEmojiSettingsSupports",i=["flag","emoji"],n.supports={everything:!0,everythingExceptFlag:!0},e=new Promise(function(e){s.addEventListener("DOMContentLoaded",e,{once:!0})}),new Promise(function(t){var n=function(){try{var e=JSON.parse(sessionStorage.getItem(o));if("object"==typeof e&&"number"==typeof e.timestamp&&(new Date).valueOf()<e.timestamp+604800&&"object"==typeof e.supportTests)return e.supportTests}catch(e){}return null}();if(!n){if("undefined"!=typeof Worker&&"undefined"!=typeof OffscreenCanvas&&"undefined"!=typeof URL&&URL.createObjectURL&&"undefined"!=typeof Blob)try{var e="postMessage("+g.toString()+"("+[JSON.stringify(i),f.toString(),p.toString(),u.toString()].join(",")+"));",a=new Blob([e],{type:"text/javascript"}),r=new Worker(URL.createObjectURL(a),{name:"wpTestEmojiSupports"});return void(r.onmessage=function(e){c(n=e.data),r.terminate(),t(n)})}catch(e){}c(n=g(i,f,p,u))}t(n)}).then(function(e){for(var t in e)n.supports[t]=e[t],n.supports.everything=n.supports.everything&&n.supports[t],"flag"!==t&&(n.supports.everythingExceptFlag=n.supports.everythingExceptFlag&&n.supports[t]);n.supports.everythingExceptFlag=n.supports.everythingExceptFlag&&!n.supports.flag,n.DOMReady=!1,n.readyCallback=function(){n.DOMReady=!0}}).then(function(){return e}).then(function(){var e;n.supports.everything||(n.readyCallback(),(e=n.source||{}).concatemoji?t(e.concatemoji):e.wpemoji&&e.twemoji&&(t(e.twemoji),t(e.wpemoji)))}))}((window,document),window._wpemojiSettings);
+</script>
+<link rel='stylesheet' id='dashicons-css' href='http://localhost:10070/wp-includes/css/dashicons.min.css?ver=6.8.2' media='all' />
+<link rel='stylesheet' id='admin-bar-css' href='http://localhost:10070/wp-includes/css/admin-bar.min.css?ver=6.8.2' media='all' />
+<style id='admin-bar-inline-css'>
+
+		@media screen { html { margin-top: 32px !important; } }
+		@media screen and ( max-width: 782px ) { html { margin-top: 46px !important; } }
+	
+@media print { #wpadminbar { display:none; } }
+</style>
+<style id='wp-emoji-styles-inline-css'>
+
+	img.wp-smiley, img.emoji {
+		display: inline !important;
+		border: none !important;
+		box-shadow: none !important;
+		height: 1em !important;
+		width: 1em !important;
+		margin: 0 0.07em !important;
+		vertical-align: -0.1em !important;
+		background: none !important;
+		padding: 0 !important;
+	}
+</style>
+<link rel='stylesheet' id='wp-block-library-css' href='http://localhost:10070/wp-includes/css/dist/block-library/style.min.css?ver=6.8.2' media='all' />
+<style id='classic-theme-styles-inline-css'>
+/*! This file is auto-generated */
+.wp-block-button__link{color:#fff;background-color:#32373c;border-radius:9999px;box-shadow:none;text-decoration:none;padding:calc(.667em + 2px) calc(1.333em + 2px);font-size:1.125em}.wp-block-file__button{background:#32373c;color:#fff;text-decoration:none}
+</style>
+<style id='global-styles-inline-css'>
+:root{--wp--preset--aspect-ratio--square: 1;--wp--preset--aspect-ratio--4-3: 4/3;--wp--preset--aspect-ratio--3-4: 3/4;--wp--preset--aspect-ratio--3-2: 3/2;--wp--preset--aspect-ratio--2-3: 2/3;--wp--preset--aspect-ratio--16-9: 16/9;--wp--preset--aspect-ratio--9-16: 9/16;--wp--preset--color--black: #000000;--wp--preset--color--cyan-bluish-gray: #abb8c3;--wp--preset--color--white: #ffffff;--wp--preset--color--pale-pink: #f78da7;--wp--preset--color--vivid-red: #cf2e2e;--wp--preset--color--luminous-vivid-orange: #ff6900;--wp--preset--color--luminous-vivid-amber: #fcb900;--wp--preset--color--light-green-cyan: #7bdcb5;--wp--preset--color--vivid-green-cyan: #00d084;--wp--preset--color--pale-cyan-blue: #8ed1fc;--wp--preset--color--vivid-cyan-blue: #0693e3;--wp--preset--color--vivid-purple: #9b51e0;--wp--preset--color--contrast: var(--contrast);--wp--preset--color--contrast-2: var(--contrast-2);--wp--preset--color--contrast-3: var(--contrast-3);--wp--preset--color--base: var(--base);--wp--preset--color--base-2: var(--base-2);--wp--preset--color--base-3: var(--base-3);--wp--preset--color--accent: var(--accent);--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple: linear-gradient(135deg,rgba(6,147,227,1) 0%,rgb(155,81,224) 100%);--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan: linear-gradient(135deg,rgb(122,220,180) 0%,rgb(0,208,130) 100%);--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange: linear-gradient(135deg,rgba(252,185,0,1) 0%,rgba(255,105,0,1) 100%);--wp--preset--gradient--luminous-vivid-orange-to-vivid-red: linear-gradient(135deg,rgba(255,105,0,1) 0%,rgb(207,46,46) 100%);--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray: linear-gradient(135deg,rgb(238,238,238) 0%,rgb(169,184,195) 100%);--wp--preset--gradient--cool-to-warm-spectrum: linear-gradient(135deg,rgb(74,234,220) 0%,rgb(151,120,209) 20%,rgb(207,42,186) 40%,rgb(238,44,130) 60%,rgb(251,105,98) 80%,rgb(254,248,76) 100%);--wp--preset--gradient--blush-light-purple: linear-gradient(135deg,rgb(255,206,236) 0%,rgb(152,150,240) 100%);--wp--preset--gradient--blush-bordeaux: linear-gradient(135deg,rgb(254,205,165) 0%,rgb(254,45,45) 50%,rgb(107,0,62) 100%);--wp--preset--gradient--luminous-dusk: linear-gradient(135deg,rgb(255,203,112) 0%,rgb(199,81,192) 50%,rgb(65,88,208) 100%);--wp--preset--gradient--pale-ocean: linear-gradient(135deg,rgb(255,245,203) 0%,rgb(182,227,212) 50%,rgb(51,167,181) 100%);--wp--preset--gradient--electric-grass: linear-gradient(135deg,rgb(202,248,128) 0%,rgb(113,206,126) 100%);--wp--preset--gradient--midnight: linear-gradient(135deg,rgb(2,3,129) 0%,rgb(40,116,252) 100%);--wp--preset--font-size--small: 13px;--wp--preset--font-size--medium: 20px;--wp--preset--font-size--large: 36px;--wp--preset--font-size--x-large: 42px;--wp--preset--spacing--20: 0.44rem;--wp--preset--spacing--30: 0.67rem;--wp--preset--spacing--40: 1rem;--wp--preset--spacing--50: 1.5rem;--wp--preset--spacing--60: 2.25rem;--wp--preset--spacing--70: 3.38rem;--wp--preset--spacing--80: 5.06rem;--wp--preset--shadow--natural: 6px 6px 9px rgba(0, 0, 0, 0.2);--wp--preset--shadow--deep: 12px 12px 50px rgba(0, 0, 0, 0.4);--wp--preset--shadow--sharp: 6px 6px 0px rgba(0, 0, 0, 0.2);--wp--preset--shadow--outlined: 6px 6px 0px -3px rgba(255, 255, 255, 1), 6px 6px rgba(0, 0, 0, 1);--wp--preset--shadow--crisp: 6px 6px 0px rgba(0, 0, 0, 1);}:where(.is-layout-flex){gap: 0.5em;}:where(.is-layout-grid){gap: 0.5em;}body .is-layout-flex{display: flex;}.is-layout-flex{flex-wrap: wrap;align-items: center;}.is-layout-flex > :is(*, div){margin: 0;}body .is-layout-grid{display: grid;}.is-layout-grid > :is(*, div){margin: 0;}:where(.wp-block-columns.is-layout-flex){gap: 2em;}:where(.wp-block-columns.is-layout-grid){gap: 2em;}:where(.wp-block-post-template.is-layout-flex){gap: 1.25em;}:where(.wp-block-post-template.is-layout-grid){gap: 1.25em;}.has-black-color{color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-color{color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-color{color: var(--wp--preset--color--white) !important;}.has-pale-pink-color{color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-color{color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-color{color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-color{color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-color{color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-color{color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-color{color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-color{color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-color{color: var(--wp--preset--color--vivid-purple) !important;}.has-black-background-color{background-color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-background-color{background-color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-background-color{background-color: var(--wp--preset--color--white) !important;}.has-pale-pink-background-color{background-color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-background-color{background-color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-background-color{background-color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-background-color{background-color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-background-color{background-color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-background-color{background-color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-background-color{background-color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-background-color{background-color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-background-color{background-color: var(--wp--preset--color--vivid-purple) !important;}.has-black-border-color{border-color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-border-color{border-color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-border-color{border-color: var(--wp--preset--color--white) !important;}.has-pale-pink-border-color{border-color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-border-color{border-color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-border-color{border-color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-border-color{border-color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-border-color{border-color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-border-color{border-color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-border-color{border-color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-border-color{border-color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-border-color{border-color: var(--wp--preset--color--vivid-purple) !important;}.has-vivid-cyan-blue-to-vivid-purple-gradient-background{background: var(--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple) !important;}.has-light-green-cyan-to-vivid-green-cyan-gradient-background{background: var(--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan) !important;}.has-luminous-vivid-amber-to-luminous-vivid-orange-gradient-background{background: var(--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange) !important;}.has-luminous-vivid-orange-to-vivid-red-gradient-background{background: var(--wp--preset--gradient--luminous-vivid-orange-to-vivid-red) !important;}.has-very-light-gray-to-cyan-bluish-gray-gradient-background{background: var(--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray) !important;}.has-cool-to-warm-spectrum-gradient-background{background: var(--wp--preset--gradient--cool-to-warm-spectrum) !important;}.has-blush-light-purple-gradient-background{background: var(--wp--preset--gradient--blush-light-purple) !important;}.has-blush-bordeaux-gradient-background{background: var(--wp--preset--gradient--blush-bordeaux) !important;}.has-luminous-dusk-gradient-background{background: var(--wp--preset--gradient--luminous-dusk) !important;}.has-pale-ocean-gradient-background{background: var(--wp--preset--gradient--pale-ocean) !important;}.has-electric-grass-gradient-background{background: var(--wp--preset--gradient--electric-grass) !important;}.has-midnight-gradient-background{background: var(--wp--preset--gradient--midnight) !important;}.has-small-font-size{font-size: var(--wp--preset--font-size--small) !important;}.has-medium-font-size{font-size: var(--wp--preset--font-size--medium) !important;}.has-large-font-size{font-size: var(--wp--preset--font-size--large) !important;}.has-x-large-font-size{font-size: var(--wp--preset--font-size--x-large) !important;}
+:where(.wp-block-post-template.is-layout-flex){gap: 1.25em;}:where(.wp-block-post-template.is-layout-grid){gap: 1.25em;}
+:where(.wp-block-columns.is-layout-flex){gap: 2em;}:where(.wp-block-columns.is-layout-grid){gap: 2em;}
+:root :where(.wp-block-pullestimate){font-size: 1.5em;line-height: 1.6;}
+</style>
+<link rel='stylesheet' id='wp-mail-smtp-admin-bar-css' href='http://localhost:10070/wp-content/plugins/wp-mail-smtp/assets/css/admin-bar.min.css?ver=4.6.0' media='all' />
+<link rel='stylesheet' id='generate-style-css' href='http://localhost:10070/wp-content/themes/generatepress/assets/css/main.min.css?ver=3.6.0' media='all' />
+<style id='generate-style-inline-css'>
+body{background-color:var(--base-2);color:var(--contrast);}a{color:var(--accent);}a{text-decoration:underline;}.entry-title a, .site-branding a, a.button, .wp-block-button__link, .main-navigation a{text-decoration:none;}a:hover, a:focus, a:active{color:var(--contrast);}.wp-block-group__inner-container{max-width:1200px;margin-left:auto;margin-right:auto;}:root{--contrast:#222222;--contrast-2:#575760;--contrast-3:#b2b2be;--base:#f0f0f0;--base-2:#f7f8f9;--base-3:#ffffff;--accent:#0D9488;}:root .has-contrast-color{color:var(--contrast);}:root .has-contrast-background-color{background-color:var(--contrast);}:root .has-contrast-2-color{color:var(--contrast-2);}:root .has-contrast-2-background-color{background-color:var(--contrast-2);}:root .has-contrast-3-color{color:var(--contrast-3);}:root .has-contrast-3-background-color{background-color:var(--contrast-3);}:root .has-base-color{color:var(--base);}:root .has-base-background-color{background-color:var(--base);}:root .has-base-2-color{color:var(--base-2);}:root .has-base-2-background-color{background-color:var(--base-2);}:root .has-base-3-color{color:var(--base-3);}:root .has-base-3-background-color{background-color:var(--base-3);}:root .has-accent-color{color:var(--accent);}:root .has-accent-background-color{background-color:var(--accent);}.top-bar{background-color:#636363;color:#ffffff;}.top-bar a{color:#ffffff;}.top-bar a:hover{color:#303030;}.site-header{background-color:var(--contrast);}.main-title a,.main-title a:hover{color:var(--contrast);}.site-description{color:var(--contrast-2);}.main-navigation,.main-navigation ul ul{background-color:var(--base-3);}.main-navigation .main-nav ul li a, .main-navigation .menu-toggle, .main-navigation .menu-bar-items{color:var(--contrast);}.main-navigation .main-nav ul li:not([class*="current-menu-"]):hover > a, .main-navigation .main-nav ul li:not([class*="current-menu-"]):focus > a, .main-navigation .main-nav ul li.sfHover:not([class*="current-menu-"]) > a, .main-navigation .menu-bar-item:hover > a, .main-navigation .menu-bar-item.sfHover > a{color:var(--accent);}button.menu-toggle:hover,button.menu-toggle:focus{color:var(--contrast);}.main-navigation .main-nav ul li[class*="current-menu-"] > a{color:var(--accent);}.navigation-search input[type="search"],.navigation-search input[type="search"]:active, .navigation-search input[type="search"]:focus, .main-navigation .main-nav ul li.search-item.active > a, .main-navigation .menu-bar-items .search-item.active > a{color:var(--accent);}.main-navigation ul ul{background-color:var(--base);}.separate-containers .inside-article, .separate-containers .comments-area, .separate-containers .page-header, .one-container .container, .separate-containers .paging-navigation, .inside-page-header{background-color:var(--base-3);}.entry-title a{color:var(--contrast);}.entry-title a:hover{color:var(--contrast-2);}.entry-meta{color:var(--contrast-2);}.sidebar .widget{background-color:var(--base-3);}.footer-widgets{background-color:var(--base-3);}.site-info{background-color:var(--base-3);}input[type="text"],input[type="email"],input[type="url"],input[type="password"],input[type="search"],input[type="tel"],input[type="number"],textarea,select{color:var(--contrast);background-color:var(--base-2);border-color:var(--base);}input[type="text"]:focus,input[type="email"]:focus,input[type="url"]:focus,input[type="password"]:focus,input[type="search"]:focus,input[type="tel"]:focus,input[type="number"]:focus,textarea:focus,select:focus{color:var(--contrast);background-color:var(--base-2);border-color:var(--contrast-3);}button,html input[type="button"],input[type="reset"],input[type="submit"],a.button,a.wp-block-button__link:not(.has-background){color:#ffffff;background-color:#55555e;}button:hover,html input[type="button"]:hover,input[type="reset"]:hover,input[type="submit"]:hover,a.button:hover,button:focus,html input[type="button"]:focus,input[type="reset"]:focus,input[type="submit"]:focus,a.button:focus,a.wp-block-button__link:not(.has-background):active,a.wp-block-button__link:not(.has-background):focus,a.wp-block-button__link:not(.has-background):hover{color:#ffffff;background-color:#3f4047;}a.generate-back-to-top{background-color:rgba( 0,0,0,0.4 );color:#ffffff;}a.generate-back-to-top:hover,a.generate-back-to-top:focus{background-color:rgba( 0,0,0,0.6 );color:#ffffff;}:root{--gp-search-modal-bg-color:var(--base-3);--gp-search-modal-text-color:var(--contrast);--gp-search-modal-overlay-bg-color:rgba(0,0,0,0.2);}@media (max-width:768px){.main-navigation .menu-bar-item:hover > a, .main-navigation .menu-bar-item.sfHover > a{background:none;color:var(--contrast);}}.nav-below-header .main-navigation .inside-navigation.grid-container, .nav-above-header .main-navigation .inside-navigation.grid-container{padding:0px 20px 0px 20px;}.site-main .wp-block-group__inner-container{padding:40px;}.separate-containers .paging-navigation{padding-top:20px;padding-bottom:20px;}.entry-content .alignwide, body:not(.no-sidebar) .entry-content .alignfull{margin-left:-40px;width:calc(100% + 80px);max-width:calc(100% + 80px);}.rtl .menu-item-has-children .dropdown-menu-toggle{padding-left:20px;}.rtl .main-navigation .main-nav ul li.menu-item-has-children > a{padding-right:20px;}@media (max-width:768px){.separate-containers .inside-article, .separate-containers .comments-area, .separate-containers .page-header, .separate-containers .paging-navigation, .one-container .site-content, .inside-page-header{padding:30px;}.site-main .wp-block-group__inner-container{padding:30px;}.inside-top-bar{padding-right:30px;padding-left:30px;}.inside-header{padding-right:30px;padding-left:30px;}.widget-area .widget{padding-top:30px;padding-right:30px;padding-bottom:30px;padding-left:30px;}.footer-widgets-container{padding-top:30px;padding-right:30px;padding-bottom:30px;padding-left:30px;}.inside-site-info{padding-right:30px;padding-left:30px;}.entry-content .alignwide, body:not(.no-sidebar) .entry-content .alignfull{margin-left:-30px;width:calc(100% + 60px);max-width:calc(100% + 60px);}.one-container .site-main .paging-navigation{margin-bottom:20px;}}/* End cached CSS */.is-right-sidebar{width:30%;}.is-left-sidebar{width:30%;}.site-content .content-area{width:100%;}@media (max-width:768px){.main-navigation .menu-toggle,.sidebar-nav-mobile:not(#sticky-placeholder){display:block;}.main-navigation ul,.gen-sidebar-nav,.main-navigation:not(.slideout-navigation):not(.toggled) .main-nav > ul,.has-inline-mobile-toggle #site-navigation .inside-navigation > *:not(.navigation-search):not(.main-nav){display:none;}.nav-align-right .inside-navigation,.nav-align-center .inside-navigation{justify-content:space-between;}.has-inline-mobile-toggle .mobile-menu-control-wrapper{display:flex;flex-wrap:wrap;}.has-inline-mobile-toggle .inside-header{flex-direction:row;text-align:left;flex-wrap:wrap;}.has-inline-mobile-toggle .header-widget,.has-inline-mobile-toggle #site-navigation{flex-basis:100%;}.nav-float-left .has-inline-mobile-toggle #site-navigation{order:10;}}
+</style>
+<link rel='stylesheet' id='generate-child-css' href='http://localhost:10070/wp-content/themes/gp-child-swiftrooter/style.css?ver=1759753131' media='all' />
+<link rel='stylesheet' id='wpforms-admin-bar-css' href='http://localhost:10070/wp-content/plugins/wpforms-lite/assets/css/admin-bar.min.css?ver=1.9.8.1' media='all' />
+<style id='wpforms-admin-bar-inline-css'>
+#wpadminbar .wpforms-menu-notification-counter, #wpadminbar .wpforms-menu-notification-indicator {
+						background-color: #d63638 !important;
+						color: #ffffff !important;
+					}
+</style>
+<link rel='stylesheet' id='bd-graphite-css' href='http://localhost:10070/wp-content/themes/gp-child-swiftrooter/assets/css/graphite.css?ver=1759876142' media='all' />
+<link rel='stylesheet' id='generatepress-css' href='http://localhost:10070/wp-content/themes/generatepress/style.css' media='all' />
+<link rel='stylesheet' id='sr-tokens-css' href='http://localhost:10070/wp-content/themes/gp-child-swiftrooter/assets/css/tokens.css?ver=1.0.1' media='all' />
+<link rel='stylesheet' id='sr-site-css' href='http://localhost:10070/wp-content/themes/gp-child-swiftrooter/assets/css/site.css?ver=1.0.1' media='all' />
+<link rel='stylesheet' id='sr-header-css' href='http://localhost:10070/wp-content/themes/gp-child-swiftrooter/assets/css/header.css?ver=1.0.0' media='all' />
+<link rel='stylesheet' id='sr-wpforms-custom-css' href='http://localhost:10070/wp-content/themes/gp-child-swiftrooter/assets/css/wpforms-custom.css?ver=1.0.8' media='all' />
+<link rel='stylesheet' id='sr-cards-css' href='http://localhost:10070/wp-content/themes/gp-child-swiftrooter/assets/css/cards.css?ver=1.0.0' media='all' />
+<link rel='stylesheet' id='sr-graphite-css' href='http://localhost:10070/wp-content/themes/gp-child-swiftrooter/assets/css/graphite.css?ver=1.0.0' media='all' />
+<link rel="https://api.w.org/" href="http://localhost:10070/wp-json/" /><link rel="alternate" title="JSON" type="application/json" href="http://localhost:10070/wp-json/wp/v2/pages/8" /><link rel="EditURI" type="application/rsd+xml" title="RSD" href="http://localhost:10070/xmlrpc.php?rsd" />
+<link rel="alternate" title="oEmbed (JSON)" type="application/json+oembed" href="http://localhost:10070/wp-json/oembed/1.0/embed?url=http%3A%2F%2Flocalhost%3A10070%2F" />
+<link rel="alternate" title="oEmbed (XML)" type="text/xml+oembed" href="http://localhost:10070/wp-json/oembed/1.0/embed?url=http%3A%2F%2Flocalhost%3A10070%2F&#038;format=xml" />
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"MovingCompany","name":"Bird Dog's Delivery & Moving Services","description":"Professional moving services in Oklahoma City metro area. Licensed & insured crews for local moves, labor-only services, furniture delivery, and more.","url":"http://localhost:10070/","logo":"http://localhost:10070/wp-content/themes/gp-child-swiftrooter/assets/images/logo.svg","image":"http://localhost:10070/wp-content/themes/gp-child-swiftrooter/assets/img/areas/area-downtown-edmond.jpg","telephone":"+14055354554","email":"birddogmoving@gmail.com","address":{"@type":"PostalAddress","streetAddress":"3509 NW 22nd St","addressLocality":"Oklahoma City","addressRegion":"OK","postalCode":"73107","addressCountry":"US"},"geo":{"@type":"GeoCoordinates","latitude":"35.4676","longitude":"-97.5164"},"areaServed":[{"@type":"City","name":"Oklahoma City","containedInPlace":{"@type":"State","name":"Oklahoma"}},{"@type":"City","name":"Edmond","containedInPlace":{"@type":"State","name":"Oklahoma"}},{"@type":"City","name":"Norman","containedInPlace":{"@type":"State","name":"Oklahoma"}}],"serviceType":["Local Moving","Labor-Only Loading/Unloading","Furniture Delivery","Packing & Supplies","Single-Item Haul-Away"],"sameAs":["https://www.facebook.com/birddogmoving","https://www.instagram.com/birddogmoving","https://www.google.com/maps/place/Bird+Dog+Delivery+%26+Moving"],"openingHours":["Mo-Fr 08:00-18:00","Sa 09:00-16:00"],"priceRange":"$$","aggregateRating":{"@type":"AggregateRating","ratingValue":"4.8","reviewCount":"127","bestRating":"5","worstRating":"1"}}</script>
+		<style id="wp-custom-css">
+			.services-page .gap-md { gap: var(--space-md); }
+.services-page .gap-lg { gap: var(--space-lg); }
+.services-page .pad-xl { padding: var(--space-3xl); }
+.services-page .pad-lg { padding: var(--space-2xl); }
+.services-page .radius-lg { border-radius: var(--radius-lg); }
+.services-page .shadow-sm { box-shadow: var(--shadow-sm); }
+.services-page .shadow-md { box-shadow: var(--shadow-md); }
+.services-page .max-hero { max-width: clamp(640px, 60vw, 760px); margin-inline: auto; }
+.services-page .text-center { text-align: center; }
+.services-page .w-100 { width: 100%; }
+.services-page {
+  background: var(--color-bg);
+  color: var(--color-text);
+}
+
+.services-page .wp-block-group {
+  background: transparent;
+}
+
+.services-hero {
+  padding-block: var(--space-4xl);
+  background: linear-gradient(180deg, rgba(13,148,136,0.08) 0%, rgba(13,148,136,0) 52%);
+}
+
+.services-hero .wp-block-heading {
+  font-size: var(--fs-900);
+  line-height: 1.15;
+  margin-bottom: var(--space-md);
+}
+
+.services-hero p {
+  font-size: var(--fs-500);
+  color: var(--color-text-muted);
+  margin-bottom: var(--space-xl);
+}
+
+.services-hero .wp-block-buttons {
+  justify-content: center;
+  gap: var(--space-md);
+}
+
+.services-grid {
+  padding-block: var(--space-3xl);
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: var(--space-xl);
+}
+
+@media (max-width: 1023px) {
+  .services-grid {
+    gap: var(--space-lg);
+  }
+}
+
+@media (max-width: 768px) {
+  .services-grid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
+
+.services-card {
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-sm);
+  padding: var(--space-2xl);
+  display: grid;
+  gap: var(--space-md);
+  position: relative;
+}
+
+.services-card.is-featured {
+  border-color: var(--color-primary);
+  box-shadow: var(--shadow-md);
+}
+
+.services-card__badge {
+  position: absolute;
+  top: var(--space-md);
+  right: var(--space-md);
+  padding: 0.25rem var(--space-sm);
+  border-radius: 999px;
+  background: var(--color-accent);
+  color: var(--color-text);
+  font-size: var(--fs-300);
+  font-weight: 600;
+}
+
+.services-card h3 {
+  font-size: var(--fs-700);
+  margin: 0;
+  color: var(--color-text);
+}
+
+.services-card p {
+  margin: 0;
+  color: var(--color-text-muted);
+  font-size: var(--fs-400);
+}
+
+.services-card__price-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: var(--fs-400);
+  color: var(--color-text-muted);
+}
+
+.services-card__price {
+  font-size: var(--fs-600);
+  font-weight: 700;
+  color: var(--color-text);
+}
+
+.services-card ul {
+  margin: 0;
+  padding-left: var(--space-lg);
+  color: var(--color-text);
+  font-size: var(--fs-400);
+  display: grid;
+  gap: calc(var(--space-xs));
+}
+
+.services-card .wp-block-buttons {
+  justify-content: flex-start;
+}
+
+@media (max-width: 768px) {
+  .services-card .wp-block-buttons {
+    width: 100%;
+  }
+  .services-card .wp-block-button__link {
+    width: 100%;
+    text-align: center;
+  }
+}
+
+.services-cta-band {
+  margin-block: var(--space-4xl);
+  padding: var(--space-3xl);
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-sm);
+  text-align: center;
+  display: grid;
+  gap: var(--space-lg);
+}
+
+.services-cta-band h2 {
+  font-size: var(--fs-700);
+  margin: 0;
+}
+
+.services-cta-band p {
+  font-size: var(--fs-400);
+  color: var(--color-text-muted);
+  margin: 0;
+}
+
+.services-cta-actions {
+  display: flex;
+  justify-content: center;
+  gap: var(--space-md);
+  flex-wrap: wrap;
+}
+
+.services-cta-actions .wp-block-button__link {
+  min-width: 180px;
+}
+
+@media (max-width: 480px) {
+  .services-cta-band {
+    padding: var(--space-2xl);
+  }
+  .services-cta-actions {
+    flex-direction: column;
+  }
+  .services-cta-actions .wp-block-button__link {
+    width: 100%;
+  }
+}
+		</style>
+		</head>
+
+<body class="home wp-singular page-template page-template-page-templates page-template-page-home page-template-page-templatespage-home-php page page-id-8 logged-in admin-bar no-customize-support wp-custom-logo wp-embed-responsive wp-theme-generatepress wp-child-theme-gp-child-swiftrooter no-sidebar nav-float-right separate-containers header-aligned-left dropdown-hover theme--graphite">
+<script>
+		(function() {
+			var request, b = document.body, c = 'className', cs = 'customize-support', rcs = new RegExp('(^|\\s+)(no-)?'+cs+'(\\s+|$)');
+
+				request = true;
+	
+			b[c] = b[c].replace( rcs, ' ' );
+			// The customizer requires postMessage and CORS (if the site is cross domain).
+			b[c] += ( window.postMessage && request ? ' ' : ' no-' ) + cs;
+		}());
+	
+</script>
+		<div id="wpadminbar" class="nojq nojs">
+						<div class="quicklinks" id="wp-toolbar" role="navigation" aria-label="Toolbar">
+				<ul role='menu' id='wp-admin-bar-root-default' class="ab-top-menu"><li role='group' id='wp-admin-bar-wp-logo' class="menupop"><a class='ab-item' role="menuitem" aria-expanded="false" href='http://localhost:10070/wp-admin/about.php'><span class="ab-icon" aria-hidden="true"></span><span class="screen-reader-text">About WordPress</span></a><div class="ab-sub-wrapper"><ul role='menu' aria-label='About WordPress' id='wp-admin-bar-wp-logo-default' class="ab-submenu"><li role='group' id='wp-admin-bar-about'><a class='ab-item' role="menuitem" href='http://localhost:10070/wp-admin/about.php'>About WordPress</a></li><li role='group' id='wp-admin-bar-contribute'><a class='ab-item' role="menuitem" href='http://localhost:10070/wp-admin/contribute.php'>Get Involved</a></li></ul><ul role='menu' aria-label='About WordPress' id='wp-admin-bar-wp-logo-external' class="ab-sub-secondary ab-submenu"><li role='group' id='wp-admin-bar-wporg'><a class='ab-item' role="menuitem" href='https://wordpress.org/'>WordPress.org</a></li><li role='group' id='wp-admin-bar-documentation'><a class='ab-item' role="menuitem" href='https://wordpress.org/documentation/'>Documentation</a></li><li role='group' id='wp-admin-bar-learn'><a class='ab-item' role="menuitem" href='https://learn.wordpress.org/'>Learn WordPress</a></li><li role='group' id='wp-admin-bar-support-forums'><a class='ab-item' role="menuitem" href='https://wordpress.org/support/forums/'>Support</a></li><li role='group' id='wp-admin-bar-feedback'><a class='ab-item' role="menuitem" href='https://wordpress.org/support/forum/requests-and-feedback'>Feedback</a></li></ul></div></li><li role='group' id='wp-admin-bar-site-name' class="menupop"><a class='ab-item' role="menuitem" aria-expanded="false" href='http://localhost:10070/wp-admin/'>Bird Dog&#039;s</a><div class="ab-sub-wrapper"><ul role='menu' aria-label='Bird Dog&#039;s' id='wp-admin-bar-site-name-default' class="ab-submenu"><li role='group' id='wp-admin-bar-dashboard'><a class='ab-item' role="menuitem" href='http://localhost:10070/wp-admin/'>Dashboard</a></li><li role='group' id='wp-admin-bar-plugins'><a class='ab-item' role="menuitem" href='http://localhost:10070/wp-admin/plugins.php'>Plugins</a></li></ul><ul role='menu' aria-label='Bird Dog&#039;s' id='wp-admin-bar-appearance' class="ab-submenu"><li role='group' id='wp-admin-bar-themes'><a class='ab-item' role="menuitem" href='http://localhost:10070/wp-admin/themes.php'>Themes</a></li><li role='group' id='wp-admin-bar-widgets'><a class='ab-item' role="menuitem" href='http://localhost:10070/wp-admin/widgets.php'>Widgets</a></li><li role='group' id='wp-admin-bar-menus'><a class='ab-item' role="menuitem" href='http://localhost:10070/wp-admin/nav-menus.php'>Menus</a></li></ul></div></li><li role='group' id='wp-admin-bar-customize' class="hide-if-no-customize"><a class='ab-item' role="menuitem" href='http://localhost:10070/wp-admin/customize.php?url=http%3A%2F%2Flocalhost%3A10070%2F'>Customize</a></li><li role='group' id='wp-admin-bar-updates'><a class='ab-item' role="menuitem" href='http://localhost:10070/wp-admin/update-core.php'><span class="ab-icon" aria-hidden="true"></span><span class="ab-label" aria-hidden="true">2</span><span class="screen-reader-text updates-available-text">2 updates available</span></a></li><li role='group' id='wp-admin-bar-comments'><a class='ab-item' role="menuitem" href='http://localhost:10070/wp-admin/edit-comments.php'><span class="ab-icon" aria-hidden="true"></span><span class="ab-label awaiting-mod pending-count count-0" aria-hidden="true">0</span><span class="screen-reader-text comments-in-moderation-text">0 Comments in moderation</span></a></li><li role='group' id='wp-admin-bar-new-content' class="menupop"><a class='ab-item' role="menuitem" aria-expanded="false" href='http://localhost:10070/wp-admin/post-new.php'><span class="ab-icon" aria-hidden="true"></span><span class="ab-label">New</span></a><div class="ab-sub-wrapper"><ul role='menu' aria-label='New' id='wp-admin-bar-new-content-default' class="ab-submenu"><li role='group' id='wp-admin-bar-new-post'><a class='ab-item' role="menuitem" href='http://localhost:10070/wp-admin/post-new.php'>Post</a></li><li role='group' id='wp-admin-bar-new-media'><a class='ab-item' role="menuitem" href='http://localhost:10070/wp-admin/media-new.php'>Media</a></li><li role='group' id='wp-admin-bar-new-page'><a class='ab-item' role="menuitem" href='http://localhost:10070/wp-admin/post-new.php?post_type=page'>Page</a></li><li role='group' id='wp-admin-bar-new-user'><a class='ab-item' role="menuitem" href='http://localhost:10070/wp-admin/user-new.php'>User</a></li><li role='group' id='wp-admin-bar-wpforms'><a class='ab-item' role="menuitem" href='http://localhost:10070/wp-admin/admin.php?page=wpforms-builder'>WPForms</a></li></ul></div></li><li role='group' id='wp-admin-bar-edit'><a class='ab-item' role="menuitem" href='http://localhost:10070/wp-admin/post.php?post=8&#038;action=edit'>Edit Page</a></li><li role='group' id='wp-admin-bar-wpforms-menu' class="menupop"><a class='ab-item' role="menuitem" aria-expanded="false" href='http://localhost:10070/wp-admin/admin.php?page=wpforms-overview'>WPForms</a><div class="ab-sub-wrapper"><ul role='menu' id='wp-admin-bar-wpforms-menu-default' class="ab-submenu"><li role='group' id='wp-admin-bar-wpforms-forms'><a class='ab-item' role="menuitem" href='http://localhost:10070/wp-admin/admin.php?page=wpforms-overview'>All Forms</a></li><li role='group' id='wp-admin-bar-wpforms-add-new'><a class='ab-item' role="menuitem" href='http://localhost:10070/wp-admin/admin.php?page=wpforms-builder'>Add New Form</a></li><li role='group' id='wp-admin-bar-wpforms-payments'><a class='ab-item' role="menuitem" href='http://localhost:10070/wp-admin/admin.php?page=wpforms-payments'>Payments</a></li><li role='group' id='wp-admin-bar-wpforms-settings' class="menupop"><a class='ab-item' role="menuitem" aria-expanded="false" href='http://localhost:10070/wp-admin/admin.php?page=wpforms-settings'><span class="wp-admin-bar-arrow" aria-hidden="true"></span>Settings</a><div class="ab-sub-wrapper"><ul role='menu' id='wp-admin-bar-wpforms-settings-default' class="ab-submenu"><li role='group' id='wp-admin-bar-wpforms-general-settings'><a class='ab-item' role="menuitem" href='http://localhost:10070/wp-admin/admin.php?page=wpforms-settings&#038;view=general'>General</a></li><li role='group' id='wp-admin-bar-wpforms-email-settings'><a class='ab-item' role="menuitem" href='http://localhost:10070/wp-admin/admin.php?page=wpforms-settings&#038;view=email'>Email</a></li><li role='group' id='wp-admin-bar-wpforms-captcha-settings'><a class='ab-item' role="menuitem" href='http://localhost:10070/wp-admin/admin.php?page=wpforms-settings&#038;view=captcha'>CAPTCHA</a></li><li role='group' id='wp-admin-bar-wpforms-validation-settings'><a class='ab-item' role="menuitem" href='http://localhost:10070/wp-admin/admin.php?page=wpforms-settings&#038;view=validation'>Validation</a></li><li role='group' id='wp-admin-bar-wpforms-payments-settings'><a class='ab-item' role="menuitem" href='http://localhost:10070/wp-admin/admin.php?page=wpforms-settings&#038;view=payments'>Payments</a></li><li role='group' id='wp-admin-bar-wpforms-integrations-settings'><a class='ab-item' role="menuitem" href='http://localhost:10070/wp-admin/admin.php?page=wpforms-settings&#038;view=integrations'>Integrations</a></li><li role='group' id='wp-admin-bar-wpforms-geolocation-settings'><a class='ab-item' role="menuitem" href='http://localhost:10070/wp-admin/admin.php?page=wpforms-settings&#038;view=geolocation'>Geolocation</a></li><li role='group' id='wp-admin-bar-wpforms-access-settings'><a class='ab-item' role="menuitem" href='http://localhost:10070/wp-admin/admin.php?page=wpforms-settings&#038;view=access'>Access Control</a></li><li role='group' id='wp-admin-bar-wpforms-misc-settings'><a class='ab-item' role="menuitem" href='http://localhost:10070/wp-admin/admin.php?page=wpforms-settings&#038;view=misc'>Misc</a></li></ul></div></li><li role='group' id='wp-admin-bar-wpforms-tools' class="menupop"><a class='ab-item' role="menuitem" aria-expanded="false" href='http://localhost:10070/wp-admin/admin.php?page=wpforms-tools'><span class="wp-admin-bar-arrow" aria-hidden="true"></span>Tools</a><div class="ab-sub-wrapper"><ul role='menu' id='wp-admin-bar-wpforms-tools-default' class="ab-submenu"><li role='group' id='wp-admin-bar-wpforms-tools-import'><a class='ab-item' role="menuitem" href='http://localhost:10070/wp-admin/admin.php?page=wpforms-tools&#038;view=import'>Import</a></li><li role='group' id='wp-admin-bar-wpforms-tools-export'><a class='ab-item' role="menuitem" href='http://localhost:10070/wp-admin/admin.php?page=wpforms-tools&#038;view=export'>Export</a></li><li role='group' id='wp-admin-bar-wpforms-tools-entry-automation'><a class='ab-item' role="menuitem" href='http://localhost:10070/wp-admin/admin.php?page=wpforms-tools&#038;view=entry-automation'>Entry Automation</a></li><li role='group' id='wp-admin-bar-wpforms-tools-system'><a class='ab-item' role="menuitem" href='http://localhost:10070/wp-admin/admin.php?page=wpforms-tools&#038;view=system'>System Info</a></li><li role='group' id='wp-admin-bar-wpforms-tools-action-scheduler' class="menupop"><a class='ab-item' role="menuitem" aria-expanded="false" href='http://localhost:10070/wp-admin/admin.php?page=wpforms-tools&#038;view=action-scheduler&#038;s=wpforms'><span class="wp-admin-bar-arrow" aria-hidden="true"></span>Scheduled Actions</a><div class="ab-sub-wrapper"><ul role='menu' id='wp-admin-bar-wpforms-tools-action-scheduler-default' class="ab-submenu"><li role='group' id='wp-admin-bar-wpforms-tools-action-scheduler-all'><a class='ab-item' role="menuitem" href='http://localhost:10070/wp-admin/admin.php?page=wpforms-tools&#038;view=action-scheduler&#038;s=wpforms&#038;orderby=hook&#038;order=desc'>View All</a></li><li role='group' id='wp-admin-bar-wpforms-tools-action-scheduler-complete'><a class='ab-item' role="menuitem" href='http://localhost:10070/wp-admin/admin.php?page=wpforms-tools&#038;view=action-scheduler&#038;s=wpforms&#038;status=complete&#038;orderby=hook&#038;order=desc'>Completed Actions</a></li><li role='group' id='wp-admin-bar-wpforms-tools-action-scheduler-failed'><a class='ab-item' role="menuitem" href='http://localhost:10070/wp-admin/admin.php?page=wpforms-tools&#038;view=action-scheduler&#038;s=wpforms&#038;status=failed&#038;orderby=hook&#038;order=desc'>Failed Actions</a></li><li role='group' id='wp-admin-bar-wpforms-tools-action-scheduler-pending'><a class='ab-item' role="menuitem" href='http://localhost:10070/wp-admin/admin.php?page=wpforms-tools&#038;view=action-scheduler&#038;s=wpforms&#038;status=pending&#038;orderby=hook&#038;order=desc'>Pending Actions</a></li><li role='group' id='wp-admin-bar-wpforms-tools-action-scheduler-past-due'><a class='ab-item' role="menuitem" href='http://localhost:10070/wp-admin/admin.php?page=wpforms-tools&#038;view=action-scheduler&#038;s=wpforms&#038;status=past-due&#038;orderby=hook&#038;order=desc'>Past Due Actions</a></li></ul></div></li><li role='group' id='wp-admin-bar-wpforms-tools-logs'><a class='ab-item' role="menuitem" href='http://localhost:10070/wp-admin/admin.php?page=wpforms-tools&#038;view=logs'>Logs</a></li><li role='group' id='wp-admin-bar-wpforms-tools-wpcode'><a class='ab-item' role="menuitem" href='http://localhost:10070/wp-admin/admin.php?page=wpforms-tools&#038;view=wpcode'>Code Snippets</a></li></ul></div></li><li role='group' id='wp-admin-bar-wpforms-community'><a class='ab-item' role="menuitem" href='https://www.facebook.com/groups/wpformsvip/' target='_blank' rel='noopener noreferrer'>Community</a></li><li role='group' id='wp-admin-bar-wpforms-help-docs'><a class='ab-item' role="menuitem" href='https://wpforms.com/docs/?utm_campaign=liteplugin&#038;utm_medium=admin-bar&#038;utm_source=WordPress&#038;utm_content=Documentation' target='_blank' rel='noopener noreferrer'>Help Docs</a></li><li role='group' id='wp-admin-bar-wpforms-upgrade'><a class='ab-item' role="menuitem" href='https://wpforms.com/lite-upgrade/?utm_campaign=liteplugin&#038;utm_source=WordPress&#038;utm_medium=admin-bar&#038;utm_content=Upgrade%20to%20Pro&#038;utm_locale=en_US' target='_blank' rel='noopener noreferrer'>Upgrade to Pro</a></li></ul></div></li></ul><ul role='menu' id='wp-admin-bar-top-secondary' class="ab-top-secondary ab-top-menu"><li role='group' id='wp-admin-bar-my-account' class="menupop with-avatar"><a class='ab-item' role="menuitem" aria-expanded="false" href='http://localhost:10070/wp-admin/profile.php'>Howdy, <span class="display-name">gerroald</span><img alt='' src='https://secure.gravatar.com/avatar/26521351abd2c33c3a52f64aa2a1064b3329dc5586b23141f7e3d825e5dd305c?s=26&#038;d=mm&#038;r=g' srcset='https://secure.gravatar.com/avatar/26521351abd2c33c3a52f64aa2a1064b3329dc5586b23141f7e3d825e5dd305c?s=52&#038;d=mm&#038;r=g 2x' class='avatar avatar-26 photo' height='26' width='26' decoding='async'/></a><div class="ab-sub-wrapper"><ul role='menu' aria-label='Howdy, gerroald' id='wp-admin-bar-user-actions' class="ab-submenu"><li role='group' id='wp-admin-bar-user-info'><a class='ab-item' role="menuitem" href='http://localhost:10070/wp-admin/profile.php'><img alt='' src='https://secure.gravatar.com/avatar/26521351abd2c33c3a52f64aa2a1064b3329dc5586b23141f7e3d825e5dd305c?s=64&#038;d=mm&#038;r=g' srcset='https://secure.gravatar.com/avatar/26521351abd2c33c3a52f64aa2a1064b3329dc5586b23141f7e3d825e5dd305c?s=128&#038;d=mm&#038;r=g 2x' class='avatar avatar-64 photo' height='64' width='64' decoding='async'/><span class='display-name'>gerroald</span><span class='display-name edit-profile'>Edit Profile</span></a></li><li role='group' id='wp-admin-bar-logout'><a class='ab-item' role="menuitem" href='http://localhost:10070/wp-login.php?action=logout&#038;_wpnonce=1dcb978821'>Log Out</a></li></ul></div></li><li role='group' id='wp-admin-bar-search' class="admin-bar-search"><div class="ab-item ab-empty-item" tabindex="-1" role="menuitem"><form action="http://localhost:10070/" method="get" id="adminbarsearch"><input class="adminbar-input" name="s" id="adminbar-search" type="text" value="" maxlength="150" /><label for="adminbar-search" class="screen-reader-text">Search</label><input type="submit" class="adminbar-button" value="Search" /></form></div></li></ul>			</div>
+		</div>
+
+		<div class="callbar" role="region" aria-label="Quick actions">
+    <a class="c-button c-button--primary" href="http://localhost:10070/contact/#estimate">Get Free Estimate</a>
+    <a class="c-button c-button--ghost" href="tel:4055354554">Call (405) 535-4554</a>
+  </div>
+<header class="site-header" role="banner">
+    <div class="l-container">
+        <!-- Logo -->
+        <a class="site-logo" href="http://localhost:10070/" aria-label="Bird Dog&#039;s - Home">
+            <img
+                src="http://localhost:10070/wp-content/uploads/2025/10/logo-lockup-512-black-e1759429063411.png"
+                alt="Bird Dog&#039;s logo"/>
+        </a>
+
+<!-- Primary Navigation -->
+<nav class="site-nav" id="site-nav" aria-label="Primary">
+  <ul id="primary-menu" class="menu"><li id="menu-item-31" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-home current-menu-item page_item page-item-8 current_page_item menu-item-31"><a href="http://localhost:10070/" aria-current="page">Home</a></li>
+<li id="menu-item-305" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-305"><a href="http://localhost:10070/services-3/">Services</a> <button class="submenu-toggle" aria-label="Expand submenu" aria-expanded="false" aria-controls="submenu-305" tabindex="-1">▾</button>
+<ul class="sub-menu">
+	<li id="menu-item-218" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-218"><a href="http://localhost:10070/services-2__trashed/residential-moving/">Residential Moving</a></li>
+	<li id="menu-item-217" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-217"><a href="http://localhost:10070/services-2__trashed/office-commercial-moving/">Office &#038; Commercial Moves</a></li>
+	<li id="menu-item-216" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-216"><a href="http://localhost:10070/services-2__trashed/junk-removal/">Junk Removal</a></li>
+	<li id="menu-item-215" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-215"><a href="http://localhost:10070/services-2__trashed/specialty-moving-service/">Specialty Moves</a></li>
+</ul>
+</li>
+<li id="menu-item-220" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-220"><a href="http://localhost:10070/free-estimates-pricing/">Free Estimates! &amp; Pricing</a></li>
+<li id="menu-item-357" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-357"><a href="http://localhost:10070/blog/">Blog</a></li>
+<li id="menu-item-332" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-332"><a href="http://localhost:10070/the-bird-dog-blog-2/">The Bird Dog Blog!</a></li>
+<li id="menu-item-28" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-28"><a href="http://localhost:10070/about-2/">About</a></li>
+<li id="menu-item-26" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-26"><a href="http://localhost:10070/contact-2/">Contact</a></li>
+</ul></nav>
+
+
+
+        <!-- CTA Buttons -->
+        <div class="site-cta">
+            <!-- Text Me Button -->
+            <a href="sms:4055354554" class="site-cta__text" aria-label="Text us">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M20 2H4c-1.1 0-1.99.9-1.99 2L2 22l4-4h14c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zM6 9h12v2H6V9zm8 5H6v-2h8v2zm4-6H6V6h12v2z" fill="currentColor"/>
+                </svg>
+            </a>
+
+            <!-- Call Button -->
+            <a href="tel:+14055354554" class="site-cta__button">
+                <span class="site-cta__icon" aria-hidden="true">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M6.62 10.79a15.1 15.1 0 006.59 6.59l2.2-2.2a1 1 0 011.05-.24c1.12.37 2.33.57 3.54.57a1 1 0 011 1v3.5a1 1 0 01-1 1C10.2 21 3 13.8 3 4a1 1 0 011-1h3.5a1 1 0 011 1c0 1.21.2 2.42.57 3.54a1 1 0 01-.25 1.05l-2.2 2.2z" fill="currentColor"/>
+                    </svg>
+                </span>
+                <span class="site-cta__number">(405) 535-4554</span>
+            </a>
+        </div>
+
+        <!-- Mobile Navigation Toggle -->
+        <button class="nav-toggle" 
+                aria-controls="site-nav" 
+                aria-expanded="false" 
+                aria-label="Open menu">
+            <span class="nav-toggle__bar"></span>
+            <span class="nav-toggle__bar"></span>
+            <span class="nav-toggle__bar"></span>
+            <span class="sr-only">Toggle navigation menu</span>
+        </button>
+    </div>
+</header>
+
+<main id="main" class="site-main" role="main">
+<!-- Hero Section -->
+<!-- Hero Form on Right 6040 -->
+<section class="hero hero--watermark hero--teal hero--two-col l-section" aria-labelledby="page-title">
+  <div class="l-container">
+    <!-- Column 1: Text FIRST in DOM -->
+    <div class="hero__text">
+      <p class="hero__eyebrow">
+        Bird Dog's Delivery &amp; Moving, OKC
+      </p>
+      <h1 id="page-title" class="hero__title">
+        The <span class="text-accent-yellow">Trusted Local</span> Moving Company in
+        <span class="text-accent-yellow">Oklahoma City</span>
+      </h1>
+      <p class="hero__lead">
+        Family-owned, licensed &amp; insured movers in OKC. Local expertise, transparent pricing, and stress-free service.
+      </p>
+      <ul class="hero__highlights">
+        <li>Same-day crews available</li>
+        <li>Floor, wall &amp; furniture protection</li> <!-- fixed &amp;amp; -->
+        <li>Transparent, upfront pricing</li>
+      </ul>
+      <div class="hero__actions">
+        <a href="http://localhost:10070/contact/#estimate" class="c-button c-button--primary">Get Your Estimate</a>
+        <a href="tel:+14055354554" class="c-button c-button--ghost">Call (405) 535-4554</a>
+      </div>
+    </div>
+
+    <!-- Column 2: Estimator / card -->
+    <aside class="hero__aside" aria-label="Instant moving estimate">
+      <div class="hero-form-card c-card">
+        [moving_estimator mode="quick" layout="compact"]      </div>
+    </aside>
+  </div>
+</section>
+	
+
+<!-- Trust Logos Section -->
+<section class="trust l-section">
+    <div class="l-container">
+        <div class="trust__logos">
+            <div class="trust__item">
+                <a href="https://www.bbb.org/us/ok/oklahoma-city/profile/moving-companies/bird-dogs-delivery-moving-service-0995-90046474/#sealclick" target="_blank" rel="nofollow"><img src="https://seal-oklahomacity.bbb.org/seals/black-seal-187-130-bbb-90046474.png" style="border: 0;" alt="Bird Dogs Delivery & Moving Service BBB Business Review" data=reveal/></a>
+            </div>
+            <div class="trust__item">
+                <a hrefhttps://share.google/CtNMR8Xakxcj7JCbf"><img src="http://localhost:10070/wp-content/uploads/2025/10/google_g_icon_download.png" alt="Google Reviews" width="120" height="60" data-reveal>
+            </div>
+            <div class="trust__item">
+                <a href="https://www.yelp.com/biz/bird-dogs-delivery-and-moving-service-oklahoma-city?osq=bird+dogs+delivery+%26+moving+services&override_cta=Get+pricing+%26+availability" alt="Yelp"><img src="http://localhost:10070/wp-content/uploads/2025/10/yelp_logo.png" width="120" height="60" data-reveal>
+            </div>
+ 
+        </div>
+        <p class="trust__caption">Licensed &amp; Insured • Same-Day Moves • Oklahoma City Locals</p>
+    </div>
+</section>
+
+
+<!-- Services Preview Section -->
+<section class="services-preview l-section section--light">
+    <div class="l-container">
+        <div class="services-preview__header">
+            <h2 class="services-preview__title">Our Services</h2>
+            <p class="services-preview__subtitle">Professional Moving Services for your home and business</p>
+        </div>
+        <div class="services-preview__grid u-grid u-grid--3">
+            <div class="c-card services-preview__card" data-reveal>
+                <div class="services-preview__icon">
+                    <svg width="48" height="48" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M3 7h18v2H3V7zm0 4h18v2H3v-2zm0 4h18v2H3v-2z" fill="#0D9488"/>
+                    </svg>
+                </div>
+                <h3 class="services-preview__card-title">Residential Moving</h3>
+                <ul class="services-preview__features">
+                    <li>Dependable by-the-hour moving crews</li>
+                    <li>Seamless moves for houses, apartments, and condos</li>
+                    <li>Fully licensed &amp; insured for your confidence</li>
+                </ul>
+                <p>From compact apartments to expansive homes, we provide personalized care and precision, ensuring your move is stress-free from start to finish.</p>
+                <a href="http://localhost:10070/services/local-moving/" class="c-button c-button--ghost services-preview__link">Learn more</a>
+            </div>
+            
+            <div class="c-card services-preview__card" data-reveal>
+                <div class="services-preview__icon">
+                    <svg width="48" height="48" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" fill="#0D9488"/>
+                    </svg>
+                </div>
+                <h3 class="services-preview__card-title">Office &amp; Commercial Moves</h3>
+                <ul class="services-preview__features">
+                    <li>Efficient, professional teams tailored to your business needs</li>
+                    <li>Expertise in office spaces, retail, and commercial properties</li>
+                    <li>Licensed &amp; insured for reliable service</li>
+                </ul>
+                <p>We handle your office relocation with minimal disruption to your operations, letting you focus on what matters most.</p>
+                <a href="http://localhost:10070/services/labor-only/" class="c-button c-button--ghost services-preview__link">Learn more</a>
+            </div>
+            
+            <div class="c-card services-preview__card" data-reveal>
+                <div class="services-preview__icon">
+                    <svg width="48" height="48" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z" fill="#0D9488"/>
+                    </svg>
+                </div>
+<h3 class="services-preview__card-title">Junk Removal</h3>
+                <ul class="services-preview__features">
+                    <li>Quick and hassle-free removal services</li>
+                    <li>Residential and commercial spaces of all sizes</li>
+                    <li>Licensed &amp; insured for your peace of mind</li>
+                </ul>
+                <p>Need to clear out the clutter? We offer quick, hassle-free junk removal for residential and commercial spaces of all sizes.</p>
+                <a href="http://localhost:10070/services/junk-removal/" class="c-button c-button--ghost services-preview__link">Learn more</a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Areas Preview Section -->
+<section class="areas-preview l-section section--surface">
+    <div class="l-container">
+        <div class="areas-preview__header">
+            <h2 class="areas-preview__title">Areas We Serve</h2>
+            <p class="areas-preview__subtitle">Providing reliable moving services throughout the Oklahoma City metro</p>
+        </div>
+        <div class="areas-preview__grid u-grid u-grid--3">
+            <div class="c-card areas-preview__card" data-reveal>
+                <h3 class="areas-preview__card-title">Oklahoma City</h3>
+                <p class="areas-preview__description">Full-service moving for Oklahoma City residents and businesses. Same-day crews, careful packing, and safe delivery.</p>
+                <a href="http://localhost:10070/service-area/oklahoma-city/" class="c-button c-button--ghost areas-preview__link">View Services</a>
+            </div>
+            
+            <div class="c-card areas-preview__card" data-reveal>
+                <h3 class="areas-preview__card-title">Edmond</h3>
+                <p class="areas-preview__description">Professional moving services in Edmond. Same-day support for loading, unloading, and in-town moves.</p>
+                <a href="http://localhost:10070/service-area/edmond/" class="c-button c-button--ghost areas-preview__link">View Services</a>
+            </div>
+            
+            <div class="c-card areas-preview__card" data-reveal>
+                <h3 class="areas-preview__card-title">Norman</h3>
+                <p class="areas-preview__description">Reliable moving solutions for Norman homes and businesses. Licensed crews with local expertise.</p>
+                <a href="http://localhost:10070/service-area/norman/" class="c-button c-button--ghost areas-preview__link">View Services</a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Testimonials Teaser Section -->
+<section class="testimonials-teaser l-section section-light">
+    <div class="l-container">
+        <div class="testimonials-teaser__header">
+            <h2 class="testimonials-teaser__title">What Our Customers Say</h2>
+            <p class="testimonials-teaser__subtitle">Real reviews from satisfied customers across Oklahoma City</p>
+        </div>
+        <div class="testimonials-teaser__grid u-grid u-grid--3">
+            <div class="c-card testimonials-teaser__card" data-reveal>
+                <blockquote class="testimonials-teaser__quote">
+                    "Bird Dog's Delivery & Moving Services got our three-bedroom home packed, moved, and set back up in a single day. Nothing was scratched and the crew was upbeat the whole time."
+                </blockquote>
+                <figcaption class="testimonials-teaser__author">
+                    <strong>Sarah M.</strong><br>
+                    <span class="testimonials-teaser__location">Oklahoma City</span>
+                </figcaption>
+            </div>
+            
+            <div class="c-card testimonials-teaser__card" data-reveal>
+                <blockquote class="testimonials-teaser__quote">
+                    "Transparent pricing and excellent communication. They coordinated with our building manager and kept our downtown office move right on schedule."
+                </blockquote>
+                <figcaption class="testimonials-teaser__author">
+                    <strong>Mike R.</strong><br>
+                    <span class="testimonials-teaser__location">Edmond</span>
+                </figcaption>
+            </div>
+            
+            <div class="c-card testimonials-teaser__card" data-reveal>
+                <blockquote class="testimonials-teaser__quote">
+                    "From the first walkthrough to the final box, the crew treated our belongings with care and even helped stage the new space. We'll hire them again."
+                </blockquote>
+                <figcaption class="testimonials-teaser__author">
+                    <strong>Jennifer L.</strong><br>
+                    <span class="testimonials-teaser__location">Norman</span>
+                </figcaption>
+            </div>
+        </div>
+    </div>
+</section>
+  <section class="l-section">
+    <div class="l-container prose">
+          </div>
+  </section>
+
+<!-- CTA Band Section -->
+<section class="cta-band l-section section-tealband">
+    <div class="l-container">
+        <div class="cta-band__content">
+            <h2 class="cta-band__title">Ready to Get Started?</h2>
+            <p class="cta-band__subtitle">Contact Bird Dog's Delivery & Moving Services today for fast, reliable moving services in Oklahoma City</p>
+            <div class="cta-band__actions">
+                <a href="http://localhost:10070/contact/#estimate" class="c-button c-button--primary" data-reveal>Get Free Estimate</a>
+                <a href="tel:+14055354554" class="c-button c-button--secondary" data-reveal>Call (405) 535-4554</a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<footer class="site-footer" role="contentinfo">
+    <div class="l-container">
+        <div class="footer__grid">
+            <!-- Brand & NAP -->
+            <div class="footer__brand">
+                <a class="footer__logo" href="http://localhost:10070/" aria-label="Home">
+                    <img
+                        src="http://localhost:10070/wp-content/uploads/2025/10/logo-lockup-512.png"
+                        alt="Bird Dog&#039;s logo"
+                        width="180"
+                        height="56"
+                        loading="lazy"
+                    />
+                </a>
+                <div class="footer__contact">
+                    <p>3509 NW 22nd St<br>Oklahoma City, OK 73107</p>
+                    <p><a href="tel:+14055354554">(405) 535-4554</a></p>
+                    <p>Mon-Fri: 8AM-5PM</p>
+                </div>
+            </div>
+
+            <!-- Quick Links -->
+            <div class="footer__links">
+                <h3>Quick Links</h3>
+                            </div>
+
+            <!-- Services -->
+            <div class="footer__services">
+                <h3>Services</h3>
+                <ul class="footer__menu">
+                    <li><a href="http://localhost:10070/services/local-moving/">Local Moving</a></li>
+                    <li><a href="http://localhost:10070/services/labor-only/">Labor-Only Loading/Unloading</a></li>
+                    <li><a href="http://localhost:10070/services/furniture-delivery/">Furniture Delivery</a></li>
+                    <li><a href="http://localhost:10070/services/packing-services/">Packing & Supplies</a></li>
+                    <li><a href="http://localhost:10070/services/item-haul-away/">Single-Item Haul-Away</a></li>
+                </ul>
+            </div>
+
+            <!-- Social -->
+            <div class="footer__social">
+                <h3>Follow Us</h3>
+                <div class="social__links">
+                    <a href="#" aria-label="Facebook" class="social__link">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
+                        </svg>
+                    </a>
+                    <a href="#" aria-label="Instagram" class="social__link">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+                        </svg>
+                    </a>
+                    <a href="#" aria-label="YouTube" class="social__link">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/>
+                        </svg>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer__bottom">
+            <p>&copy; 2025 Bird Dog&#039;s. All rights reserved.</p>
+        </div>
+    </div>
+</footer>
+
+  <script>
+    (function(){
+      var d = document.documentElement;
+      if (!d.classList.contains('theme--graphite')) {
+        d.classList.add('theme--graphite');
+      }
+    })();
+  </script>
+  <script id="generate-a11y">
+!function(){"use strict";if("querySelector"in document&&"addEventListener"in window){var e=document.body;e.addEventListener("pointerdown",(function(){e.classList.add("using-mouse")}),{passive:!0}),e.addEventListener("keydown",(function(){e.classList.remove("using-mouse")}),{passive:!0})}}();
+</script>
+<script src="http://localhost:10070/wp-includes/js/hoverintent-js.min.js?ver=2.2.1" id="hoverintent-js-js"></script>
+<script id="admin-bar-js-before">
+( function() {
+				function wpforms_admin_bar_menu_init() {
+					var template = document.getElementById( 'tmpl-wpforms-admin-menubar-data' ),
+						notifications = document.getElementById( 'wp-admin-bar-wpforms-notifications' );
+
+					if ( ! template ) {
+						return;
+					}
+
+					if ( ! notifications ) {
+						var menu = document.getElementById( 'wp-admin-bar-wpforms-menu-default' );
+
+						if ( ! menu ) {
+							return;
+						}
+
+						menu.insertAdjacentHTML( 'afterBegin', template.innerHTML );
+					} else {}
+						notifications.insertAdjacentHTML( 'afterend', template.innerHTML );
+					}
+				};
+				document.addEventListener( 'DOMContentLoaded', wpforms_admin_bar_menu_init );
+			}() );
+</script>
+<script src="http://localhost:10070/wp-includes/js/admin-bar.min.js?ver=6.8.2" id="admin-bar-js"></script>
+<!--[if lte IE 11]>
+<script src="http://localhost:10070/wp-content/themes/generatepress/assets/js/classList.min.js?ver=3.6.0" id="generate-classlist-js"></script>
+<![endif]-->
+<script id="generate-menu-js-before">
+var generatepressMenu = {"toggleOpenedSubMenus":true,"openSubMenuLabel":"Open Sub-Menu","closeSubMenuLabel":"Close Sub-Menu"};
+</script>
+<script src="http://localhost:10070/wp-content/themes/generatepress/assets/js/menu.min.js?ver=3.6.0" id="generate-menu-js"></script>
+<script src="http://localhost:10070/wp-content/themes/gp-child-swiftrooter/assets/js/site.js?ver=1.0.1" id="sr-site-js"></script>
+<script src="http://localhost:10070/wp-content/themes/gp-child-swiftrooter/assets/js/header.js?ver=1.0.0" id="sr-header-js"></script>
+  <div class="fab-panel-mobile clean-mode" role="region" aria-label="Quick actions">
+    <button class="fab-toggle btn-pulse" aria-expanded="false" aria-controls="fab-panel">
+      <svg width="22" height="22" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 5v14M5 12h14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+      <span class="sr-only">Open quick actions</span>
+    </button>
+    <div class="fab-panel" id="fab-panel">
+      <a class="fab-link" href="tel:4055354554">Call Now</a>
+      <a class="fab-link" href="sms:+14055354554">Text Us</a>
+      <a class="fab-link" href="http://localhost:10070/contact/#estimate">Get Free Estimate</a>
+      <a class="fab-link" href="mailto:birddogmoving@gmail.com">Email</a>
+    </div>
+  </div>
+  </body>
+</html>
+graphitetestingsourcecode.html

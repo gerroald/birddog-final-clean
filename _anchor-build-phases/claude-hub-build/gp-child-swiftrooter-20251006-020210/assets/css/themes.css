@@ -1,0 +1,158 @@
+/* ===== Base (shared tokens & fallbacks) ===== */
+:root{
+  --shadow-md: 0 8px 20px rgba(16,24,40,.10);
+  --shadow-lg: 0 14px 30px rgba(16,24,40,.16);
+
+  /* status */
+  --color-success:#16A34A;
+  --color-warning:#D97706;
+  --color-error:#B91C1C;
+
+  /* sensible defaults (overridden by presets below) */
+  --color-bg:#EEF3F6;
+  --color-surface:#FFFFFF;
+  --color-border:#E1E6EC;
+  --color-text:#0E1217;
+  --color-text-muted:#596170;
+  --color-text-inverse:#0E1419;
+
+  --color-primary:#0D9488;  /* teal */
+  --color-accent:#F59E0B;   /* yellow */
+  --color-link:var(--color-primary);
+  --color-link-hover:#0FA091;
+
+  --color-focus:#FBBF24;
+  --color-focus-ring:0 0 0 3px rgba(251,191,36,.35);
+}
+
+/* Helper: palette chips in your demo (optional) */
+.color-swatch.primary{ background:var(--color-primary); color:var(--color-text-inverse); }
+.color-swatch.accent{ background:var(--color-accent); color:var(--color-text-inverse); }
+.color-swatch.success{ background:var(--color-success); color:#fff; }
+.color-swatch.warning{ background:var(--color-warning); color:#0F172A; }
+.color-swatch.error{ background:var(--color-error); color:#fff; }
+.color-swatch.surface{ background:var(--color-surface); border:1px solid var(--color-border); }
+.color-swatch.text{ background:var(--color-bg); color:var(--color-text); }
+.color-swatch.muted{ background:var(--color-bg); color:var(--color-text-muted); }
+
+/* =========================================================================
+   THEME PRESETS — each has three tones: [data-tone="light-lean|mid|dark-lean"]
+   ========================================================================= */
+
+/* =================== PRO CORE (teal primary, yellow accent) =================== */
+/* Light-leaning: bright but not pure white bg */
+html[data-theme="pro-core"][data-tone="light-lean"]{
+  --color-bg:#F5F7FA; --color-surface:#FFFFFF; --color-border:#E3E8EF;
+  --color-text:#0F172A; --color-text-muted:#5B6574; --color-text-inverse:#FFFFFF;
+  --color-primary:#0D9488; --color-accent:#F59E0B;
+  --color-link:#0D9488; --color-link-hover:#0FA09A;
+  --color-focus:#FBBF24; --color-focus-ring:0 0 0 3px rgba(251,191,36,.32);
+}
+/* Mid-tone (comfort dusk) */
+html[data-theme="pro-core"][data-tone="mid"]{
+  --color-bg:#1A2230; --color-surface:#232D3A; --color-border:#324055;
+  --color-text:#E8EDF3; --color-text-muted:#A9B4C0; --color-text-inverse:#0E1419;
+  --color-primary:#12B3A2; --color-accent:#F5B515;
+  --color-link:#12B3A2; --color-link-hover:#0FA091;
+  --color-focus:#FBBF24; --color-focus-ring:0 0 0 3px rgba(251,191,36,.45);
+}
+/* Dark-leaning (dim slate; not black) */
+html[data-theme="pro-core"][data-tone="dark-lean"]{
+  --color-bg:#121820; --color-surface:#1E2630; --color-border:#2B3644;
+  --color-text:#EAF0F6; --color-text-muted:#A9B4C0; --color-text-inverse:#0E1419;
+  --color-primary:#12B3A2; --color-accent:#F5B515;
+  --color-link:#12B3A2; --color-link-hover:#0FA091;
+  --color-focus:#FBBF24; --color-focus-ring:0 0 0 3px rgba(251,191,36,.50);
+}
+
+/* =================== MODERN TEAL (cooler slate, deeper teal) =================== */
+html[data-theme="modern-teal"][data-tone="light-lean"]{
+  --color-bg:#F6FAF9; --color-surface:#FFFFFF; --color-border:#E5EEF0;
+  --color-text:#0E1620; --color-text-muted:#5B6673; --color-text-inverse:#FFFFFF;
+  --color-primary:#0C8B80; --color-accent:#F4AF17;
+  --color-link:#0C8B80; --color-link-hover:#109E90;
+  --color-focus:#F4AF17; --color-focus-ring:0 0 0 3px rgba(244,175,23,.32);
+}
+html[data-theme="modern-teal"][data-tone="mid"]{
+  --color-bg:#182129; --color-surface:#212A33; --color-border:#2E3A46;
+  --color-text:#E7EDF2; --color-text-muted:#A5B0BA; --color-text-inverse:#0F1419;
+  --color-primary:#109E90; --color-accent:#F4AF17;
+  --color-link:#109E90; --color-link-hover:#0FA091;
+  --color-focus:#F4AF17; --color-focus-ring:0 0 0 3px rgba(244,175,23,.42);
+}
+html[data-theme="modern-teal"][data-tone="dark-lean"]{
+  --color-bg:#141C23; --color-surface:#1C2630; --color-border:#2A3440;
+  --color-text:#E7EEF3; --color-text-muted:#A6B1BC; --color-text-inverse:#0F1419;
+  --color-primary:#11A393; --color-accent:#F5B21A;
+  --color-link:#11A393; --color-link-hover:#0FA091;
+  --color-focus:#F5B21A; --color-focus-ring:0 0 0 3px rgba(245,178,26,.48);
+}
+
+/* =================== INDUSTRIAL YELLOW (yellow primary, teal accent) =================== */
+html[data-theme="industrial-yellow"][data-tone="light-lean"]{
+  --color-bg:#FFF8E9; --color-surface:#FFFFFF; --color-border:#F0E4C0;
+  --color-text:#0E1419; --color-text-muted:#5A5F66; --color-text-inverse:#0E1419;
+  --color-primary:#F59E0B; --color-accent:#12B3A2;
+  --color-link:#0D9488; --color-link-hover:#0FA091;
+  --color-focus:#FBBF24; --color-focus-ring:0 0 0 3px rgba(251,191,36,.30);
+}
+html[data-theme="industrial-yellow"][data-tone="mid"]{
+  --color-bg:#211C12; --color-surface:#292214; --color-border:#3A2F18;
+  --color-text:#F3EEE3; --color-text-muted:#C9C1AE; --color-text-inverse:#0E1419;
+  --color-primary:#F5B515; --color-accent:#10A090;
+  --color-link:#10A090; --color-link-hover:#12B3A2;
+  --color-focus:#F5B515; --color-focus-ring:0 0 0 3px rgba(245,181,21,.44);
+}
+html[data-theme="industrial-yellow"][data-tone="dark-lean"]{
+  --color-bg:#1A1710; --color-surface:#222018; --color-border:#3A3526;
+  --color-text:#F5F2E8; --color-text-muted:#C8C2B2; --color-text-inverse:#0E1419;
+  --color-primary:#F5B515; --color-accent:#10A090;
+  --color-link:#10A090; --color-link-hover:#12B3A2;
+  --color-focus:#F5B515; --color-focus-ring:0 0 0 3px rgba(245,181,21,.50);
+}
+
+/* =================== EXECUTIVE (premium blue-gray slate; emerald primary) =================== */
+html[data-theme="executive-dark"][data-tone="light-lean"]{
+  --color-bg:#F4F6F8; --color-surface:#FFFFFF; --color-border:#E1E6EC;
+  --color-text:#0E1217; --color-text-muted:#596170; --color-text-inverse:#FFFFFF;
+  --color-primary:#059669; --color-accent:#2DD4BF;
+  --color-link:#0F766E; --color-link-hover:#0EA5A3;
+  --color-focus:#2DD4BF; --color-focus-ring:0 0 0 3px rgba(45,212,191,.32);
+}
+html[data-theme="executive-dark"][data-tone="mid"]{
+  --color-bg:#151C24; --color-surface:#1D2631; --color-border:#2A3543;
+  --color-text:#E6ECF2; --color-text-muted:#A3ADBA; --color-text-inverse:#0E1419;
+  --color-primary:#10B981; --color-accent:#34D399;
+  --color-link:#10B981; --color-link-hover:#34D399;
+  --color-focus:#34D399; --color-focus-ring:0 0 0 3px rgba(52,211,153,.44);
+}
+html[data-theme="executive-dark"][data-tone="dark-lean"]{
+  --color-bg:#0F1419; --color-surface:#18202A; --color-border:#283241;
+  --color-text:#E6ECF2; --color-text-muted:#A3ADBA; --color-text-inverse:#0E1419;
+  --color-primary:#10B981; --color-accent:#34D399;
+  --color-link:#10B981; --color-link-hover:#34D399;
+  --color-focus:#34D399; --color-focus-ring:0 0 0 3px rgba(52,211,153,.50);
+}
+
+/* =================== CLEAN CONTRAST (crisp, mid-light option) =================== */
+html[data-theme="clean-contrast"][data-tone="light-lean"]{
+  --color-bg:#F3F6F9; --color-surface:#FFFFFF; --color-border:#E1E6EC;
+  --color-text:#0E1217; --color-text-muted:#596170; --color-text-inverse:#FFFFFF;
+  --color-primary:#111827; --color-accent:#2563EB;
+  --color-link:#2563EB; --color-link-hover:#1D4ED8;
+  --color-focus:#2563EB; --color-focus-ring:0 0 0 3px rgba(37,99,235,.32);
+}
+html[data-theme="clean-contrast"][data-tone="mid"]{
+  --color-bg:#20262D; --color-surface:#27313A; --color-border:#34404C;
+  --color-text:#E9EEF3; --color-text-muted:#A7B1BB; --color-text-inverse:#0E1419;
+  --color-primary:#E5E7EB; --color-accent:#60A5FA;
+  --color-link:#60A5FA; --color-link-hover:#93C5FD;
+  --color-focus:#60A5FA; --color-focus-ring:0 0 0 3px rgba(96,165,250,.44);
+}
+html[data-theme="clean-contrast"][data-tone="dark-lean"]{
+  --color-bg:#0B0D10; --color-surface:#12161C; --color-border:#202833;
+  --color-text:#F3F4F6; --color-text-muted:#9CA3AF; --color-text-inverse:#0B0D10;
+  --color-primary:#E5E7EB; --color-accent:#60A5FA;
+  --color-link:#93C5FD; --color-link-hover:#BFDBFE;
+  --color-focus:#60A5FA; --color-focus-ring:0 0 0 3px rgba(96,165,250,.50);
+}
