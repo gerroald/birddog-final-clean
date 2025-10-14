@@ -1,0 +1,119 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/theme.json",
+  "title": "SET 4",
+  "version": 3,
+  "settings": {
+    "color": {
+      "palette": [
+        {
+          "slug": "primary",
+          "color": "#261355",
+          "name": "Primary"
+        },
+        {
+          "slug": "secondary",
+          "color": "#0C37F7",
+          "name": "Secondary"
+        },
+
+        {
+          "slug": "light-color",
+          "color": "#FFFFFE",
+          "name": "Light Color"
+        },
+        {
+          "slug": "black-color",
+          "color": "#000000",
+          "name": "Black Color"
+        },
+        {
+          "slug": "heading-color",
+          "color": "#18191B",
+          "name": "Heading Color"
+        },
+        {
+          "slug": "background",
+          "color": "#FFFFFF",
+          "name": "Background"
+        },
+        {
+          "slug": "background-alt",
+          "color": "#F0ECFD",
+          "name": "Background Alt"
+        },
+        {
+          "slug": "foreground",
+          "color": "#6A6A6A",
+          "name": "Foreground"
+        },
+        {
+          "slug": "meta-color",
+          "color": "#A6A3A3",
+          "name": "Meta Color"
+        },
+        {
+          "slug": "star-color",
+          "color": "#0F0105",
+          "name": "Star Color"
+        },
+        {
+          "slug": "border-color",
+          "color": "#E7E6E6",
+          "name": "Border Color"
+        },
+        {
+          "color": "#ffffff00",
+          "name": "Transparent",
+          "slug": "transparent"
+        }
+      ],
+      "duotone": [
+        {
+          "colors": ["#000404", "#E3E8FF"],
+          "slug": "mixed-tone",
+          "name": "Mixed"
+        },
+        {
+          "colors": ["#261355", "#ffffff"],
+          "slug": "primary-white",
+          "name": "Primary White"
+        },
+        {
+          "colors": ["#ffffff", "#261355"],
+          "slug": "white-primary",
+          "name": "White Primary"
+        },
+        {
+          "colors": ["#0C37F7", "#ffffff"],
+          "slug": "secondary-white",
+          "name": "Secondary White"
+        },
+        {
+          "colors": ["#ffffff", "#0C37F7"],
+          "slug": "white-secondary",
+          "name": "White Secondary"
+        },
+        {
+          "colors": ["#261355", "#0C37F7"],
+          "slug": "primary-secondary",
+          "name": "Primary Secondary"
+        },
+        {
+          "colors": ["#0C37F7", "#261355"],
+          "slug": "secondary-primary",
+          "name": "Secondary Primary"
+        },
+        {
+          "colors": ["#000000", "#ffffff"],
+          "slug": "black-light",
+          "name": "Black Light"
+        },
+        {
+          "colors": ["#ffffff", "#000000"],
+          "slug": "light-black",
+          "name": "Light Black"
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,351 @@
+/**
+ * Tailwind CSS Globals Layer
+ * Base styles using theme-aware CSS variables
+ * 
+ * Usage: Add this to your main CSS file or import in Tailwind
+ */
+
+@layer base {
+  /* Base element styles using CSS variables */
+  html {
+    color-scheme: light;
+    transition: background-color 0.3s ease, color 0.3s ease;
+  }
+  
+  html[data-mode="dark"] {
+    color-scheme: dark;
+  }
+  
+  body {
+    background-color: hsl(var(--color-bg));
+    color: hsl(var(--color-text));
+    font-family: var(--font-sans, system-ui, -apple-system, sans-serif);
+    line-height: 1.55;
+    transition: background-color 0.3s ease, color 0.3s ease;
+  }
+  
+  /* Headings */
+  h1, h2, h3, h4, h5, h6 {
+    color: hsl(var(--color-text));
+    font-weight: 600;
+    line-height: 1.2;
+  }
+  
+  h1 {
+    font-size: clamp(2.2rem, 3vw + 1rem, 3.4rem);
+  }
+  
+  h2 {
+    font-size: clamp(1.8rem, 2.5vw + .8rem, 2.6rem);
+  }
+  
+  h3 {
+    font-size: clamp(1.35rem, 1.6vw + .6rem, 1.9rem);
+  }
+  
+  h4 {
+    font-size: clamp(1.1rem, 1vw + .5rem, 1.25rem);
+  }
+  
+  h5, h6 {
+    font-size: 1.0625rem;
+  }
+  
+  /* Paragraphs and text */
+  p, span, div, li, td, th {
+    color: hsl(var(--color-text));
+  }
+  
+  /* Links */
+  a {
+    color: hsl(var(--color-link));
+    text-decoration: none;
+    transition: color 0.2s ease;
+  }
+  
+  a:hover {
+    color: hsl(var(--color-link-hover));
+  }
+  
+  a:focus-visible {
+    outline: 2px solid transparent;
+    outline-offset: 2px;
+    box-shadow: 0 0 0 3px hsl(var(--color-focus) / 0.35);
+    border-radius: 0.125rem;
+  }
+  
+  /* Form elements */
+  input, select, textarea {
+    background-color: hsl(var(--color-surface));
+    color: hsl(var(--color-text));
+    border-color: hsl(var(--color-border));
+    transition: background-color 0.2s ease, color 0.2s ease, border-color 0.2s ease;
+  }
+  
+  input:focus, select:focus, textarea:focus {
+    outline: 2px solid transparent;
+    outline-offset: 2px;
+    box-shadow: 0 0 0 3px hsl(var(--color-focus) / 0.35);
+    border-color: hsl(var(--color-focus));
+  }
+  
+  /* Buttons */
+  button {
+    transition: background-color 0.2s ease, color 0.2s ease, border-color 0.2s ease, transform 0.2s ease;
+  }
+  
+  button:focus-visible {
+    outline: 2px solid transparent;
+    outline-offset: 2px;
+    box-shadow: 0 0 0 3px hsl(var(--color-focus) / 0.35);
+  }
+  
+  /* Code */
+  code, pre {
+    background-color: hsl(var(--color-surface));
+    color: hsl(var(--color-text));
+    border-color: hsl(var(--color-border));
+  }
+  
+  /* Tables */
+  table {
+    border-color: hsl(var(--color-border));
+  }
+  
+  th, td {
+    border-color: hsl(var(--color-border));
+  }
+  
+  /* Horizontal rules */
+  hr {
+    border-color: hsl(var(--color-border));
+  }
+  
+  /* Blockquotes */
+  blockquote {
+    border-left-color: hsl(var(--color-primary-500));
+    background-color: hsl(var(--color-surface));
+    color: hsl(var(--color-text));
+  }
+  
+  /* Selection */
+  ::selection {
+    background-color: hsl(var(--color-primary-500) / 0.2);
+    color: hsl(var(--color-text));
+  }
+  
+  /* Scrollbars */
+  ::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+  }
+  
+  ::-webkit-scrollbar-track {
+    background-color: hsl(var(--color-surface));
+  }
+  
+  ::-webkit-scrollbar-thumb {
+    background-color: hsl(var(--color-border-strong));
+    border-radius: 4px;
+  }
+  
+  ::-webkit-scrollbar-thumb:hover {
+    background-color: hsl(var(--color-text-muted));
+  }
+}
+
+@layer components {
+  /* Theme-aware component classes */
+  .btn-primary {
+    @apply bg-primary-500 text-white border-primary-500 hover:bg-primary-600 hover:border-primary-600 focus:ring-focus;
+  }
+  
+  .btn-secondary {
+    @apply bg-accent-500 text-white border-accent-500 hover:bg-accent-600 hover:border-accent-600 focus:ring-focus;
+  }
+  
+  .btn-ghost {
+    @apply bg-transparent text-primary-500 border-primary-500 hover:bg-primary-50 hover:text-primary-600 focus:ring-focus;
+  }
+  
+  .card {
+    @apply bg-surface border border-border text-foreground shadow-theme-sm;
+  }
+  
+  .card-elevated {
+    @apply bg-surface-elevated border border-border text-foreground shadow-theme-md;
+  }
+  
+  .input {
+    @apply bg-surface border border-border text-foreground placeholder:text-muted focus:border-focus focus:ring-focus;
+  }
+  
+  .status-success {
+    @apply bg-success-bg text-success border border-success/20;
+  }
+  
+  .status-warning {
+    @apply bg-warning-bg text-warning border border-warning/20;
+  }
+  
+  .status-error {
+    @apply bg-error-bg text-error border border-error/20;
+  }
+  
+  .status-info {
+    @apply bg-info-bg text-info border border-info/20;
+  }
+  
+  .link {
+    @apply text-link hover:text-link-hover focus:ring-focus;
+  }
+  
+  .surface {
+    @apply bg-surface text-foreground;
+  }
+  
+  .surface-elevated {
+    @apply bg-surface-elevated text-foreground;
+  }
+  
+  .muted {
+    @apply text-muted;
+  }
+  
+  .border-subtle {
+    @apply border-border;
+  }
+  
+  .border-strong {
+    @apply border-border-strong;
+  }
+}
+
+@layer utilities {
+  /* Theme transition utilities */
+  .theme-transition {
+    transition-property: background-color, color, border-color;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+    transition-duration: 300ms;
+  }
+  
+  .theme-transition-fast {
+    transition-property: background-color, color, border-color;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+    transition-duration: 150ms;
+  }
+  
+  .theme-transition-slow {
+    transition-property: background-color, color, border-color;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+    transition-duration: 500ms;
+  }
+  
+  /* Focus utilities */
+  .focus-theme {
+    outline: 2px solid transparent;
+    outline-offset: 2px;
+    box-shadow: 0 0 0 3px hsl(var(--color-focus) / 0.35);
+  }
+  
+  .focus-theme-sm {
+    outline: 2px solid transparent;
+    outline-offset: 2px;
+    box-shadow: 0 0 0 2px hsl(var(--color-focus) / 0.35);
+  }
+  
+  .focus-theme-lg {
+    outline: 2px solid transparent;
+    outline-offset: 2px;
+    box-shadow: 0 0 0 4px hsl(var(--color-focus) / 0.35);
+  }
+  
+  /* Theme-aware shadows */
+  .shadow-theme {
+    box-shadow: var(--shadow-md);
+  }
+  
+  .shadow-theme-sm {
+    box-shadow: var(--shadow-sm);
+  }
+  
+  .shadow-theme-lg {
+    box-shadow: var(--shadow-lg);
+  }
+  
+  .shadow-theme-xl {
+    box-shadow: var(--shadow-xl);
+  }
+  
+  /* Theme-aware backgrounds */
+  .bg-theme {
+    background-color: hsl(var(--color-bg));
+  }
+  
+  .bg-surface-theme {
+    background-color: hsl(var(--color-surface));
+  }
+  
+  .bg-surface-elevated-theme {
+    background-color: hsl(var(--color-surface-elevated));
+  }
+  
+  /* Theme-aware text colors */
+  .text-theme {
+    color: hsl(var(--color-text));
+  }
+  
+  .text-muted-theme {
+    color: hsl(var(--color-text-muted));
+  }
+  
+  .text-link-theme {
+    color: hsl(var(--color-link));
+  }
+  
+  .text-link-hover-theme {
+    color: hsl(var(--color-link-hover));
+  }
+  
+  /* Theme-aware borders */
+  .border-theme {
+    border-color: hsl(var(--color-border));
+  }
+  
+  .border-strong-theme {
+    border-color: hsl(var(--color-border-strong));
+  }
+  
+  /* Status color utilities */
+  .text-success-theme {
+    color: hsl(var(--color-success));
+  }
+  
+  .text-warning-theme {
+    color: hsl(var(--color-warning));
+  }
+  
+  .text-error-theme {
+    color: hsl(var(--color-error));
+  }
+  
+  .text-info-theme {
+    color: hsl(var(--color-info));
+  }
+  
+  .bg-success-theme {
+    background-color: hsl(var(--color-success-bg));
+  }
+  
+  .bg-warning-theme {
+    background-color: hsl(var(--color-warning-bg));
+  }
+  
+  .bg-error-theme {
+    background-color: hsl(var(--color-error-bg));
+  }
+  
+  .bg-info-theme {
+    background-color: hsl(var(--color-info-bg));
+  }
+}

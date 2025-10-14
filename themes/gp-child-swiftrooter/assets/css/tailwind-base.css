@@ -1,0 +1,260 @@
+/**
+ * Tailwind CSS Base Layer for Moving Company Theme System
+ * Binds base elements to CSS custom properties for theme switching
+ * 
+ * Usage: Import this file in your main CSS file
+ * @import './tailwind-base.css';
+ */
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  /* Base element styling using theme tokens */
+  html {
+    color-scheme: var(--data-mode, light);
+  }
+  
+  body {
+    @apply bg-background text-foreground theme-transition;
+    font-family: var(--font-sans);
+    line-height: 1.55;
+  }
+  
+  /* Headings */
+  h1, h2, h3, h4, h5, h6 {
+    @apply text-foreground;
+  }
+  
+  /* Paragraphs and text elements */
+  p, span, div, li, td, th {
+    @apply text-foreground;
+  }
+  
+  /* Links */
+  a {
+    @apply text-primary hover:text-primary-600 transition-colors duration-200;
+    text-decoration: none;
+  }
+  
+  a:hover {
+    text-decoration: underline;
+    text-underline-offset: 2px;
+  }
+  
+  /* Focus states */
+  :focus-visible {
+    @apply focus-ring;
+  }
+  
+  /* Form elements */
+  input, select, textarea {
+    @apply bg-surface text-foreground border-border theme-transition;
+  }
+  
+  input:focus, select:focus, textarea:focus {
+    @apply border-primary focus-ring;
+  }
+  
+  /* Buttons */
+  button {
+    @apply theme-transition;
+  }
+  
+  /* Cards */
+  .c-card {
+    @apply bg-surface border-border text-foreground shadow-sm theme-transition;
+  }
+  
+  .c-card:hover {
+    @apply shadow-md;
+    transform: translateY(-2px);
+  }
+  
+  /* Primary buttons */
+  .c-button--primary {
+    @apply bg-primary text-white border-primary;
+  }
+  
+  .c-button--primary:hover {
+    @apply opacity-90 shadow-md;
+    transform: translateY(-1px);
+  }
+  
+  /* Secondary buttons */
+  .c-button--secondary {
+    @apply bg-accent text-white border-accent;
+  }
+  
+  .c-button--secondary:hover {
+    @apply opacity-90 shadow-md;
+    transform: translateY(-1px);
+  }
+  
+  /* Ghost buttons */
+  .c-button--ghost {
+    @apply bg-transparent text-primary border-primary;
+  }
+  
+  .c-button--ghost:hover {
+    @apply bg-primary text-white border-primary;
+  }
+  
+  /* Headers */
+  .site-header {
+    @apply bg-background border-border shadow-sm;
+  }
+  
+  /* Sections */
+  .l-section {
+    @apply bg-background;
+  }
+  
+  /* Trust strip */
+  .trust {
+    @apply bg-surface border-border;
+  }
+  
+  /* Status messages */
+  .status-success {
+    @apply status-success;
+  }
+  
+  .status-warning {
+    @apply status-warning;
+  }
+  
+  .status-error {
+    @apply status-error;
+  }
+  
+  .status-info {
+    @apply status-info;
+  }
+  
+  /* Muted text utility */
+  .text-muted {
+    @apply text-muted;
+  }
+}
+
+@layer components {
+  /* Component-specific styles that use theme tokens */
+  .btn {
+    @apply inline-flex items-center justify-center gap-2 font-semibold rounded-md px-5 py-3 text-center cursor-pointer border transition-all duration-200 theme-transition;
+  }
+  
+  .btn-primary {
+    @apply bg-primary text-white border-primary hover:opacity-90 hover:shadow-md hover:-translate-y-0.5;
+  }
+  
+  .btn-secondary {
+    @apply bg-accent text-white border-accent hover:opacity-90 hover:shadow-md hover:-translate-y-0.5;
+  }
+  
+  .btn-ghost {
+    @apply bg-transparent text-primary border-primary hover:bg-primary hover:text-white hover:border-primary;
+  }
+  
+  .card {
+    @apply bg-surface border-border rounded-lg shadow-sm p-6 theme-transition hover:shadow-md hover:-translate-y-1;
+  }
+  
+  .form-input {
+    @apply w-full px-4 py-3 border border-border rounded-md bg-surface text-foreground theme-transition focus:border-primary focus:ring-2 focus:ring-primary/20;
+  }
+  
+  .form-label {
+    @apply block mb-2 font-medium text-foreground;
+  }
+  
+  .alert {
+    @apply p-4 rounded-md border theme-transition;
+  }
+  
+  .alert-success {
+    @apply status-success;
+  }
+  
+  .alert-warning {
+    @apply status-warning;
+  }
+  
+  .alert-error {
+    @apply status-error;
+  }
+  
+  .alert-info {
+    @apply status-info;
+  }
+}
+
+@layer utilities {
+  /* Utility classes for theme-aware styling */
+  .theme-transition {
+    transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+  }
+  
+  .focus-ring {
+    outline: none;
+    box-shadow: var(--color-focus-ring);
+    border-radius: 0.25rem;
+  }
+  
+  .text-primary {
+    color: hsl(var(--color-primary));
+  }
+  
+  .text-accent {
+    color: hsl(var(--color-accent));
+  }
+  
+  .text-muted {
+    color: hsl(var(--color-text-muted));
+  }
+  
+  .bg-primary {
+    background-color: hsl(var(--color-primary));
+  }
+  
+  .bg-accent {
+    background-color: hsl(var(--color-accent));
+  }
+  
+  .bg-surface {
+    background-color: hsl(var(--color-surface));
+  }
+  
+  .bg-background {
+    background-color: hsl(var(--color-bg));
+  }
+  
+  .border-primary {
+    border-color: hsl(var(--color-primary));
+  }
+  
+  .border-accent {
+    border-color: hsl(var(--color-accent));
+  }
+  
+  .border-border {
+    border-color: hsl(var(--color-border));
+  }
+  
+  .shadow-sm {
+    box-shadow: var(--shadow-sm);
+  }
+  
+  .shadow-md {
+    box-shadow: var(--shadow-md);
+  }
+  
+  .shadow-lg {
+    box-shadow: var(--shadow-lg);
+  }
+  
+  .shadow-xl {
+    box-shadow: var(--shadow-xl);
+  }
+}

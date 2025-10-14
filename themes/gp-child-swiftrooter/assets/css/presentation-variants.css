@@ -1,0 +1,908 @@
+/**
+ * Presentation Variants for Moving Company Website
+ * 5 polished visual design variants with microinteractions
+ * Swappable via data-style attribute on <html> element
+ * 
+ * Usage: <html data-style="precision-pro">
+ * Variants: precision-pro, soft-industrial, card-ledger, bold-stripe, airy-minimal
+ */
+
+/* ==========================================================================
+   BASE PRESENTATION TOKENS
+   ========================================================================== */
+
+:root {
+  /* Presentation-specific tokens */
+  --presentation-border-width: 1px;
+  --presentation-border-radius: 0.5rem;
+  --presentation-shadow-blur: 8px;
+  --presentation-shadow-offset: 0 4px;
+  --presentation-transition-duration: 200ms;
+  --presentation-transition-easing: cubic-bezier(0.4, 0, 0.2, 1);
+  
+  /* Elevation scale */
+  --elev-0: 0 0 0 rgba(0, 0, 0, 0);
+  --elev-1: 0 1px 3px rgba(0, 0, 0, 0.1);
+  --elev-2: 0 4px 6px rgba(0, 0, 0, 0.1);
+  --elev-3: 0 10px 15px rgba(0, 0, 0, 0.1);
+  --elev-4: 0 20px 25px rgba(0, 0, 0, 0.1);
+  
+  /* Divider styles */
+  --divider-thin: 1px solid var(--color-border);
+  --divider-medium: 2px solid var(--color-border);
+  --divider-thick: 3px solid var(--color-border);
+  
+  /* Focus states */
+  --focus-ring-thin: 0 0 0 2px var(--color-focus);
+  --focus-ring-medium: 0 0 0 3px var(--color-focus);
+  --focus-ring-thick: 0 0 0 4px var(--color-focus);
+  
+  /* Motion preferences */
+  --motion-safe: 1;
+  --motion-reduce: 0;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  :root {
+    --motion-safe: 0;
+    --motion-reduce: 1;
+  }
+}
+
+/* ==========================================================================
+   VARIANT 1: PRECISION PRO
+   Intent: Crisp, high-contrast, operational clarity
+   Best for: Professional service pages, pricing tables, operational dashboards
+   ========================================================================== */
+
+:root[data-style="precision-pro"] {
+  /* Borders: Hairlines with strong contrast */
+  --presentation-border-width: 1px;
+  --presentation-border-radius: 0.25rem;
+  --presentation-border-opacity: 1;
+  
+  /* Shadows: Minimal elevations */
+  --elev-1: 0 1px 2px rgba(0, 0, 0, 0.1);
+  --elev-2: 0 2px 4px rgba(0, 0, 0, 0.1);
+  --elev-3: 0 4px 8px rgba(0, 0, 0, 0.1);
+  --elev-4: 0 8px 16px rgba(0, 0, 0, 0.1);
+  
+  /* Focus: Hard-edge ring */
+  --focus-ring: 0 0 0 2px var(--color-focus);
+  
+  /* Typography: Tight tracking */
+  --font-tracking-tight: -0.025em;
+  --font-tracking-normal: 0;
+  --font-tracking-wide: 0.025em;
+  
+  /* Dividers: Grid-aligned */
+  --divider-style: solid;
+  --divider-opacity: 0.8;
+}
+
+:root[data-style="precision-pro"] .c-card {
+  border: var(--presentation-border-width) solid var(--color-border);
+  border-radius: var(--presentation-border-radius);
+  box-shadow: var(--elev-1);
+  background: var(--color-surface);
+  transition: all var(--presentation-transition-duration) var(--presentation-transition-easing);
+}
+
+:root[data-style="precision-pro"] .c-card:hover {
+  box-shadow: var(--elev-2);
+  transform: translateY(-1px);
+}
+
+:root[data-style="precision-pro"] .c-button {
+  border-radius: var(--presentation-border-radius);
+  font-weight: 600;
+  letter-spacing: var(--font-tracking-tight);
+  transition: all var(--presentation-transition-duration) var(--presentation-transition-easing);
+}
+
+:root[data-style="precision-pro"] .c-button:hover {
+  transform: translateY(-1px);
+  box-shadow: var(--elev-2);
+}
+
+:root[data-style="precision-pro"] .c-button:active {
+  transform: scale(0.985);
+}
+
+:root[data-style="precision-pro"] .c-button:focus-visible {
+  box-shadow: var(--focus-ring);
+}
+
+:root[data-style="precision-pro"] a {
+  position: relative;
+  text-decoration: none;
+  transition: color var(--presentation-transition-duration) var(--presentation-transition-easing);
+}
+
+:root[data-style="precision-pro"] a:hover {
+  color: var(--color-link-hover);
+}
+
+:root[data-style="precision-pro"] a::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: var(--color-accent);
+  transition: width var(--presentation-transition-duration) var(--presentation-transition-easing);
+}
+
+:root[data-style="precision-pro"] a:hover::after {
+  width: 100%;
+}
+
+:root[data-style="precision-pro"] .site-header {
+  border-bottom: var(--divider-thin);
+  box-shadow: var(--elev-1);
+}
+
+:root[data-style="precision-pro"] .l-section {
+  border-bottom: var(--divider-thin);
+}
+
+:root[data-style="precision-pro"] .l-section:last-child {
+  border-bottom: none;
+}
+
+:root[data-style="precision-pro"] h1,
+:root[data-style="precision-pro"] h2,
+:root[data-style="precision-pro"] h3 {
+  letter-spacing: var(--font-tracking-tight);
+  font-weight: 700;
+}
+
+:root[data-style="precision-pro"] .hero {
+  border-bottom: var(--divider-medium);
+}
+
+:root[data-style="precision-pro"] .trust {
+  border: var(--divider-thin);
+  border-radius: var(--presentation-border-radius);
+}
+
+/* ==========================================================================
+   VARIANT 2: SOFT INDUSTRIAL
+   Intent: Robust, approachable, safety cues
+   Best for: Service pages, safety information, approachable branding
+   ========================================================================== */
+
+:root[data-style="soft-industrial"] {
+  /* Borders: Softened with rounded corners */
+  --presentation-border-width: 2px;
+  --presentation-border-radius: 0.75rem;
+  --presentation-border-opacity: 0.6;
+  
+  /* Shadows: Soft ambient with tinted key shadow */
+  --elev-1: 0 2px 8px rgba(0, 0, 0, 0.08);
+  --elev-2: 0 4px 12px rgba(0, 0, 0, 0.12);
+  --elev-3: 0 8px 20px rgba(0, 0, 0, 0.15);
+  --elev-4: 0 16px 32px rgba(0, 0, 0, 0.18);
+  
+  /* Focus: Soft ring */
+  --focus-ring: 0 0 0 3px rgba(17, 197, 198, 0.2);
+  
+  /* Typography: Humanist sans, larger line-height */
+  --font-leading-relaxed: 1.7;
+  --font-leading-normal: 1.5;
+  --font-leading-tight: 1.3;
+  
+  /* Dividers: Soft separations */
+  --divider-style: solid;
+  --divider-opacity: 0.4;
+}
+
+:root[data-style="soft-industrial"] .c-card {
+  border: var(--presentation-border-width) solid rgba(var(--color-border), var(--presentation-border-opacity));
+  border-radius: var(--presentation-border-radius);
+  box-shadow: var(--elev-1);
+  background: var(--color-surface);
+  transition: all var(--presentation-transition-duration) var(--presentation-transition-easing);
+}
+
+:root[data-style="soft-industrial"] .c-card:hover {
+  box-shadow: var(--elev-2);
+  transform: translateY(-2px);
+  border-color: var(--color-accent);
+}
+
+:root[data-style="soft-industrial"] .c-button {
+  border-radius: var(--presentation-border-radius);
+  font-weight: 600;
+  line-height: var(--font-leading-normal);
+  transition: all var(--presentation-transition-duration) var(--presentation-transition-easing);
+  position: relative;
+  overflow: hidden;
+}
+
+:root[data-style="soft-industrial"] .c-button:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--elev-2);
+}
+
+:root[data-style="soft-industrial"] .c-button:active {
+  transform: scale(0.98);
+}
+
+:root[data-style="soft-industrial"] .c-button::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 0;
+  height: 0;
+  background: rgba(255, 255, 255, 0.3);
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  transition: width 0.3s ease, height 0.3s ease;
+}
+
+:root[data-style="soft-industrial"] .c-button:active::before {
+  width: 200px;
+  height: 200px;
+}
+
+:root[data-style="soft-industrial"] .c-button:focus-visible {
+  box-shadow: var(--focus-ring);
+}
+
+:root[data-style="soft-industrial"] a {
+  text-decoration: none;
+  transition: color var(--presentation-transition-duration) var(--presentation-transition-easing);
+}
+
+:root[data-style="soft-industrial"] a:hover {
+  color: var(--color-link-hover);
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}
+
+:root[data-style="soft-industrial"] .site-header {
+  border-bottom: var(--divider-medium);
+  box-shadow: var(--elev-1);
+}
+
+:root[data-style="soft-industrial"] .l-section {
+  padding-block: calc(var(--space-3xl) * 1.2);
+}
+
+:root[data-style="soft-industrial"] h1,
+:root[data-style="soft-industrial"] h2,
+:root[data-style="soft-industrial"] h3 {
+  line-height: var(--font-leading-relaxed);
+  font-weight: 600;
+}
+
+:root[data-style="soft-industrial"] p {
+  line-height: var(--font-leading-relaxed);
+}
+
+:root[data-style="soft-industrial"] .hero {
+  border-bottom: var(--divider-thick);
+  background: linear-gradient(135deg, var(--color-bg) 0%, var(--color-surface) 100%);
+}
+
+:root[data-style="soft-industrial"] .trust {
+  border: var(--divider-medium);
+  border-radius: var(--presentation-border-radius);
+  background: var(--color-surface);
+}
+
+/* ==========================================================================
+   VARIANT 3: CARD LEDGER
+   Intent: Sectional clarity, quotes/pricing focus
+   Best for: Pricing pages, service comparisons, detailed quotes
+   ========================================================================== */
+
+:root[data-style="card-ledger"] {
+  /* Borders: Card outlines + subtle inner dividers */
+  --presentation-border-width: 1px;
+  --presentation-border-radius: 0.5rem;
+  --presentation-border-opacity: 0.8;
+  
+  /* Shadows: Layered elevation for card stacks */
+  --elev-1: 0 1px 3px rgba(0, 0, 0, 0.1);
+  --elev-2: 0 2px 6px rgba(0, 0, 0, 0.1);
+  --elev-3: 0 4px 12px rgba(0, 0, 0, 0.1);
+  --elev-4: 0 8px 24px rgba(0, 0, 0, 0.1);
+  
+  /* Focus: Medium ring */
+  --focus-ring: 0 0 0 3px var(--color-focus);
+  
+  /* Typography: Numeric tabular for prices */
+  --font-mono: 'SF Mono', 'Monaco', 'Inconsolata', 'Roboto Mono', monospace;
+  --font-tabular: 'SF Pro Display', 'Inter', system-ui, sans-serif;
+  
+  /* Dividers: Table-style rules */
+  --divider-style: solid;
+  --divider-opacity: 0.6;
+}
+
+:root[data-style="card-ledger"] .c-card {
+  border: var(--presentation-border-width) solid var(--color-border);
+  border-radius: var(--presentation-border-radius);
+  box-shadow: var(--elev-1);
+  background: var(--color-surface);
+  transition: all var(--presentation-transition-duration) var(--presentation-transition-easing);
+  position: relative;
+}
+
+:root[data-style="card-ledger"] .c-card:hover {
+  box-shadow: var(--elev-2);
+  transform: translateY(-1px);
+}
+
+:root[data-style="card-ledger"] .c-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, var(--color-accent), var(--color-accent-2));
+  border-radius: var(--presentation-border-radius) var(--presentation-border-radius) 0 0;
+  opacity: 0;
+  transition: opacity var(--presentation-transition-duration) var(--presentation-transition-easing);
+}
+
+:root[data-style="card-ledger"] .c-card:hover::before {
+  opacity: 1;
+}
+
+:root[data-style="card-ledger"] .c-button {
+  border-radius: var(--presentation-border-radius);
+  font-weight: 600;
+  transition: all var(--presentation-transition-duration) var(--presentation-transition-easing);
+}
+
+:root[data-style="card-ledger"] .c-button:hover {
+  transform: translateY(-1px);
+  box-shadow: var(--elev-2);
+}
+
+:root[data-style="card-ledger"] .c-button:focus-visible {
+  box-shadow: var(--focus-ring);
+}
+
+:root[data-style="card-ledger"] a {
+  text-decoration: none;
+  transition: color var(--presentation-transition-duration) var(--presentation-transition-easing);
+}
+
+:root[data-style="card-ledger"] a:hover {
+  color: var(--color-link-hover);
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+:root[data-style="card-ledger"] .site-header {
+  border-bottom: var(--divider-thin);
+  box-shadow: var(--elev-1);
+}
+
+:root[data-style="card-ledger"] .l-section {
+  border-bottom: var(--divider-thin);
+}
+
+:root[data-style="card-ledger"] .l-section:last-child {
+  border-bottom: none;
+}
+
+:root[data-style="card-ledger"] .hero {
+  border-bottom: var(--divider-medium);
+}
+
+:root[data-style="card-ledger"] .trust {
+  border: var(--divider-thin);
+  border-radius: var(--presentation-border-radius);
+}
+
+:root[data-style="card-ledger"] .price,
+:root[data-style="card-ledger"] .cost,
+:root[data-style="card-ledger"] .amount {
+  font-family: var(--font-mono);
+  font-weight: 600;
+  letter-spacing: 0.05em;
+}
+
+:root[data-style="card-ledger"] table {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+:root[data-style="card-ledger"] table th,
+:root[data-style="card-ledger"] table td {
+  border-bottom: var(--divider-thin);
+  padding: 0.75rem;
+  text-align: left;
+}
+
+:root[data-style="card-ledger"] table tr:hover {
+  background: var(--color-surface);
+}
+
+/* ==========================================================================
+   VARIANT 4: BOLD STRIPE
+   Intent: Brand-forward, directional accents
+   Best for: Marketing pages, CTAs, brand-forward sections
+   ========================================================================== */
+
+:root[data-style="bold-stripe"] {
+  /* Borders: Accent stripes for section headers */
+  --presentation-border-width: 4px;
+  --presentation-border-radius: 0.5rem;
+  --presentation-border-opacity: 1;
+  
+  /* Shadows: Directional shadow (y-axis) to imply movement */
+  --elev-1: 0 2px 4px rgba(0, 0, 0, 0.1);
+  --elev-2: 0 4px 8px rgba(0, 0, 0, 0.15);
+  --elev-3: 0 8px 16px rgba(0, 0, 0, 0.2);
+  --elev-4: 0 16px 32px rgba(0, 0, 0, 0.25);
+  
+  /* Focus: Thick ring */
+  --focus-ring: 0 0 0 4px var(--color-focus);
+  
+  /* Typography: Strong weight for CTAs */
+  --font-weight-strong: 700;
+  --font-weight-bold: 800;
+  
+  /* Dividers: Accent stripes */
+  --divider-style: solid;
+  --divider-opacity: 1;
+}
+
+:root[data-style="bold-stripe"] .c-card {
+  border: var(--presentation-border-width) solid transparent;
+  border-radius: var(--presentation-border-radius);
+  box-shadow: var(--elev-1);
+  background: var(--color-surface);
+  transition: all var(--presentation-transition-duration) var(--presentation-transition-easing);
+  position: relative;
+}
+
+:root[data-style="bold-stripe"] .c-card:hover {
+  box-shadow: var(--elev-2);
+  transform: translateY(-2px);
+  border-top-color: var(--color-accent);
+}
+
+:root[data-style="bold-stripe"] .c-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: var(--presentation-border-width);
+  background: linear-gradient(90deg, var(--color-accent), var(--color-accent-2));
+  border-radius: var(--presentation-border-radius) var(--presentation-border-radius) 0 0;
+}
+
+:root[data-style="bold-stripe"] .c-button {
+  border-radius: var(--presentation-border-radius);
+  font-weight: var(--font-weight-strong);
+  transition: all var(--presentation-transition-duration) var(--presentation-transition-easing);
+  position: relative;
+  overflow: hidden;
+}
+
+:root[data-style="bold-stripe"] .c-button:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--elev-2);
+}
+
+:root[data-style="bold-stripe"] .c-button:active {
+  transform: scale(0.98);
+}
+
+:root[data-style="bold-stripe"] .c-button::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 3px;
+  background: var(--color-accent);
+  transition: width var(--presentation-transition-duration) var(--presentation-transition-easing);
+}
+
+:root[data-style="bold-stripe"] .c-button:hover::after {
+  width: 100%;
+}
+
+:root[data-style="bold-stripe"] .c-button:focus-visible {
+  box-shadow: var(--focus-ring);
+}
+
+:root[data-style="bold-stripe"] a {
+  text-decoration: none;
+  transition: color var(--presentation-transition-duration) var(--presentation-transition-easing);
+  position: relative;
+}
+
+:root[data-style="bold-stripe"] a:hover {
+  color: var(--color-link-hover);
+}
+
+:root[data-style="bold-stripe"] a::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: var(--color-accent);
+  transition: width var(--presentation-transition-duration) var(--presentation-transition-easing);
+}
+
+:root[data-style="bold-stripe"] a:hover::after {
+  width: 100%;
+}
+
+:root[data-style="bold-stripe"] .site-header {
+  border-bottom: var(--divider-thick);
+  box-shadow: var(--elev-1);
+}
+
+:root[data-style="bold-stripe"] .site-header.scrolled {
+  box-shadow: var(--elev-2);
+}
+
+:root[data-style="bold-stripe"] .l-section {
+  border-bottom: var(--divider-thin);
+  position: relative;
+}
+
+:root[data-style="bold-stripe"] .l-section:not(:last-child)::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: linear-gradient(90deg, var(--color-accent), var(--color-accent-2));
+}
+
+:root[data-style="bold-stripe"] .hero {
+  border-bottom: var(--divider-thick);
+  background: linear-gradient(135deg, var(--color-bg) 0%, var(--color-surface) 100%);
+}
+
+:root[data-style="bold-stripe"] .trust {
+  border: var(--divider-thick);
+  border-radius: var(--presentation-border-radius);
+  border-top-color: var(--color-accent);
+}
+
+:root[data-style="bold-stripe"] h1,
+:root[data-style="bold-stripe"] h2,
+:root[data-style="bold-stripe"] h3 {
+  font-weight: var(--font-weight-strong);
+}
+
+:root[data-style="bold-stripe"] .c-button--primary {
+  font-weight: var(--font-weight-bold);
+}
+
+/* ==========================================================================
+   VARIANT 5: AIRY MINIMAL
+   Intent: Calm, trustworthy, booking-friendly
+   Best for: Contact forms, booking pages, calm user experience
+   ========================================================================== */
+
+:root[data-style="airy-minimal"] {
+  /* Borders: Ultra-light dividers */
+  --presentation-border-width: 1px;
+  --presentation-border-radius: 1rem;
+  --presentation-border-opacity: 0.3;
+  
+  /* Shadows: Almost-flat, subtle focus glows */
+  --elev-1: 0 1px 2px rgba(0, 0, 0, 0.05);
+  --elev-2: 0 2px 4px rgba(0, 0, 0, 0.08);
+  --elev-3: 0 4px 8px rgba(0, 0, 0, 0.1);
+  --elev-4: 0 8px 16px rgba(0, 0, 0, 0.12);
+  
+  /* Focus: Subtle glow */
+  --focus-ring: 0 0 0 3px rgba(17, 197, 198, 0.15);
+  
+  /* Typography: Clean geometric sans, generous sizes */
+  --font-size-generous: 1.125rem;
+  --font-size-large: 1.25rem;
+  --font-size-xl: 1.5rem;
+  
+  /* Dividers: Minimal separations */
+  --divider-style: solid;
+  --divider-opacity: 0.2;
+}
+
+:root[data-style="airy-minimal"] .c-card {
+  border: var(--presentation-border-width) solid rgba(var(--color-border), var(--presentation-border-opacity));
+  border-radius: var(--presentation-border-radius);
+  box-shadow: var(--elev-1);
+  background: var(--color-surface);
+  transition: all var(--presentation-transition-duration) var(--presentation-transition-easing);
+  padding: calc(var(--space-lg) * 1.5);
+}
+
+:root[data-style="airy-minimal"] .c-card:hover {
+  box-shadow: var(--elev-2);
+  transform: translateY(-1px);
+}
+
+:root[data-style="airy-minimal"] .c-card[data-reveal] {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+:root[data-style="airy-minimal"] .c-card[data-reveal].revealed {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+:root[data-style="airy-minimal"] .c-button {
+  border-radius: var(--presentation-border-radius);
+  font-weight: 500;
+  font-size: var(--font-size-generous);
+  padding: 1rem 2rem;
+  transition: all var(--presentation-transition-duration) var(--presentation-transition-easing);
+}
+
+:root[data-style="airy-minimal"] .c-button:hover {
+  transform: translateY(-1px);
+  box-shadow: var(--elev-2);
+}
+
+:root[data-style="airy-minimal"] .c-button:focus-visible {
+  box-shadow: var(--focus-ring);
+}
+
+:root[data-style="airy-minimal"] a {
+  text-decoration: none;
+  transition: color var(--presentation-transition-duration) var(--presentation-transition-easing);
+}
+
+:root[data-style="airy-minimal"] a:hover {
+  color: var(--color-link-hover);
+  text-decoration: underline;
+  text-underline-offset: 6px;
+}
+
+:root[data-style="airy-minimal"] .site-header {
+  border-bottom: var(--divider-thin);
+  box-shadow: var(--elev-1);
+}
+
+:root[data-style="airy-minimal"] .l-section {
+  padding-block: calc(var(--space-3xl) * 1.5);
+}
+
+:root[data-style="airy-minimal"] .l-section:not(:last-child) {
+  border-bottom: var(--divider-thin);
+}
+
+:root[data-style="airy-minimal"] .hero {
+  border-bottom: var(--divider-thin);
+  background: var(--color-bg);
+}
+
+:root[data-style="airy-minimal"] .trust {
+  border: var(--divider-thin);
+  border-radius: var(--presentation-border-radius);
+  background: var(--color-surface);
+}
+
+:root[data-style="airy-minimal"] h1 {
+  font-size: var(--font-size-xl);
+  font-weight: 600;
+  line-height: 1.2;
+}
+
+:root[data-style="airy-minimal"] h2 {
+  font-size: var(--font-size-large);
+  font-weight: 600;
+  line-height: 1.3;
+}
+
+:root[data-style="airy-minimal"] h3 {
+  font-size: var(--font-size-generous);
+  font-weight: 600;
+  line-height: 1.4;
+}
+
+:root[data-style="airy-minimal"] p {
+  font-size: var(--font-size-generous);
+  line-height: 1.6;
+}
+
+:root[data-style="airy-minimal"] input,
+:root[data-style="airy-minimal"] select,
+:root[data-style="airy-minimal"] textarea {
+  border-radius: var(--presentation-border-radius);
+  border: var(--presentation-border-width) solid rgba(var(--color-border), var(--presentation-border-opacity));
+  padding: 1rem;
+  font-size: var(--font-size-generous);
+  transition: all var(--presentation-transition-duration) var(--presentation-transition-easing);
+}
+
+:root[data-style="airy-minimal"] input:focus,
+:root[data-style="airy-minimal"] select:focus,
+:root[data-style="airy-minimal"] textarea:focus {
+  box-shadow: var(--focus-ring);
+  border-color: var(--color-focus);
+}
+
+/* ==========================================================================
+   COMMON ENHANCEMENTS ACROSS ALL VARIANTS
+   ========================================================================== */
+
+/* Reduced motion preferences */
+@media (prefers-reduced-motion: reduce) {
+  :root[data-style] * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+  
+  :root[data-style] .c-card:hover,
+  :root[data-style] .c-button:hover {
+    transform: none !important;
+  }
+}
+
+/* Focus management */
+:root[data-style] :focus-visible {
+  outline: none;
+}
+
+:root[data-style] .c-button:focus-visible,
+:root[data-style] a:focus-visible,
+:root[data-style] input:focus-visible,
+:root[data-style] select:focus-visible,
+:root[data-style] textarea:focus-visible {
+  box-shadow: var(--focus-ring);
+}
+
+/* High contrast mode support */
+@media (prefers-contrast: high) {
+  :root[data-style] .c-card {
+    border-width: 2px;
+  }
+  
+  :root[data-style] .c-button {
+    border-width: 2px;
+  }
+}
+
+/* Print styles */
+@media print {
+  :root[data-style] .c-card {
+    box-shadow: none;
+    border: 1px solid #000;
+  }
+  
+  :root[data-style] .c-button {
+    box-shadow: none;
+    border: 1px solid #000;
+  }
+}
+
+/* ==========================================================================
+   UTILITY CLASSES FOR PRESENTATION VARIANTS
+   ========================================================================== */
+
+.presentation-divider {
+  border-bottom: var(--divider-thin);
+}
+
+.presentation-divider-medium {
+  border-bottom: var(--divider-medium);
+}
+
+.presentation-divider-thick {
+  border-bottom: var(--divider-thick);
+}
+
+.presentation-elevation-1 {
+  box-shadow: var(--elev-1);
+}
+
+.presentation-elevation-2 {
+  box-shadow: var(--elev-2);
+}
+
+.presentation-elevation-3 {
+  box-shadow: var(--elev-3);
+}
+
+.presentation-elevation-4 {
+  box-shadow: var(--elev-4);
+}
+
+.presentation-focus {
+  box-shadow: var(--focus-ring);
+}
+
+.presentation-transition {
+  transition: all var(--presentation-transition-duration) var(--presentation-transition-easing);
+}
+
+/* Animation utilities */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideInRight {
+  from {
+    opacity: 0;
+    transform: translateX(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.presentation-animate-fade-up {
+  animation: fadeInUp 0.6s ease-out;
+}
+
+.presentation-animate-slide-left {
+  animation: slideInLeft 0.6s ease-out;
+}
+
+.presentation-animate-slide-right {
+  animation: slideInRight 0.6s ease-out;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  :root[data-style] .c-card {
+    padding: var(--space-md);
+  }
+  
+  :root[data-style] .c-button {
+    padding: 0.75rem 1.5rem;
+  }
+  
+  :root[data-style="airy-minimal"] .c-button {
+    padding: 0.875rem 1.75rem;
+  }
+}
+
+@media (max-width: 480px) {
+  :root[data-style] .c-card {
+    padding: var(--space-sm);
+  }
+  
+  :root[data-style] .c-button {
+    padding: 0.625rem 1.25rem;
+  }
+  
+  :root[data-style="airy-minimal"] .c-button {
+    padding: 0.75rem 1.5rem;
+  }
+}

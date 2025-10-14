@@ -1,0 +1,418 @@
+/**
+ * Style Switcher Utility
+ * Manages presentation variants for the moving company website
+ * Switches between 5 visual design variants via data-style attribute
+ */
+
+class StyleSwitcher {
+  constructor() {
+    this.variants = [
+      'precision-pro',
+      'soft-industrial', 
+      'card-ledger',
+      'bold-stripe',
+      'airy-minimal'
+    ];
+    
+    this.currentVariant = this.getStoredVariant() || 'precision-pro';
+    this.init();
+  }
+
+  init() {
+    // Apply stored variant on load
+    this.applyVariant(this.currentVariant);
+    
+    // Initialize intersection observer for reveal animations
+    this.initRevealAnimations();
+    
+    // Initialize scroll-based animations
+    this.initScrollAnimations();
+  }
+
+  /**
+   * Set the active presentation variant
+   * @param {string} variantName - Variant name
+   */
+  setStyleVariant(variantName) {
+    if (!this.variants.includes(variantName)) {
+      console.warn(`Variant "${variantName}" not found. Available variants:`, this.variants);
+      return false;
+    }
+
+    this.applyVariant(variantName);
+    this.storeVariant(variantName);
+    this.currentVariant = variantName;
+    
+    // Dispatch custom event
+    this.dispatchVariantChange(variantName);
+    return true;
+  }
+
+  /**
+   * Get current variant name
+   */
+  getStyleVariant() {
+    return this.currentVariant;
+  }
+
+  /**
+   * Get all available variants
+   */
+  getAvailableVariants() {
+    return [...this.variants];
+  }
+
+  /**
+   * Apply variant to document
+   * @private
+   */
+  applyVariant(variantName) {
+    const root = document.documentElement;
+    
+    // Remove existing variant attributes
+    this.variants.forEach(variant => {
+      root.removeAttribute(`data-style-${variant}`);
+    });
+    
+    // Apply new variant
+    root.setAttribute('data-style', variantName);
+  }
+
+  /**
+   * Store variant in localStorage
+   * @private
+   */
+  storeVariant(variantName) {
+    try {
+      localStorage.setItem('style-switcher-variant', variantName);
+    } catch (e) {
+      console.warn('Could not store variant preference:', e);
+    }
+  }
+
+  /**
+   * Get stored variant from localStorage
+   * @private
+   */
+  getStoredVariant() {
+    try {
+      return localStorage.getItem('style-switcher-variant');
+    } catch (e) {
+      return null;
+    }
+  }
+
+  /**
+   * Dispatch variant change event
+   * @private
+   */
+  dispatchVariantChange(variant) {
+    const event = new CustomEvent('stylechange', {
+      detail: {
+        variant: variant,
+        timestamp: Date.now()
+      }
+    });
+    document.dispatchEvent(event);
+  }
+
+  /**
+   * Initialize reveal animations using Intersection Observer
+   * @private
+   */
+  initRevealAnimations() {
+    if (!window.IntersectionObserver) return;
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('revealed');
+        }
+      });
+    }, {
+      threshold: 0.1,
+      rootMargin: '0px 0px -50px 0px'
+    });
+
+    // Observe elements with data-reveal attribute
+    document.querySelectorAll('[data-reveal]').forEach(el => {
+      observer.observe(el);
+    });
+  }
+
+  /**
+   * Initialize scroll-based animations
+   * @private
+   */
+  initScrollAnimations() {
+    let ticking = false;
+
+    const updateScrollAnimations = () => {
+      const scrollY = window.scrollY;
+      
+      // Header shadow on scroll
+      const header = document.querySelector('.site-header');
+      if (header) {
+        if (scrollY > 10) {
+          header.classList.add('scrolled');
+        } else {
+          header.classList.remove('scrolled');
+        }
+      }
+
+      ticking = false;
+    };
+
+    const requestTick = () => {
+      if (!ticking) {
+        requestAnimationFrame(updateScrollAnimations);
+        ticking = true;
+      }
+    };
+
+    window.addEventListener('scroll', requestTick, { passive: true });
+  }
+
+  /**
+   * Add microinteraction to element
+   * @param {HTMLElement} element - Element to add interaction to
+   * @param {string} interaction - Interaction type
+   */
+  addMicrointeraction(element, interaction) {
+    if (!element || !interaction) return;
+
+    switch (interaction) {
+      case 'hover-lift':
+        element.classList.add('hover-lift');
+        break;
+      case 'hover-scale':
+        element.classList.add('hover-scale');
+        break;
+      case 'hover-shadow':
+        element.classList.add('hover-shadow');
+        break;
+      case 'hover-border':
+        element.classList.add('hover-border');
+        break;
+      case 'link-underline':
+        element.classList.add('link-underline');
+        break;
+      case 'btn-press':
+        element.classList.add('btn-press');
+        break;
+      case 'btn-ripple':
+        element.classList.add('btn-ripple');
+        break;
+      case 'card-tilt':
+        element.classList.add('card-tilt');
+        break;
+      case 'card-peek':
+        element.classList.add('card-peek');
+        break;
+      case 'card-glow':
+        element.classList.add('card-glow');
+        break;
+      case 'reveal-fade':
+        element.classList.add('reveal-fade');
+        break;
+      case 'reveal-slide-left':
+        element.classList.add('reveal-slide-left');
+        break;
+      case 'reveal-slide-right':
+        element.classList.add('reveal-slide-right');
+        break;
+      case 'reveal-scale':
+        element.classList.add('reveal-scale');
+        break;
+      default:
+        console.warn(`Unknown microinteraction: ${interaction}`);
+    }
+  }
+
+  /**
+   * Remove microinteraction from element
+   * @param {HTMLElement} element - Element to remove interaction from
+   * @param {string} interaction - Interaction type
+   */
+  removeMicrointeraction(element, interaction) {
+    if (!element || !interaction) return;
+    element.classList.remove(interaction);
+  }
+
+  /**
+   * Add tooltip to element
+   * @param {HTMLElement} element - Element to add tooltip to
+   * @param {string} text - Tooltip text
+   */
+  addTooltip(element, text) {
+    if (!element || !text) return;
+    element.setAttribute('data-tooltip', text);
+    element.classList.add('tooltip');
+  }
+
+  /**
+   * Show toast notification
+   * @param {string} message - Toast message
+   * @param {string} type - Toast type (success, warning, error, info)
+   * @param {number} duration - Display duration in ms
+   */
+  showToast(message, type = 'info', duration = 3000) {
+    const toast = document.createElement('div');
+    toast.className = `toast toast-${type}`;
+    toast.textContent = message;
+    
+    document.body.appendChild(toast);
+    
+    // Trigger show animation
+    setTimeout(() => {
+      toast.classList.add('show');
+    }, 100);
+    
+    // Auto remove
+    setTimeout(() => {
+      toast.classList.remove('show');
+      setTimeout(() => {
+        document.body.removeChild(toast);
+      }, 300);
+    }, duration);
+  }
+
+  /**
+   * Add skeleton loading to element
+   * @param {HTMLElement} element - Element to add skeleton to
+   */
+  addSkeleton(element) {
+    if (!element) return;
+    element.classList.add('skeleton');
+  }
+
+  /**
+   * Remove skeleton loading from element
+   * @param {HTMLElement} element - Element to remove skeleton from
+   */
+  removeSkeleton(element) {
+    if (!element) return;
+    element.classList.remove('skeleton');
+  }
+}
+
+// Create global instance
+window.styleSwitcher = new StyleSwitcher();
+
+// Export for module systems
+if (typeof module !== 'undefined' && module.exports) {
+  module.exports = StyleSwitcher;
+}
+
+// Simple API functions for easy use
+window.setStyleVariant = (variant) => window.styleSwitcher.setStyleVariant(variant);
+window.getStyleVariant = () => window.styleSwitcher.getStyleVariant();
+window.getAvailableVariants = () => window.styleSwitcher.getAvailableVariants();
+
+// Style change event listener example
+document.addEventListener('stylechange', (e) => {
+  console.log('Style changed:', e.detail);
+  // Add any custom logic here for style changes
+});
+
+// Auto-initialize style switcher UI if present
+document.addEventListener('DOMContentLoaded', () => {
+  const styleSelect = document.querySelector('[data-style-select]');
+  const randomStyle = document.querySelector('[data-random-style]');
+  
+  if (styleSelect) {
+    // Populate style select options
+    const variants = window.styleSwitcher.getAvailableVariants();
+    variants.forEach(variant => {
+      const option = document.createElement('option');
+      option.value = variant;
+      option.textContent = variant.replace('-', ' ').replace(/\b\w/g, l => l.toUpperCase());
+      if (variant === window.styleSwitcher.getStyleVariant()) {
+        option.selected = true;
+      }
+      styleSelect.appendChild(option);
+    });
+    
+    // Handle style selection
+    styleSelect.addEventListener('change', (e) => {
+      window.styleSwitcher.setStyleVariant(e.target.value);
+    });
+  }
+  
+  if (randomStyle) {
+    // Handle random style button
+    randomStyle.addEventListener('click', () => {
+      const variants = window.styleSwitcher.getAvailableVariants();
+      const randomVariant = variants[Math.floor(Math.random() * variants.length)];
+      window.styleSwitcher.setStyleVariant(randomVariant);
+      
+      // Update select if present
+      if (styleSelect) {
+        styleSelect.value = randomVariant;
+      }
+    });
+  }
+});
+
+// Utility functions for common microinteractions
+window.addHoverLift = (selector) => {
+  document.querySelectorAll(selector).forEach(el => {
+    window.styleSwitcher.addMicrointeraction(el, 'hover-lift');
+  });
+};
+
+window.addHoverScale = (selector) => {
+  document.querySelectorAll(selector).forEach(el => {
+    window.styleSwitcher.addMicrointeraction(el, 'hover-scale');
+  });
+};
+
+window.addHoverShadow = (selector) => {
+  document.querySelectorAll(selector).forEach(el => {
+    window.styleSwitcher.addMicrointeraction(el, 'hover-shadow');
+  });
+};
+
+window.addLinkUnderline = (selector) => {
+  document.querySelectorAll(selector).forEach(el => {
+    window.styleSwitcher.addMicrointeraction(el, 'link-underline');
+  });
+};
+
+window.addCardTilt = (selector) => {
+  document.querySelectorAll(selector).forEach(el => {
+    window.styleSwitcher.addMicrointeraction(el, 'card-tilt');
+  });
+};
+
+window.addCardPeek = (selector) => {
+  document.querySelectorAll(selector).forEach(el => {
+    window.styleSwitcher.addMicrointeraction(el, 'card-peek');
+  });
+};
+
+window.addRevealFade = (selector) => {
+  document.querySelectorAll(selector).forEach(el => {
+    window.styleSwitcher.addMicrointeraction(el, 'reveal-fade');
+  });
+};
+
+// Initialize common microinteractions on page load
+document.addEventListener('DOMContentLoaded', () => {
+  // Add hover effects to cards
+  window.addHoverLift('.c-card');
+  window.addHoverShadow('.c-card');
+  
+  // Add hover effects to buttons
+  window.addHoverLift('.c-button');
+  window.addHoverShadow('.c-button');
+  
+  // Add link underlines
+  window.addLinkUnderline('a');
+  
+  // Add card interactions
+  window.addCardTilt('.c-card');
+  
+  // Add reveal animations to elements with data-reveal
+  window.addRevealFade('[data-reveal]');
+});

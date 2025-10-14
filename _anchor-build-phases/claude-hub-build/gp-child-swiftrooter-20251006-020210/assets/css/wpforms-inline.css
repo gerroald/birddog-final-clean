@@ -1,0 +1,123 @@
+/* ========================================
+   WPForms Custom Styling - INLINE VERSION
+   Add this to the end of site.css
+   ======================================== */
+
+/* Hide fallback HTML form */
+.wpforms-container ~ .contact-form__fallback {
+  display: none !important;
+}
+
+/* WPForms Base Styling */
+.wpforms-container .wpforms-form,
+.wpforms-container-full .wpforms-form {
+  max-width: 100%;
+  padding: 0;
+  margin: 0;
+}
+
+/* Field Spacing */
+.wpforms-form .wpforms-field {
+  margin-bottom: 1.5rem !important;
+  padding: 0 !important;
+}
+
+/* Labels */
+.wpforms-form .wpforms-field-label,
+.wpforms-form legend.wpforms-field-label {
+  font-weight: 600 !important;
+  margin-bottom: 0.5rem !important;
+  color: var(--color-text) !important;
+  font-size: 1rem !important;
+}
+
+.wpforms-form .wpforms-required-label {
+  color: #ffd128 !important;
+}
+
+.wpforms-form .wpforms-field-sublabel {
+  font-size: 0.875rem !important;
+  color: #999 !important;
+  font-weight: 400 !important;
+  margin-top: 0.25rem !important;
+}
+
+/* Reset Fieldset */
+.wpforms-form fieldset {
+  border: none !important;
+  padding: 0 !important;
+  margin: 0 !important;
+}
+
+/* Name Field Side-by-Side */
+.wpforms-form .wpforms-field-name .wpforms-field-row {
+  display: grid !important;
+  grid-template-columns: 1fr 1fr !important;
+  gap: 1.5rem !important;
+}
+
+.wpforms-form .wpforms-field-row-block,
+.wpforms-form .wpforms-field-name-first,
+.wpforms-form .wpforms-field-name-last {
+  width: 100% !important;
+  float: none !important;
+  margin: 0 !important;
+}
+
+/* Input Fields */
+.wpforms-form input[type="text"],
+.wpforms-form input[type="email"],
+.wpforms-form input[type="tel"],
+.wpforms-form input[type="date"],
+.wpforms-form input[type="number"],
+.wpforms-form select,
+.wpforms-form textarea {
+  width: 100% !important;
+  padding: 0.75rem 1rem !important;
+  border: 1px solid rgba(255,255,255,0.12) !important;
+  border-radius: 8px !important;
+  background: #18191d !important;
+  color: #f5f5f5 !important;
+  font-size: 1rem !important;
+  min-height: 48px !important;
+  transition: border-color 0.2s, box-shadow 0.2s !important;
+}
+
+.wpforms-form input:focus,
+.wpforms-form select:focus,
+.wpforms-form textarea:focus {
+  outline: none !important;
+  border-color: #ffd128 !important;
+  box-shadow: 0 0 0 3px rgba(255,209,40,0.25) !important;
+}
+
+.wpforms-form textarea {
+  min-height: 120px !important;
+}
+
+/* Submit Button */
+.wpforms-form button[type="submit"],
+.wpforms-form .wpforms-submit {
+  background: #ffd128 !important;
+  color: #0a0a0a !important;
+  font-weight: 600 !important;
+  border-radius: 8px !important;
+  padding: 0.875rem 1.25rem !important;
+  border: none !important;
+  font-size: 1rem !important;
+  cursor: pointer !important;
+  transition: transform 0.2s, box-shadow 0.2s !important;
+  box-shadow: 0 1px 0 rgba(0,0,0,0.25) !important;
+}
+
+.wpforms-form button[type="submit"]:hover {
+  transform: translateY(-1px) !important;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.28) !important;
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+  .wpforms-form .wpforms-field-name .wpforms-field-row {
+    grid-template-columns: 1fr !important;
+  }
+}

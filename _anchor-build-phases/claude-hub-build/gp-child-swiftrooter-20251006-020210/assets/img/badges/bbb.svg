@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 72 72" width="72" height="72" role="img" aria-label="BBB Accredited">
+  <rect width="72" height="72" rx="10" fill="#0067A6"/>
+  <path fill="#fff" d="M36 9c2.9 3.9 5.8 6.8 5.8 10.6S38.9 28 36 28s-5.8-3.1-5.8-8.4S33.1 12.9 36 9zM36 30.5c6.6 0 11.3 4.8 11.3 11.7S42.6 54 36 54s-11.3-4.8-11.3-11.7S29.4 30.5 36 30.5z"/>
+  <text x="36" y="63" font-family="Arial,Helvetica,sans-serif" font-size="10" text-anchor="middle" fill="#fff">BBB</text>
+</svg>
+

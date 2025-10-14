@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="en" class="use-tokens">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>ALNP — Trust & Benefits Sections (Monochrome) — Tokenized</title>
+
+<!-- Design Tokens (Bird Dog Moving) -->
+<link rel="stylesheet" href="../wp-content/themes/gp-child-swiftrooter/assets/css/tokens.css">
+
+<!-- Tokenized Component Styles -->
+<link rel="stylesheet" href="components.tokens.css">
+
+<!-- Original ALNP Styles (fallback for non-.use-tokens) -->
+<style>
+/* ===== ALNP Monochrome Core (sections + utilities) ===== */
+:root{
+  --alnp-bg:#fff; --alnp-text:#0f1220; --alnp-muted:#606775; --alnp-border:#e7eaf1;
+  --alnp-surface:#f6f7f9; --alnp-radius-s:6px; --alnp-radius-m:10px;
+  --alnp-shadow-1:0 6px 18px rgba(0,0,0,.06); --alnp-shadow-2:0 10px 28px rgba(0,0,0,.10);
+}
+html,body{margin:0;padding:0;background:#fff;}
+.alnp{ color:var(--alnp-text); font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;}
+.alnp.is-light{ background:var(--alnp-bg); }
+.alnp.is-dark{
+  background:#0f1220; color:#fff;
+  --alnp-muted:rgba(255,255,255,.8); --alnp-border:rgba(255,255,255,.18); --alnp-surface:rgba(255,255,255,.06);
+}
+.alnp .alnp-container{ width:min(100%,1200px); margin-inline:auto; padding:clamp(40px,6vw,80px) 16px; }
+.alnp .alnp-title{ font-size:clamp(24px,3.2vw,36px); line-height:1.15; margin:0 0 12px; }
+.alnp .alnp-lead{ color:var(--alnp-muted); margin:0 0 24px; }
+
+/* Buttons (mono) */
+.alnp .alnp-btn{ display:inline-block; padding:10px 16px; font-weight:700; border-radius:var(--alnp-radius-s);
+  text-decoration:none; border:1px solid var(--alnp-text); color:var(--alnp-text); transition:.18s ease transform,.18s ease box-shadow,.18s ease background-color; }
+.alnp .alnp-btn--primary{ background:var(--alnp-text); color:#fff; border-color:transparent; box-shadow:var(--alnp-shadow-1); }
+.alnp .alnp-btn--primary:hover{ transform:translateY(-1px); box-shadow:var(--alnp-shadow-2); }
+.alnp .alnp-btn--ghost{ background:transparent; color:inherit; border-color:color-mix(in srgb, currentColor 40%, transparent); }
+.alnp.is-dark .alnp-btn--ghost{ color:#fff; border-color:rgba(255,255,255,.45); }
+.alnp .alnp-btn--ghost:hover{ background:var(--alnp-surface); }
+
+/* Lists with checkmarks */
+.alnp .alnp-bullets{ list-style:none; margin:0; padding:0; display:grid; gap:.65rem; }
+.alnp .alnp-bullets li{ display:flex; gap:.6rem; align-items:flex-start; }
+.alnp .alnp-bullets li::before{
+  content:""; width:18px; height:18px; margin-top:.15rem; border-radius:50%;
+  background: currentColor;
+  mask: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" fill="white" viewBox="0 0 24 24"><path d="M9 16.2l-3.5-3.5-1.4 1.4L9 19 20.3 7.7l-1.4-1.4z"/></svg>') center/contain no-repeat;
+  opacity:.85;
+}
+
+/* Card + grid primitives */
+.alnp .alnp-grid{ display:grid; gap:24px; }
+@media (min-width:720px){ .alnp .alnp-grid--2{ grid-template-columns:repeat(2,1fr); } }
+@media (min-width:960px){ .alnp .alnp-grid--3{ grid-template-columns:repeat(3,1fr); } .alnp .alnp-grid--4{ grid-template-columns:repeat(4,1fr); } }
+
+.alnp .alnp-card{
+  background:#fff; border:1px solid var(--alnp-border); border-radius:var(--alnp-radius-m);
+  padding:24px; box-shadow:var(--alnp-shadow-1);
+}
+.alnp.is-dark .alnp-card{ background:rgba(255,255,255,.04); }
+
+/* Media block (for icons/images) */
+.alnp .alnp-media{ aspect-ratio:16/10; background:#e9ecf3; border-radius:var(--alnp-radius-m); overflow:hidden; }
+.alnp .alnp-media img{ width:100%; height:100%; object-fit:cover; display:block; filter:grayscale(100%); }
+/* Stat tiles */
+.alnp .alnp-stat{ text-align:center; padding:24px; background:#fff; border:1px solid var(--alnp-border); border-radius:var(--alnp-radius-m); }
+.alnp .alnp-stat__num{ font-weight:800; font-size:clamp(28px,4vw,40px); margin:0 0 6px; }
+.alnp .alnp-stat__label{ color:var(--alnp-muted); margin:0; }
+
+/* Split layout */
+.alnp .alnp-split{ display:grid; gap:24px; }
+@media (min-width:960px){ .alnp .alnp-split{ grid-template-columns:1.1fr .9fr; align-items:start; } }
+
+/* Panel (for benefits) */
+.alnp .alnp-panel{ border:1px solid var(--alnp-border); border-radius:var(--alnp-radius-m); padding:24px; background:#fff; box-shadow:var(--alnp-shadow-1); }
+.alnp.is-dark .alnp-panel{ background:rgba(255,255,255,.06); }
+
+/* Timeline / process row */
+.alnp .alnp-process{ display:grid; gap:20px; }
+@media (min-width:900px){ .alnp .alnp-process{ grid-template-columns:repeat(4,1fr); } }
+.alnp .alnp-step{ text-align:center; }
+.alnp .alnp-step__num{ width:40px; height:40px; border-radius:50%; border:2px solid currentColor; display:inline-grid; place-items:center; font-weight:800; margin-bottom:8px; }
+.alnp .alnp-step__txt{ margin:0; color:var(--alnp-muted); }
+
+/* Testimonial */
+.alnp .alnp-quote{ font-size:clamp(18px,2.2vw,22px); line-height:1.5; margin:0; }
+.alnp .alnp-cite{ display:block; margin-top:10px; color:var(--alnp-muted); font-weight:600; }
+
+/* ===== Optional: 2-card pricing (monochrome scoped) ===== */
+.alnp-pricing{ background:#0f1220; color:#fff; }
+.alnp-pricing .alnp-title{ color:#fff; }
+.alnp-pricing .pricing-grid{ display:grid; gap:24px; max-width:820px; margin:16px auto 0; }
+@media (min-width:860px){ .alnp-pricing .pricing-grid{ grid-template-columns:repeat(2,1fr); } }
+.alnp-pricing .pricing-card{ background:rgba(255,255,255,.06); border:1px solid rgba(255,255,255,.2); border-radius:12px; padding:28px; position:relative; box-shadow:var(--alnp-shadow-1); }
+.alnp-pricing .cardtag{ position:absolute; top:-12px; left:50%; transform:translateX(-50%); background:#fff; color:#0f1220; padding:.4rem 1rem; border-radius:999px; font-weight:800; font-size:.8rem; }
+.alnp-pricing .cardtitle{ margin:0 0 8px; }
+.alnp-pricing .carddesc{ color:rgba(255,255,255,.85); margin:0 0 18px; }
+.alnp-pricing .cardfeatures{ list-style:none; margin:0 0 18px; padding:0; }
+.alnp-pricing .cardfeatures li{ padding:.5rem 0; border-bottom:1px solid rgba(255,255,255,.15); }
+.alnp-pricing .cardfeatures li:last-child{ border-bottom:none; }
+.alnp-pricing .priceamount{ font-size:2.4rem; font-weight:900; }
+.alnp-pricing .priceterm{ opacity:.8; }
+.alnp-pricing .alnp-btn--primary{ background:#fff; color:#0f1220; border-color:#fff; }
+.alnp-pricing .alnp-btn--ghost{ color:#fff; border-color:rgba(255,255,255,.45); }
+
+/* Simple page helper for demo spacing */
+.demo-gap{ height:24px; }
+</style>
+</head>
+<body>
+
+<!-- WHY CHOOSE US — Variation 1 (Icon Grid) -->
+<section class="alnp is-light alnp-icon-grid" id="why-choose-icon-grid">
+  <div class="alnp-container">
+    <h2 class="alnp-title">Why Choose Anchor Lawn &amp; Pest?</h2>
+    <p class="alnp-lead">Built on reliability, craftsmanship, and care for OKC properties.</p>
+
+    <div class="alnp-grid alnp-grid--2">
+      <article class="alnp-card">
+        <div class="alnp-media" aria-hidden="true"><img src="https://picsum.photos/400/250?1" alt=""></div>
+        <h3 style="margin:14px 0 6px;">Local Expertise</h3>
+        <p class="alnp-lead" style="margin:0;">Oklahoma soils, seasons, and pests—handled with precision.</p>
+      </article>
+
+      <article class="alnp-card">
+        <div class="alnp-media" aria-hidden="true"><img src="https://picsum.photos/400/250?2" alt=""></div>
+        <h3 style="margin:14px 0 6px;">Trusted Teams</h3>
+        <p class="alnp-lead" style="margin:0;">Background‑checked, uniformed, and professionally trained.</p>
+      </article>
+
+      <article class="alnp-card">
+        <div class="alnp-media" aria-hidden="true"><img src="https://picsum.photos/400/250?3" alt=""></div>
+        <h3 style="margin:14px 0 6px;">Consistent Results</h3>
+        <p class="alnp-lead" style="margin:0;">Tidy lines, healthy turf, and clear communication.</p>
+      </article>
+
+      <article class="alnp-card">
+        <div class="alnp-media" aria-hidden="true"><img src="https://picsum.photos/400/250?4" alt=""></div>
+        <h3 style="margin:14px 0 6px;">One Team, Full Care</h3>
+        <p class="alnp-lead" style="margin:0;">Lawn + pest under one roof for simpler scheduling.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<div class="demo-gap"></div>
+
+<!-- WHY CHOOSE US — Variation 2 (Split Feature List) -->
+<section class="alnp is-dark alnp-split-dark" id="why-choose-split">
+  <div class="alnp-container">
+    <div class="alnp-split">
+      <div>
+        <h2 class="alnp-title">Why Choose Anchor?</h2>
+        <p class="alnp-lead">We protect homes, families, and businesses with reliable service and proven methods.</p>
+        <a class="alnp-btn alnp-btn--ghost" href="#reviews">Read Reviews</a>
+      </div>
+      <div>
+        <ul class="alnp-bullets">
+          <li>Reliable scheduling—on time, every time</li>
+          <li>Clear scope and tidy work areas</li>
+          <li>EPA‑approved treatments; safe once dry</li>
+          <li>Local support and transparent updates</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="demo-gap"></div>
+
+<!-- WHY CHOOSE US — Variation 3 (Stats Row) -->
+<section class="alnp is-light alnp-stats" id="why-choose-stats">
+  <div class="alnp-container">
+    <h2 class="alnp-title">Trusted in Oklahoma City</h2>
+    <div class="alnp-grid alnp-grid--3" style="margin-top:16px;">
+      <div class="alnp-stat">
+        <p class="alnp-stat__num">500+</p>
+        <p class="alnp-stat__label">Lawns Maintained Each Season</p>
+      </div>
+      <div class="alnp-stat">
+        <p class="alnp-stat__num">4.9★</p>
+        <p class="alnp-stat__label">Average Customer Rating</p>
+      </div>
+      <div class="alnp-stat">
+        <p class="alnp-stat__num">10+ yrs</p>
+        <p class="alnp-stat__label">Serving OKC Metro</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="demo-gap"></div>
+
+<!-- BENEFITS — Variation 1 (Split Panel) -->
+<section class="alnp is-dark alnp-benefits-split" id="benefits-split-panel">
+  <div class="alnp-container">
+    <div class="alnp-split">
+      <div>
+        <h2 class="alnp-title">The Benefits of Working With Anchor</h2>
+        <ul class="alnp-bullets">
+          <li>Protect your family and property</li>
+          <li>Bundle lawn &amp; pest for fewer visits</li>
+          <li>Licensed, insured, and accountable</li>
+          <li>Consistent results, season after season</li>
+        </ul>
+      </div>
+      <aside class="alnp-panel">
+        <h3 style="margin:0 0 10px;">What’s Included</h3>
+        <ul class="alnp-bullets" style="gap:.5rem;">
+          <li>Recurring lawn care</li>
+          <li>Perimeter pest treatment</li>
+          <li>Seasonal fertilization</li>
+          <li>Custom add‑ons</li>
+        </ul>
+        <div style="margin-top:14px;">
+          <a class="alnp-btn alnp-btn--primary" href="#quote">Get a Quote</a>
+          <a class="alnp-btn alnp-btn--ghost" href="#services">See Services</a>
+        </div>
+      </aside>
+    </div>
+  </div>
+</section>
+
+<div class="demo-gap"></div>
+
+<!-- BENEFITS — Variation 2 (Journey Timeline) -->
+<section class="alnp is-light alnp-timeline" id="benefits-timeline">
+  <div class="alnp-container">
+    <h2 class="alnp-title">Working With Us is Simple</h2>
+    <div class="alnp-process" style="margin-top:12px;">
+      <div class="alnp-step">
+        <div class="alnp-step__num">1</div>
+        <p class="alnp-step__txt">We show up on time</p>
+      </div>
+      <div class="alnp-step">
+        <div class="alnp-step__num">2</div>
+        <p class="alnp-step__txt">We keep your property clean</p>
+      </div>
+      <div class="alnp-step">
+        <div class="alnp-step__num">3</div>
+        <p class="alnp-step__txt">We deliver consistent results</p>
+      </div>
+      <div class="alnp-step">
+        <div class="alnp-step__num">4</div>
+        <p class="alnp-step__txt">We stand behind our work</p>
+      </div>
+    </div>
+    <div style="margin-top:18px;">
+      <a class="alnp-btn alnp-btn--primary" href="#book">Book a Visit</a>
+    </div>
+  </div>
+</section>
+
+<div class="demo-gap"></div>
+
+<!-- BENEFITS — Variation 3 (Testimonial Overlay Band) -->
+<section class="alnp is-dark alnp-testimonial" id="benefits-testimonial">
+  <div class="alnp-container">
+    <h2 class="alnp-title">The Benefits, In Our Customers’ Words</h2>
+    <blockquote class="alnp-quote" style="margin-top:12px;">
+      “Anchor keeps our lawn flawless and our home pest‑free. Worth every penny for the peace of mind.”
+      <cite class="alnp-cite">— OKC Homeowner</cite>
+    </blockquote>
+  </div>
+</section>
+
+<div class="demo-gap"></div>
+
+<!-- OPTIONAL: Monochrome 2-card pricing comparison -->
+<section class="alnp alnp-pricing" id="pricing-two-card">
+  <div class="alnp-container">
+    <h2 class="alnp-title">Service Plans &amp; Pricing</h2>
+    <p class="alnp-lead">Choose the plan that fits your property. Every plan includes professional service and our satisfaction promise.</p>
+
+    <div class="pricing-grid">
+      <div class="pricing-card">
+        <div class="cardtag">Most Popular</div>
+        <h3 class="cardtitle">Premium Protection</h3>
+        <p class="carddesc">Comprehensive lawn health and year‑round pest control.</p>
+        <div class="cardprice">
+          <span class="priceamount">$149</span><span class="priceterm">/month</span>
+        </div>
+        <ul class="cardfeatures">
+          <li>Weekly Lawn Mowing &amp; Edging</li>
+          <li>Advanced Weed &amp; Fertilization Program</li>
+          <li>Year‑Round Pest Control</li>
+          <li>Grub &amp; Ant Control</li>
+          <li>Priority Scheduling</li>
+          <li>Dedicated Account Manager</li>
+        </ul>
+        <a class="alnp-btn alnp-btn--primary" href="#cta">Select Plan</a>
+      </div>
+
+      <div class="pricing-card">
+        <h3 class="cardtitle">Ultimate Estate</h3>
+        <p class="carddesc">Tailored solutions for large properties requiring extensive care.</p>
+        <div class="cardprice">
+          <span class="priceamount">Custom</span> <span class="priceterm">Quote</span>
+        </div>
+        <ul class="cardfeatures">
+          <li>All Premium Protection Features</li>
+          <li>Tree &amp; Shrub Care</li>
+          <li>Drought &amp; Water Management</li>
+          <li>Rodent &amp; Termite Inspections</li>
+          <li>Seasonal Cleanups</li>
+          <li>On‑Demand Emergency Service</li>
+        </ul>
+        <a class="alnp-btn alnp-btn--ghost" href="#cta">Request Custom Quote</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+</body>
+</html>

@@ -1,0 +1,146 @@
+<!-- wp:template {"slug":"archive-location"} -->
+
+<!-- HERO + CORNERSTONE INTRO -->
+<!-- wp:group {"tagName":"section","align":"full","style":{"color":{"background":"#0a4e56"},"spacing":{"padding":{"top":"80px","bottom":"64px"}}},"textColor":"white"} -->
+<section class="wp-block-group alignfull has-white-color has-text-color has-background" style="background-color:#0a4e56;padding-top:80px;padding-bottom:64px">
+  <!-- wp:group {"layout":{"type":"constrained","contentSize":"900px"}} -->
+  <div class="wp-block-group">
+    <!-- wp:paragraph {"style":{"typography":{"textTransform":"uppercase","letterSpacing":"1px"}}} -->
+    <p style="letter-spacing:1px;text-transform:uppercase">Service Areas</p>
+    <!-- /wp:paragraph -->
+
+    <!-- wp:heading {"level":1,"style":{"spacing":{"margin":{"top":"0"}}}} -->
+    <h1 style="margin-top:0">Local Expertise in Every Neighborhood</h1>
+    <!-- /wp:heading -->
+
+    <!-- wp:paragraph -->
+    <p><strong>From tight downtown loading docks to historic neighborhoods</strong>, we’ve completed hundreds of Oklahoma City moves with building coordination, permits, and freight-elevator scheduling baked in. Browse our covered areas below or search for your ZIP. For businesses, ask about after-hours moves to minimize downtime.</p>
+    <!-- /wp:paragraph -->
+
+    <!-- wp:search {"label":"Search areas","showLabel":false,"buttonText":"Search"} /-->
+
+    <!-- wp:buttons {"style":{"spacing":{"blockGap":"8px"},"spacing":{"margin":{"top":"12px"}}}} -->
+    <div class="wp-block-buttons" style="margin-top:12px">
+      <!-- Core buttons (you can hook filters later) -->
+      <div class="wp-block-button is-style-outline"><a class="wp-block-button__link">All</a></div>
+      <div class="wp-block-button is-style-outline"><a class="wp-block-button__link">Cities</a></div>
+      <div class="wp-block-button is-style-outline"><a class="wp-block-button__link">Neighborhoods</a></div>
+    </div>
+    <!-- /wp:buttons -->
+  </div>
+  <!-- /wp:group -->
+</section>
+<!-- /wp:group -->
+
+<!-- FEATURED AREAS -->
+<!-- wp:group {"style":{"spacing":{"padding":{"top":"48px","bottom":"24px"}},"color":{"background":"#f6fafa"}},"layout":{"type":"constrained","contentSize":"1100px"}} -->
+<div class="wp-block-group" style="background-color:#f6fafa;padding-top:48px;padding-bottom:24px">
+  <!-- wp:heading {"level":2} --><h2>Featured Service Areas</h2><!-- /wp:heading -->
+
+  <!-- wp:query {"queryId":1,"query":{"perPage":2,"postType":"location","inherit":false,"order":"desc","orderBy":"date"},"displayLayout":{"type":"flex","columns":2}} -->
+  <div class="wp-block-query">
+    <!-- wp:post-template -->
+      <!-- Card -->
+      <!-- wp:group {"style":{"spacing":{"padding":"24px"},"border":{"radius":"14px","width":"1px"},"color":{"background":"#ffffff","border":"#e5e7eb"}},"className":"is-style-bd-card"} -->
+      <div class="wp-block-group is-style-bd-card" style="border-width:1px;border-color:#e5e7eb;border-radius:14px;background-color:#ffffff;padding:24px">
+        <!-- wp:paragraph {"style":{"typography":{"fontSize":"14px","letterSpacing":"1px","textTransform":"uppercase"}}} -->
+        <p style="font-size:14px;letter-spacing:1px;text-transform:uppercase">Top Rated • ★ [bd field="rating"]</p>
+        <!-- /wp:paragraph -->
+        <!-- wp:post-title {"level":3,"isLink":true} /-->
+        <!-- wp:post-excerpt {"moreText":""} /-->
+        <!-- wp:paragraph --><p><span class="bd-chip">High-rise Moves</span> <span class="bd-chip">Office</span> <span class="bd-chip">Permits</span></p><!-- /wp:paragraph -->
+        <!-- wp:paragraph --><p>📦 [bd field="moves_completed"]+ moves completed</p><!-- /wp:paragraph -->
+        <!-- wp:buttons --><div class="wp-block-buttons"><div class="wp-block-button"><a class="wp-block-button__link">Learn More</a></div></div><!-- /wp:buttons -->
+      </div>
+      <!-- /wp:group -->
+    <!-- /wp:post-template -->
+  </div>
+  <!-- /wp:query -->
+</div>
+<!-- /wp:group -->
+
+<!-- ALL AREAS GRID -->
+<!-- wp:group {"style":{"spacing":{"padding":{"top":"24px","bottom":"64px"}},"color":{"background":"#f6fafa"}},"layout":{"type":"constrained","contentSize":"1100px"}} -->
+<div class="wp-block-group" style="background-color:#f6fafa;padding-top:24px;padding-bottom:64px">
+  <!-- wp:heading {"level":2} --><h2>All Service Areas</h2><!-- /wp:heading -->
+
+  <!-- 3-column Query Loop -->
+  <!-- wp:query {"queryId":2,"query":{"perPage":9,"postType":"location","inherit":false,"order":"asc","orderBy":"title"},"displayLayout":{"type":"grid","columns":3}} -->
+  <div class="wp-block-query">
+    <!-- wp:post-template -->
+      <!-- Card -->
+      <!-- wp:group {"style":{"spacing":{"padding":"24px"},"border":{"radius":"14px","width":"1px"},"color":{"background":"#ffffff","border":"#e5e7eb"}},"className":"is-style-bd-card"} -->
+      <div class="wp-block-group is-style-bd-card" style="border-width:1px;border-color:#e5e7eb;border-radius:14px;background-color:#ffffff;padding:24px">
+        <!-- wp:paragraph {"style":{"typography":{"fontSize":"14px","textTransform":"uppercase"}}} -->
+        <p style="font-size:14px;text-transform:uppercase"><span class="bd-chip">[bd field="area_label"]</span></p>
+        <!-- /wp:paragraph -->
+        <!-- wp:post-title {"level":3,"isLink":true} /-->
+        <!-- wp:post-excerpt {"moreText":""} /-->
+        <!-- wp:paragraph --><p><span class="bd-chip">ZIPs: [bd field="zips"]</span></p><!-- /wp:paragraph -->
+
+        <!-- wp:buttons {"style":{"spacing":{"blockGap":"8px"}}} -->
+        <div class="wp-block-buttons">
+          <div class="wp-block-button"><a class="wp-block-button__link">Get Quote</a></div>
+          <div class="wp-block-button is-style-outline"><a class="wp-block-button__link">Details</a></div>
+        </div>
+        <!-- /wp:buttons -->
+      </div>
+      <!-- /wp:group -->
+    <!-- /wp:post-template -->
+
+    <!-- wp:query-pagination {"layout":{"type":"flex","justifyContent":"center"},"style":{"spacing":{"margin":{"top":"24px"}}}} -->
+    <div class="wp-block-query-pagination" style="margin-top:24px">
+      <!-- wp:query-pagination-previous /-->
+      <!-- wp:query-pagination-numbers /-->
+      <!-- wp:query-pagination-next /-->
+    </div>
+    <!-- /wp:query-pagination -->
+  </div>
+  <!-- /wp:query -->
+</div>
+<!-- /wp:group -->
+
+<!-- BOTTOM CTA -->
+<!-- wp:group {"align":"full","style":{"color":{"background":"#0a4e56"},"spacing":{"padding":{"top":"56px","bottom":"56px"}}},"textColor":"white"} -->
+<div class="wp-block-group alignfull has-white-color has-text-color has-background" style="background-color:#0a4e56;padding-top:56px;padding-bottom:56px">
+  <!-- wp:group {"layout":{"type":"constrained","contentSize":"900px"}} -->
+  <div class="wp-block-group">
+    <!-- wp:heading {"textAlign":"center"} --><h2 class="has-text-align-center">Don’t See Your Area?</h2><!-- /wp:heading -->
+    <!-- wp:paragraph {"align":"center"} --><p class="has-text-align-center">We cover the entire OKC metro. Tell us where you’re moving and we’ll make it happen.</p><!-- /wp:paragraph -->
+    <!-- wp:buttons {"layout":{"type":"flex","justifyContent":"center"},"style":{"spacing":{"blockGap":"12px"}}} -->
+    <div class="wp-block-buttons">
+      <div class="wp-block-button"><a class="wp-block-button__link has-ink-color has-gold-background-color has-text-color has-background">Get Free Quote</a></div>
+      <div class="wp-block-button is-style-outline"><a class="wp-block-button__link">Call (405) 535-4554</a></div>
+    </div>
+    <!-- /wp:buttons -->
+  </div>
+  <!-- /wp:group -->
+</div>
+<!-- /wp:group -->
+
+<!-- FAQ SECTION (visible content) -->
+<!-- wp:group {"style":{"spacing":{"padding":{"top":"40px","bottom":"16px"}}},"layout":{"type":"constrained","contentSize":"900px"}} -->
+<div class="wp-block-group" style="padding-top:40px;padding-bottom:16px">
+  <!-- wp:heading {"textAlign":"center"} --><h2 class="has-text-align-center">Service Areas — FAQs</h2><!-- /wp:heading -->
+  <!-- wp:details --><details class="wp-block-details"><summary>Do you handle downtown permits and loading zones?</summary><p>Yes. We coordinate dock access, freight elevators, and temporary parking permits.</p></details><!-- /wp:details -->
+  <!-- wp:details --><details class="wp-block-details"><summary>Can you do after-hours moves?</summary><p>Absolutely—nights and weekends are available to reduce disruption for businesses.</p></details><!-- /wp:details -->
+  <!-- wp:details --><details class="wp-block-details"><summary>Which ZIP codes do you cover?</summary><p>We cover all OKC metro ZIPs. See each location for specifics.</p></details><!-- /wp:details -->
+</div>
+<!-- /wp:group -->
+
+<!-- FAQPage JSON-LD (for SEO) -->
+<!-- wp:html -->
+<script type="application/ld+json">
+{
+ "@context":"https://schema.org",
+ "@type":"FAQPage",
+ "mainEntity":[
+  {"@type":"Question","name":"Do you handle downtown permits and loading zones?","acceptedAnswer":{"@type":"Answer","text":"Yes. We coordinate dock access, freight elevators, and temporary parking permits."}},
+  {"@type":"Question","name":"Can you do after-hours moves?","acceptedAnswer":{"@type":"Answer","text":"Absolutely—nights and weekends are available to reduce disruption for businesses."}},
+  {"@type":"Question","name":"Which ZIP codes do you cover?","acceptedAnswer":{"@type":"Answer","text":"We cover all OKC metro ZIPs. See each location for specifics."}}
+ ]
+}
+</script>
+<!-- /wp:html -->
+
+<!-- /wp:template -->

@@ -1,0 +1,214 @@
+:root {
+  /* Light-Mid Hybrid Theme - Best of Both Worlds */
+  
+  /* Backgrounds */
+  --color-bg: #F1F5F9;          /* Light cool gray - main background */
+  --color-surface: #334155;      /* Medium slate - cards/panels */
+  --color-surface-light: #FFFFFF; /* Pure white - alternate cards */
+  
+  /* Text Colors */
+  --color-text: #0F172A;         /* Very dark slate - body text on light bg */
+  --color-text-on-dark: #F8FAFC; /* Off-white - text on dark cards */
+  --color-muted: #64748B;        /* Medium slate - muted text on light */
+  --color-muted-on-dark: #CBD5E1; /* Light gray - muted text on dark */
+  
+  /* Accent Colors */
+  --color-accent: #F59E0B;       /* Warm amber - primary CTA */
+  --color-accent-2: #0D9488;     /* Teal - links & secondary */
+  
+  /* Borders & Dividers */
+  --color-border: #CBD5E1;       /* Light border on light bg */
+  --color-border-dark: #475569;  /* Medium border on dark cards */
+  
+  /* Legacy compatibility */
+  --color-text-light: #FFFFFF;   /* Kept for backward compatibility */
+  
+  /* States */
+  --color-success: #10B981;
+  --color-danger: #EF4444;
+  --color-warning: #F59E0B;
+  --focus-ring: 0 0 0 3px rgba(14, 165, 233, 0.3);
+
+  /* Typography */
+  --font-sans: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+  --fs-900: clamp(2.2rem, 3vw + 1rem, 3.4rem);
+  --fs-800: clamp(1.8rem, 2.5vw + .8rem, 2.6rem);
+  --fs-700: clamp(1.35rem, 1.6vw + .6rem, 1.9rem);
+  --fs-600: clamp(1.1rem, 1vw + .5rem, 1.25rem);
+  --fs-500: 1.0625rem;
+  --fs-400: .9375rem;
+  --fs-300: .875rem;
+
+  /* Spacing */
+  --space-2xs: .25rem;
+  --space-xs: .5rem;
+  --space-sm: .75rem;
+  --space-md: 1rem;
+  --space-lg: 1.5rem;
+  --space-xl: 2rem;
+  --space-2xl: 3rem;
+  --space-3xl: 4.5rem;
+  --space-4xl: 6rem;
+
+  /* Radius */
+  --radius-sm: .5rem;
+  --radius-md: .75rem;
+  --radius-lg: 1rem;
+  --radius-xl: 1.5rem;
+
+  /* Shadows - Adjusted for light background */
+  --shadow-sm: 0 1px 3px rgba(15, 23, 42, 0.12), 0 1px 2px rgba(15, 23, 42, 0.08);
+  --shadow-md: 0 4px 6px rgba(15, 23, 42, 0.1), 0 2px 4px rgba(15, 23, 42, 0.06);
+  --shadow-lg: 0 10px 15px rgba(15, 23, 42, 0.1), 0 4px 6px rgba(15, 23, 42, 0.05);
+  --shadow-card: 0 2px 8px rgba(51, 65, 85, 0.15);
+}
+
+/* Base Styles */
+html { 
+  color-scheme: light; 
+}
+
+body {
+  margin: 0;
+  background: var(--color-bg);
+  color: var(--color-text);
+  font-family: var(--font-sans);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Links */
+a {
+  color: var(--color-accent-2);
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+a:hover {
+  color: #0284C7;
+  text-decoration: underline;
+}
+
+/* Focus States */
+:focus-visible {
+  outline: 2px solid var(--color-accent-2);
+  outline-offset: 2px;
+  border-radius: var(--radius-sm);
+}
+
+/* Typography */
+h1, h2, h3, h4, h5, h6 {
+  color: var(--color-text);
+  margin: 0;
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+p, li, span {
+  color: var(--color-text);
+}
+
+/* Card/Surface Styles - Dark cards on light background */
+.c-card,
+.services-card,
+.services-preview__card,
+.areas-preview__card,
+.testimonials-teaser__card {
+  background: var(--color-surface);
+  color: var(--color-text-on-dark);
+  border: 1px solid var(--color-border-dark);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-card);
+  padding: var(--space-2xl);
+}
+
+.c-card h3,
+.services-card h3,
+.services-preview__card h3,
+.areas-preview__card h3,
+.testimonials-teaser__card h3 {
+  color: var(--color-text-on-dark);
+}
+
+.c-card p,
+.c-card li,
+.services-card p,
+.services-card li,
+.services-preview__card p,
+.services-preview__card li,
+.areas-preview__card p,
+.testimonials-teaser__card blockquote {
+  color: var(--color-muted-on-dark);
+}
+
+/* Light Card Variant - for forms, CTAs, special emphasis */
+.c-card--light {
+  background: var(--color-surface-light);
+  color: var(--color-text);
+  border-color: var(--color-border);
+}
+
+.c-card--light h3 {
+  color: var(--color-text);
+}
+
+.c-card--light p,
+.c-card--light li {
+  color: var(--color-muted);
+}
+
+/* Buttons */
+.c-button {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-xs);
+  padding: var(--space-sm) var(--space-lg);
+  border-radius: var(--radius-md);
+  font-weight: 600;
+  font-size: var(--fs-400);
+  transition: all 0.2s ease;
+  cursor: pointer;
+  border: 2px solid transparent;
+  text-decoration: none;
+}
+
+.c-button--primary {
+  background: var(--color-accent);
+  color: #1E293B;
+  border-color: var(--color-accent);
+}
+
+.c-button--primary:hover {
+  background: #D97706;
+  border-color: #D97706;
+  transform: translateY(-1px);
+  box-shadow: var(--shadow-md);
+  text-decoration: none;
+}
+
+.c-button--secondary {
+  background: var(--color-accent-2);
+  color: white;
+  border-color: var(--color-accent-2);
+}
+
+.c-button--secondary:hover {
+  background: #0284C7;
+  border-color: #0284C7;
+  transform: translateY(-1px);
+  text-decoration: none;
+}
+
+.c-button--ghost {
+  background: transparent;
+  color: var(--color-accent-2);
+  border-color: var(--color-accent-2);
+}
+
+.c-button--ghost:hover {
+  background: var(--color-accent-2);
+  color: white;
+  text-decoration: none;
+}
+
+/* Remove all the !important hacks - not needed with proper tokens */

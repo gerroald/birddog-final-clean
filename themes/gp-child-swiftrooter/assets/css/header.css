@@ -1,0 +1,468 @@
+/**
+ * Professional Header Styles
+ * Teal background, white text, smooth dropdown, mobile hamburger
+ */
+
+/* ========================================================================
+   HEADER BASE
+   ======================================================================== */
+
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  background: #0F172A; /* Black - Bird Dog brand color */
+  color: var(--color-text-light);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+  transition: box-shadow 0.3s ease;
+}
+
+body.is-scrolled .site-header {
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.site-header .l-container {
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  align-items: center;
+  gap: var(--space-xl);
+  padding-block: var(--space-md);
+  position: relative;
+}
+
+/* ========================================================================
+   LOGO
+   ======================================================================== */
+
+.site-logo {
+  display: flex;
+  align-items: center;
+  z-index: 1001;
+  transition: transform 0.2s ease;
+}
+
+.site-logo:hover {
+  transform: scale(1.03);
+}
+
+.site-logo img {
+  height: auto;
+  width: auto;
+  max-height: 120px; /* Taller to span both visual rows */
+  display: block;
+}
+
+@media (min-width: 901px) {
+  .site-logo {
+    margin-right: var(--space-lg); /* Space between logo and first menu item */
+  }
+}
+
+/* ========================================================================
+   DESKTOP NAVIGATION
+   ======================================================================== */
+
+.site-nav {
+  justify-self: center;
+}
+
+.site-nav .menu {
+  display: flex;
+  gap: var(--space-lg);
+  align-items: center;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.site-nav .menu > li {
+  position: relative;
+}
+
+.site-nav .menu > li > a {
+  display: flex;
+  align-items: center;
+  gap: var(--space-xs);
+  padding: var(--space-sm) var(--space-md);
+  color: var(--color-text-light);
+  font-weight: 800;
+  font-size: var(--fs-600);
+  transition: all 0.2s ease;
+  border-radius: var(--radius-sm);
+}
+
+.site-nav .menu > li > a:hover {
+  background: rgba(255, 255, 255, 0.15);
+}
+
+.site-nav .menu > li.current-menu-item > a,
+.site-nav .menu > li.current_page_item > a {
+  background: rgba(255, 255, 255, 0.2);
+}
+
+/* Dropdown indicator (chevron) - desktop only */
+@media (min-width: 901px) {
+  .site-nav .menu-item-has-children > a::after {
+    content: "";
+    display: inline-block;
+    width: 0;
+    height: 0;
+    border-left: 4px solid transparent;
+    border-right: 4px solid transparent;
+    border-top: 5px solid currentColor;
+    margin-left: var(--space-xs);
+    transition: transform 0.3s ease;
+  }
+
+  .site-nav .menu-item-has-children:hover > a::after {
+    transform: rotate(180deg);
+  }
+}
+
+/* Dropdown Menu - desktop only */
+@media (min-width: 901px) {
+  .site-nav .menu > li > .sub-menu {
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%) translateY(10px);
+    min-width: 220px;
+    background: white;
+    border-radius: var(--radius-md);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+    padding: var(--space-sm) 0;
+    list-style: none;
+    margin: var(--space-sm) 0 0 0;
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    transition: opacity 0.25s ease, visibility 0.25s ease, transform 0.25s ease;
+  }
+
+  .site-nav .menu > li:hover > .sub-menu,
+  .site-nav .menu > li:focus-within > .sub-menu {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: all;
+    transform: translateX(-50%) translateY(0);
+  }
+}
+
+.site-nav .sub-menu li {
+  margin: 0;
+}
+
+.site-nav .sub-menu a {
+  display: block;
+  padding: var(--space-sm) var(--space-lg);
+  color: var(--color-text);
+  font-weight: 500;
+  font-size: var(--fs-500);
+  transition: all 0.2s ease;
+  position: relative;
+}
+
+.site-nav .sub-menu a::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 3px;
+  background: var(--color-accent);
+  transform: scaleY(0);
+  transition: transform 0.2s ease;
+}
+
+.site-nav .sub-menu a:hover {
+  background: color-mix(in srgb, var(--color-accent-2) 10%, white);
+  padding-left: calc(var(--space-lg) + 8px);
+  color: var(--color-text);
+}
+
+.site-nav .sub-menu a:hover::before {
+  transform: scaleY(1);
+}
+
+/* ========================================================================
+   CTA BUTTONS (DUAL)
+   ======================================================================== */
+
+.site-cta {
+  justify-self: end;
+  display: flex;
+  align-items: center;
+  gap: var(--space-md);
+}
+
+/* Text Me Button */
+.site-cta__text {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 48px;
+  height: 48px;
+  padding: 0;
+  background: rgba(255, 255, 255, 0.15);
+  color: var(--color-text-light);
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  border-radius: var(--radius-md);
+  transition: all 0.2s ease;
+}
+
+.site-cta__text:hover {
+  background: rgba(255, 255, 255, 0.25);
+  border-color: rgba(255, 255, 255, 0.5);
+  transform: translateY(-1px);
+}
+
+.site-cta__text svg {
+  width: 22px;
+  height: 22px;
+}
+
+/* Call Button */
+.site-cta__button {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-sm);
+  padding: var(--space-sm) var(--space-lg);
+  background: var(--color-accent);
+  color: var(--color-text);
+  border: 2px solid var(--color-accent);
+  border-radius: var(--radius-md);
+  font-weight: 700;
+  font-size: var(--fs-500);
+  transition: all 0.2s ease;
+  white-space: nowrap;
+}
+
+.site-cta__button:hover {
+  background: color-mix(in srgb, var(--color-accent) 90%, white);
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.site-cta__button:active {
+  transform: translateY(0);
+}
+
+.site-cta__icon svg {
+  width: 18px;
+  height: 18px;
+}
+
+/* ========================================================================
+   MOBILE MENU TOGGLE (HAMBURGER)
+   ======================================================================== */
+
+.nav-toggle {
+  display: none; /* Hidden on desktop */
+  flex-direction: column;
+  justify-content: space-between;
+  width: 44px;
+  height: 44px;
+  padding: 12px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  z-index: 1001;
+}
+
+.nav-toggle__bar {
+  display: block;
+  width: 100%;
+  height: 3px;
+  background: var(--color-text-light);
+  border-radius: 2px;
+  transition: all 0.3s ease;
+}
+
+.nav-toggle[aria-expanded="true"] .nav-toggle__bar:nth-child(1) {
+  transform: translateY(7px) rotate(45deg);
+}
+
+.nav-toggle[aria-expanded="true"] .nav-toggle__bar:nth-child(2) {
+  opacity: 0;
+}
+
+.nav-toggle[aria-expanded="true"] .nav-toggle__bar:nth-child(3) {
+  transform: translateY(-9px) rotate(-45deg);
+}
+
+/* ========================================================================
+   MOBILE RESPONSIVE
+   ======================================================================== */
+
+@media (max-width: 900px) {
+  /* Show hamburger, hide desktop CTA */
+  .nav-toggle {
+    display: flex;
+  }
+
+  .site-cta {
+    display: none; /* Hide on mobile - FAB handles calls */
+  }
+
+  /* Two-column mobile header: logo | hamburger */
+  .site-header .l-container {
+    grid-template-columns: 1fr auto;
+    gap: var(--space-md);
+  }
+
+  .site-logo {
+    grid-column: 1;
+  }
+
+  .site-logo img {
+    max-height: 48px;
+  }
+
+  /* Mobile Nav Panel */
+  .site-nav {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    width: min(320px, 85vw);
+    background: white;
+    box-shadow: -4px 0 24px rgba(0, 0, 0, 0.2);
+    transform: translateX(100%);
+    transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    overflow-y: auto;
+    padding: var(--space-3xl) var(--space-xl);
+    z-index: 1000;
+  }
+
+  .site-nav[data-open="true"] {
+    transform: translateX(0);
+  }
+
+  .site-nav .menu {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0;
+  }
+
+  .site-nav .menu > li {
+    border-bottom: 1px solid var(--color-border);
+  }
+
+  .site-nav .menu > li:last-child {
+    border-bottom: none;
+  }
+
+  .site-nav .menu > li > a {
+    color: var(--color-text);
+    padding: var(--space-md);
+    font-size: var(--fs-600);
+    justify-content: space-between;
+  }
+
+  .site-nav .menu > li > a:hover {
+    background: var(--color-surface);
+  }
+
+  /* Mobile Dropdown */
+  .site-nav .menu > li > .sub-menu {
+    position: static;
+    transform: none;
+    box-shadow: none;
+    background: var(--color-surface);
+    margin: 0;
+    padding: 0;
+    max-height: 0;
+    overflow: hidden;
+    opacity: 1;
+    visibility: visible;
+    pointer-events: all;
+    transition: max-height 0.3s ease;
+  }
+
+  .site-nav .menu > li.submenu-open > .sub-menu {
+    max-height: 500px;
+  }
+
+  .site-nav .sub-menu a {
+    padding: var(--space-sm) var(--space-xl);
+    font-size: var(--fs-500);
+  }
+
+  /* Mobile Menu Overlay */
+  .nav-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5);
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+    z-index: 999;
+  }
+
+  .nav-overlay[data-open="true"] {
+    opacity: 1;
+    visibility: visible;
+  }
+
+  /* Submenu Toggle Button */
+  .submenu-toggle {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 44px;
+    height: 44px;
+    padding: 0;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    color: var(--color-text);
+    font-size: var(--fs-700);
+    transition: transform 0.3s ease;
+  }
+
+  .submenu-toggle[aria-expanded="true"] {
+    transform: rotate(180deg);
+  }
+}
+
+/* Desktop: hide submenu toggle buttons */
+@media (min-width: 901px) {
+  .submenu-toggle {
+    display: none !important;
+  }
+}
+
+/* Hide submenu toggle inside dropdown links */
+.site-nav .menu-item-has-children > a .submenu-toggle {
+  display: none !important;
+}
+
+/* ========================================================================
+   HOMEPAGE HERO FORM RESPONSIVE
+   ======================================================================== */
+
+@media (max-width: 900px) {
+  /* Stack form below CTA text on mobile */
+  .hero.hero--teal .l-container {
+    grid-template-columns: 1fr !important;
+  }
+
+  .hero__text {
+    order: 1;
+  }
+
+  .hero__aside,
+  .hero__form {
+    order: 2;
+    justify-self: stretch !important;
+    max-width: 100%;
+  }
+
+  .hero-form-card {
+    width: 100% !important;
+    max-width: 100% !important;
+  }
+}

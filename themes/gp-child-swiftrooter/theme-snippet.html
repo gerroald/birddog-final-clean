@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="pro-core" data-mode="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Try Themes Now - Moving Company</title>
+    <link rel="stylesheet" href="assets/css/themes.css">
+    <style>
+        body {
+            font-family: system-ui, -apple-system, sans-serif;
+            margin: 0;
+            padding: 2rem;
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+        
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .theme-switcher {
+            position: fixed;
+            top: 1rem;
+            right: 1rem;
+            background: var(--color-surface);
+            border: 1px solid var(--color-border);
+            border-radius: 0.5rem;
+            padding: 1rem;
+            box-shadow: var(--shadow-md);
+            z-index: 1000;
+        }
+        
+        .theme-switcher h3 {
+            margin: 0 0 1rem 0;
+            font-size: 1rem;
+        }
+        
+        .theme-switcher select,
+        .theme-switcher button {
+            width: 100%;
+            margin-bottom: 0.5rem;
+            padding: 0.5rem;
+            border: 1px solid var(--color-border);
+            border-radius: 0.25rem;
+            background: var(--color-surface);
+            color: var(--color-text);
+        }
+        
+        .theme-switcher button {
+            background: var(--color-primary-500);
+            color: var(--color-text-inverse);
+            border: none;
+            cursor: pointer;
+        }
+        
+        .theme-switcher button:hover {
+            background: var(--color-primary-600);
+        }
+        
+        .demo-card {
+            background: var(--color-surface);
+            border: 1px solid var(--color-border);
+            border-radius: 0.5rem;
+            padding: 2rem;
+            margin: 2rem 0;
+            box-shadow: var(--shadow-sm);
+        }
+        
+        .demo-card h2 {
+            margin-top: 0;
+            color: var(--color-text);
+        }
+        
+        .demo-card p {
+            color: var(--color-text-muted);
+            margin-bottom: 1.5rem;
+        }
+        
+        .btn {
+            padding: 0.75rem 1.5rem;
+            border-radius: 0.375rem;
+            border: 1px solid transparent;
+            font-weight: 600;
+            text-decoration: none;
+            display: inline-block;
+            transition: all 0.2s ease;
+            cursor: pointer;
+            margin-right: 1rem;
+        }
+        
+        .btn-primary {
+            background: var(--color-primary-500);
+            color: var(--color-text-inverse);
+            border-color: var(--color-primary-500);
+        }
+        
+        .btn-primary:hover {
+            background: var(--color-primary-600);
+            border-color: var(--color-primary-600);
+        }
+        
+        .btn-secondary {
+            background: var(--color-accent-500);
+            color: var(--color-text-inverse);
+            border-color: var(--color-accent-500);
+        }
+        
+        .btn-secondary:hover {
+            background: var(--color-accent-600);
+            border-color: var(--color-accent-600);
+        }
+        
+        .status {
+            padding: 1rem;
+            border-radius: 0.375rem;
+            border: 1px solid;
+            margin: 1rem 0;
+        }
+        
+        .status-success {
+            background: var(--color-success-bg);
+            color: var(--color-success);
+            border-color: var(--color-success);
+        }
+        
+        .status-warning {
+            background: var(--color-warning-bg);
+            color: var(--color-warning);
+            border-color: var(--color-warning);
+        }
+        
+        .status-error {
+            background: var(--color-error-bg);
+            color: var(--color-error);
+            border-color: var(--color-error);
+        }
+        
+        .status-info {
+            background: var(--color-info-bg);
+            color: var(--color-info);
+            border-color: var(--color-info);
+        }
+        
+        .color-palette {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+            gap: 1rem;
+            margin: 1rem 0;
+        }
+        
+        .color-swatch {
+            text-align: center;
+            padding: 1rem;
+            border-radius: 0.375rem;
+            border: 1px solid var(--color-border);
+            font-size: 0.875rem;
+        }
+        
+        .color-swatch.primary {
+            background: var(--color-primary-500);
+            color: var(--color-text-inverse);
+        }
+        
+        .color-swatch.accent {
+            background: var(--color-accent-500);
+            color: var(--color-text-inverse);
+        }
+        
+        .color-swatch.success {
+            background: var(--color-success);
+            color: var(--color-text-inverse);
+        }
+        
+        .color-swatch.warning {
+            background: var(--color-warning);
+            color: var(--color-text-inverse);
+        }
+        
+        .color-swatch.error {
+            background: var(--color-error);
+            color: var(--color-text-inverse);
+        }
+        
+        .color-swatch.surface {
+            background: var(--color-surface);
+            color: var(--color-text);
+            border-color: var(--color-border);
+        }
+        
+        .color-swatch.text {
+            background: var(--color-text);
+            color: var(--color-bg);
+        }
+        
+        .color-swatch.muted {
+            background: var(--color-text-muted);
+            color: var(--color-bg);
+        }
+        
+        @media (max-width: 768px) {
+            .theme-switcher {
+                position: static;
+                margin-bottom: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Try Themes Now</h1>
+        <p>Experience all 5 professional color themes for the moving company website. Use the controls in the top-right to switch between themes and modes.</p>
+        
+        <div class="theme-switcher">
+            <h3>Theme Controls</h3>
+            <select id="themeSelect">
+                <option value="pro-core">Pro Core</option>
+                <option value="modern-teal">Modern Teal</option>
+                <option value="industrial-yellow">Industrial Yellow</option>
+                <option value="executive-dark">Executive Dark</option>
+                <option value="clean-contrast">Clean Contrast</option>
+            </select>
+            <button id="modeToggle">Toggle Dark Mode</button>
+            <button id="randomTheme">Random Theme</button>
+        </div>
+        
+        <div class="demo-card">
+            <h2>Color Palette</h2>
+            <div class="color-palette">
+                <div class="color-swatch primary">
+                    <strong>Primary</strong><br>
+                    <small>Trust</small>
+                </div>
+                <div class="color-swatch accent">
+                    <strong>Accent</strong><br>
+                    <small>Energy</small>
+                </div>
+                <div class="color-swatch success">
+                    <strong>Success</strong><br>
+                    <small>Positive</small>
+                </div>
+                <div class="color-swatch warning">
+                    <strong>Warning</strong><br>
+                    <small>Caution</small>
+                </div>
+                <div class="color-swatch error">
+                    <strong>Error</strong><br>
+                    <small>Failure</small>
+                </div>
+                <div class="color-swatch surface">
+                    <strong>Surface</strong><br>
+                    <small>Cards</small>
+                </div>
+                <div class="color-swatch text">
+                    <strong>Text</strong><br>
+                    <small>Content</small>
+                </div>
+                <div class="color-swatch muted">
+                    <strong>Muted</strong><br>
+                    <small>Secondary</small>
+                </div>
+            </div>
+        </div>
+        
+        <div class="demo-card">
+            <h2>Service Cards</h2>
+            <p>Professional moving services for your home and business. Licensed and insured crews available same-day.</p>
+            <button class="btn btn-primary">Get Free Estimate</button>
+            <button class="btn btn-secondary">Call Now</button>
+        </div>
+        
+        <div class="demo-card">
+            <h2>Status Messages</h2>
+            <div class="status status-success">
+                <strong>Success!</strong> Your estimate request has been submitted successfully.
+            </div>
+            <div class="status status-warning">
+                <strong>Warning</strong> Please note that weekend moves may incur additional fees.
+            </div>
+            <div class="status status-error">
+                <strong>Error</strong> There was a problem submitting your request. Please try again.
+            </div>
+            <div class="status status-info">
+                <strong>Info</strong> Same-day service is available for most local moves.
+            </div>
+        </div>
+        
+        <div class="demo-card">
+            <h2>Typography</h2>
+            <h1>Heading 1 - Main Page Title</h1>
+            <h2>Heading 2 - Section Headers</h2>
+            <h3>Heading 3 - Subsection Headers</h3>
+            <p>This is a paragraph with regular text. It demonstrates the body text color and readability across different themes.</p>
+            <p><small>This is small text used for captions, labels, and secondary information.</small></p>
+            <p><a href="#">This is a link</a> that demonstrates the link color and hover states.</p>
+        </div>
+    </div>
+    
+    <script src="assets/js/theme-swapper.js"></script>
+    <script>
+        // Theme controls
+        const themeSelect = document.getElementById('themeSelect');
+        const modeToggle = document.getElementById('modeToggle');
+        const randomTheme = document.getElementById('randomTheme');
+        
+        // Set initial theme
+        const currentTheme = getCurrentTheme();
+        const currentMode = getCurrentMode();
+        
+        themeSelect.value = currentTheme;
+        modeToggle.textContent = currentMode === 'dark' ? 'Switch to Light' : 'Switch to Dark';
+        
+        // Theme selection
+        themeSelect.addEventListener('change', (e) => {
+            setTheme(e.target.value);
+        });
+        
+        // Mode toggle
+        modeToggle.addEventListener('click', () => {
+            toggleMode();
+            const newMode = getCurrentMode();
+            modeToggle.textContent = newMode === 'dark' ? 'Switch to Light' : 'Switch to Dark';
+        });
+        
+        // Random theme
+        randomTheme.addEventListener('click', () => {
+            const themes = ['pro-core', 'modern-teal', 'industrial-yellow', 'executive-dark', 'clean-contrast'];
+            const randomThemeName = themes[Math.floor(Math.random() * themes.length)];
+            setTheme(randomThemeName);
+            themeSelect.value = randomThemeName;
+        });
+        
+        // Listen for theme changes
+        document.addEventListener('themechange', (e) => {
+            console.log('Theme changed:', e.detail);
+        });
+    </script>
+</body>
+</html>

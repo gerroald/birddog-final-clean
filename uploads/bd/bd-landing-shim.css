@@ -1,0 +1,19 @@
+<?php
+add_action('wp_head', function () {
+  if (is_page('quote')) { ?>
+<style id="bd-landing-overrides">
+  /* Scope everything to this page wrapper */
+  .bd-landing .section { padding: var(--space-2xl) 0; }
+  .bd-landing .h1, .bd-landing .h2 { all: revert-layer; font-family: inherit; font-weight: 800 !important; line-height: 1.15 !important; }
+  .bd-landing .btn { border-radius: 999px !important; font-weight: 800 !important; text-decoration: none !important; }
+  .bd-landing .btn--primary { background: var(--accent-1) !important; color:#000 !important; border-color: var(--accent-1) !important; }
+  .bd-landing .btn--ghost { background: transparent !important; color: var(--text-inv) !important; border-color: currentColor !important; }
+  .bd-landing .lp-hero__card { background:#0f0f0f !important; border:1px solid rgba(255,255,255,.08) !important; }
+  .bd-landing .quote-form input, 
+  .bd-landing .quote-form select, 
+  .bd-landing .quote-form textarea { background:rgba(255,255,255,.06) !important; color:#fff !important; border:1px solid rgba(255,255,255,.16) !important; }
+  .bd-landing .cards .card { background:#fff; color:var(--text); border:1px solid rgba(0,0,0,.06); }
+  .bd-landing.section--dark .cards .card, 
+  .bd-landing .section--dark .cards .card { background:#0e0e0e; color:#fff; border:1px solid rgba(255,255,255,.08); }
+</style>
+<?php }});
