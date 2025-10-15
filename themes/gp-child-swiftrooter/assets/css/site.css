@@ -422,7 +422,7 @@ html body .hero__lead {
 }
 
 .services-preview__card {
-  text-align: left;
+  text-align: lef;
   height: 100%;
   display: flex;
   flex-direction: column;

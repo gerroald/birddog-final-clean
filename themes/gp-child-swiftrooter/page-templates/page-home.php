@@ -54,10 +54,10 @@ get_header(); ?>
                 <a href="https://www.bbb.org/us/ok/oklahoma-city/profile/moving-companies/bird-dogs-delivery-moving-service-0995-90046474/#sealclick" target="_blank" rel="nofollow"><img src="https://seal-oklahomacity.bbb.org/seals/black-seal-187-130-bbb-90046474.png" style="border: 0;" alt="Bird Dogs Delivery & Moving Service BBB Business Review" data=reveal/></a>
             </div>
             <div class="trust__item">
-                <a hrefhttps://share.google/CtNMR8Xakxcj7JCbf"><img src="http://localhost:10070/wp-content/uploads/2025/10/google_g_icon_download.png" alt="Google Reviews" width="120" height="60" data-reveal>
+                <a href="https://share.google/CtNMR8Xakxcj7JCbf" target="_blank" rel="nofollow"><img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/badges/google-reviews.png" alt="Google Reviews" width="120" height="60" data-reveal></a>
             </div>
             <div class="trust__item">
-                <a href="https://www.yelp.com/biz/bird-dogs-delivery-and-moving-service-oklahoma-city?osq=bird+dogs+delivery+%26+moving+services&override_cta=Get+pricing+%26+availability" alt="Yelp"><img src="http://localhost:10070/wp-content/uploads/2025/10/yelp_logo.png" width="120" height="60" data-reveal>
+                <a href="https://www.yelp.com/biz/bird-dogs-delivery-and-moving-service-oklahoma-city?osq=bird+dogs+delivery+%26+moving+services&override_cta=Get+pricing+%26+availability" target="_blank" rel="nofollow"><img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/badges/yelp.png" alt="Yelp Reviews" width="120" height="60" data-reveal></a>
             </div>
  
         </div>
