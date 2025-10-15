@@ -14,9 +14,14 @@
     <div class="l-container">
         <!-- Logo -->
         <a class="site-logo" href="<?php echo esc_url(home_url('/')); ?>" aria-label="<?php bloginfo('name'); ?> - Home">
-            <img
-                src="<?php echo esc_url('http://localhost:10070/wp-content/uploads/2025/10/logo-lockup-512-black-e1759429063411.png'); ?>"
-                alt="<?php bloginfo('name'); ?> logo"/>
+            <picture>
+                <source media="(max-width: 768px)" srcset="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/logo-icon-white.png">
+                <img
+                    src="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/logo-lockup-white.png"
+                    alt="<?php bloginfo('name'); ?> - Bird Dog Delivery & Moving"
+                    width="240"
+                    height="auto"/>
+            </picture>
         </a>
 
 <!-- Primary Navigation -->
@@ -69,5 +74,5 @@
     </div>
 	
 </header>
-<?php echo do_shortcode('[bd_modern_header]'); ?>
+
 <main id="main" class="site-main" role="main">
