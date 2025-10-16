@@ -12,7 +12,7 @@ get_header();
 <main id="main" class="bd-page bd-page--services" data-page="services-overview">
 
   <!-- HERO: Tight, centered -->
-  <section class="bd-hero bd-hero--tight" aria-labelledby="hero-title" style="background: var(--color-bg-dark); color: var(--color-text-inverse); padding: var(--space-3xl) var(--space-md);">
+  <section class="section section--band-dark bd-hero bd-hero--tight" aria-labelledby="hero-title" style="background: var(--color-bg-dark); color: var(--color-text-inverse); padding: var(--space-3xl) var(--space-md);">
     <div class="bd-container" style="max-width: 1100px; margin: 0 auto; text-align: center;">
       <div class="bd-hero__content">
         <h1 id="hero-title" class="bd-hero__title" style="font-size: var(--fs-900); line-height: var(--lh-tight); font-weight: var(--fw-bold); color: var(--color-text-inverse); margin: 0 0 var(--space-md);">
@@ -22,15 +22,15 @@ get_header();
           From residential moves to office relocations and specialty deliveries, we handle it all with care.
         </p>
         <div class="bd-hero__actions" style="display: flex; gap: var(--space-md); justify-content: center; flex-wrap: wrap;">
-          <a class="bd-btn bd-btn--primary" href="/pricing/" style="display: inline-block; padding: var(--space-sm) var(--space-xl); font-weight: var(--fw-bold); border-radius: var(--radius-sm); text-decoration: none; background: var(--color-accent); color: var(--color-text); border: none; box-shadow: var(--shadow-card); transition: all var(--transition-base);">Get Free Quote</a>
-          <a class="bd-btn bd-btn--ghost" href="tel:+14055354554" style="display: inline-block; padding: var(--space-sm) var(--space-xl); font-weight: var(--fw-bold); border-radius: var(--radius-sm); text-decoration: none; background: transparent; color: var(--color-text-inverse); border: 1px solid var(--alias-alnp-border-ghost); transition: all var(--transition-base);">Call (405) 535-4554</a>
+          <a class="bd-btn bd-btn--primary c-button c-button--accent c-button--large" href="/pricing/" style="display: inline-block; padding: var(--space-sm) var(--space-xl); font-weight: var(--fw-bold); border-radius: var(--radius-sm); text-decoration: none; background: var(--color-accent); color: var(--color-text); border: none; box-shadow: var(--shadow-card); transition: all var(--transition-base);">Get Free Quote</a>
+          <a class="bd-btn bd-btn--ghost c-button c-button--ghost-light c-button--large" href="tel:+14055354554" style="display: inline-block; padding: var(--space-sm) var(--space-xl); font-weight: var(--fw-bold); border-radius: var(--radius-sm); text-decoration: none; background: transparent; color: var(--color-text-inverse); border: 1px solid var(--alias-alnp-border-ghost); transition: all var(--transition-base);">Call (405) 535-4554</a>
         </div>
       </div>
     </div>
   </section>
 
   <!-- SECTION 1: Service Cards (White bg) -->
-  <section class="bd-section bd-section--pad" aria-labelledby="services-title" style="background: var(--color-surface); color: var(--color-text); padding: var(--alias-alnp-section-padding-y) var(--space-md);">
+  <section class="section section--surface bd-section bd-section--pad" aria-labelledby="services-title" style="background: var(--color-surface); color: var(--color-text); padding: var(--alias-alnp-section-padding-y) var(--space-md);">
     <div class="bd-container" style="max-width: 1100px; margin: 0 auto;">
       <header class="bd-section__header" style="text-align: center; margin-bottom: var(--space-2xl);">
         <h2 id="services-title" class="bd-section__title" style="font-size: var(--fs-800); line-height: var(--lh-tight); font-weight: var(--fw-bold); color: var(--color-text); margin: 0 0 var(--space-sm);">Our Complete Moving Solutions</h2>
@@ -67,7 +67,7 @@ get_header();
   </section>
 
   <!-- SECTION 2: Why Choose Bird Dog (Light gray bg) -->
-  <section class="bd-section bd-section--alt" aria-labelledby="trust-title" style="background: var(--color-bg); color: var(--color-text); padding: var(--alias-alnp-section-padding-y) var(--space-md);">
+  <section class="section bd-section bd-section--alt" aria-labelledby="trust-title" style="background: var(--color-bg); color: var(--color-text); padding: var(--alias-alnp-section-padding-y) var(--space-md);">
     <div class="bd-container" style="max-width: 1100px; margin: 0 auto;">
       <header class="bd-section__header" style="text-align: center; margin-bottom: var(--space-2xl);">
         <h2 id="trust-title" class="bd-section__title" style="font-size: var(--fs-800); line-height: var(--lh-tight); font-weight: var(--fw-bold); color: var(--color-text); margin: 0 0 var(--space-sm);">Why Choose Bird Dog Moving?</h2>
@@ -99,7 +99,7 @@ get_header();
   </section>
 
   <!-- SECTION 3: How It Works (White bg) -->
-  <section class="bd-section bd-section--pad" aria-labelledby="process-title" style="background: var(--color-surface); color: var(--color-text); padding: var(--alias-alnp-section-padding-y) var(--space-md);">
+  <section class="section section--surface bd-section bd-section--pad" aria-labelledby="process-title" style="background: var(--color-surface); color: var(--color-text); padding: var(--alias-alnp-section-padding-y) var(--space-md);">
     <div class="bd-container" style="max-width: 1100px; margin: 0 auto;">
       <header class="bd-section__header" style="text-align: center; margin-bottom: var(--space-2xl);">
         <h2 id="process-title" class="bd-section__title" style="font-size: var(--fs-800); line-height: var(--lh-tight); font-weight: var(--fw-bold); color: var(--color-text); margin: 0 0 var(--space-sm);">How Our Service Works</h2>
@@ -133,7 +133,7 @@ get_header();
   </section>
 
   <!-- SECTION 4: Service Areas (Light gray bg) -->
-  <section class="bd-section bd-section--alt" aria-labelledby="areas-title" style="background: var(--color-bg); color: var(--color-text); padding: var(--alias-alnp-section-padding-y) var(--space-md);">
+  <section class="section bd-section bd-section--alt" aria-labelledby="areas-title" style="background: var(--color-bg); color: var(--color-text); padding: var(--alias-alnp-section-padding-y) var(--space-md);">
     <div class="bd-container" style="max-width: 1100px; margin: 0 auto;">
       <header class="bd-section__header" style="text-align: center; margin-bottom: var(--space-2xl);">
         <h2 id="areas-title" class="bd-section__title" style="font-size: var(--fs-800); line-height: var(--lh-tight); font-weight: var(--fw-bold); color: var(--color-text); margin: 0 0 var(--space-sm);">Proudly Serving Oklahoma City & Beyond</h2>
@@ -165,7 +165,7 @@ get_header();
   </section>
 
   <!-- SECTION 5: FAQ (White bg) -->
-  <section class="bd-section bd-section--pad" aria-labelledby="faq-title" style="background: var(--color-surface); color: var(--color-text); padding: var(--alias-alnp-section-padding-y) var(--space-md);">
+  <section class="section section--surface bd-section bd-section--pad" aria-labelledby="faq-title" style="background: var(--color-surface); color: var(--color-text); padding: var(--alias-alnp-section-padding-y) var(--space-md);">
     <div class="bd-container" style="max-width: 900px; margin: 0 auto;">
       <header class="bd-section__header" style="text-align: center; margin-bottom: var(--space-2xl);">
         <h2 id="faq-title" class="bd-section__title" style="font-size: var(--fs-800); line-height: var(--lh-tight); font-weight: var(--fw-bold); color: var(--color-text); margin: 0 0 var(--space-sm);">Frequently Asked Questions</h2>
@@ -176,7 +176,7 @@ get_header();
         <details class="bd-faq__item" style="background: var(--color-bg); border: 1px solid var(--color-border); border-radius: var(--alias-alnp-radius-s); padding: var(--space-md); margin-bottom: var(--space-sm);">
           <summary class="bd-faq__question" style="font-weight: var(--fw-semibold); color: var(--color-text); cursor: pointer; font-size: var(--fs-500);">How do I know which moving service I need?</summary>
           <div class="bd-faq__answer" style="margin-top: var(--space-md); color: var(--color-text-muted); line-height: var(--lh-normal);">
-            <p style="margin: 0;">Start with what you're moving. Residential is for homes and apartments, commercial is for offices and businesses, and specialty covers unique items like pianos or antiques. Not sure? Call us at (405) 535-4554 and we'll help you figure it out.</p>
+            <p style="margin: 0;">Start with what you're moving. Residential is for homes and apartments, commercial is for offices and businesses, and specialty covers unique items like pianos or antiques. Not sure? <a href="tel:+14055354554">Call us at (405) 535-4554</a> and we'll help you figure it out.</p>
           </div>
         </details>
 
@@ -219,13 +219,14 @@ get_header();
   </section>
 
   <!-- FINAL CTA -->
-  <section class="bd-final-cta" style="background: var(--color-accent-light); color: var(--color-text); padding: var(--space-3xl) var(--space-md); text-align: center;">
-    <div class="bd-container" style="max-width: 900px; margin: 0 auto;">
-      <h2 class="bd-final-cta__title" style="font-size: var(--fs-800); line-height: var(--lh-tight); font-weight: var(--fw-bold); color: var(--color-text); margin: 0 0 var(--space-md);">Ready to Make Your Move Happen?</h2>
-      <p class="bd-final-cta__subtitle" style="font-size: var(--fs-500); color: var(--color-text-muted); margin: 0 0 var(--space-xl);">Get a free, no-obligation quote in minutes. The Bird Dog team is standing by.</p>
-      <div class="bd-final-cta__actions" style="display: flex; gap: var(--space-md); justify-content: center; flex-wrap: wrap;">
-        <a class="bd-btn bd-btn--primary" href="/pricing/" style="display: inline-block; padding: var(--space-sm) var(--space-xl); font-weight: var(--fw-bold); border-radius: var(--radius-sm); text-decoration: none; background: var(--color-accent); color: var(--color-text); border: none; box-shadow: var(--shadow-card); transition: all var(--transition-base);">Get Your Free Quote</a>
-        <a class="bd-btn bd-btn--secondary" href="tel:+14055354554" style="display: inline-block; padding: var(--space-sm) var(--space-xl); font-weight: var(--fw-bold); border-radius: var(--radius-sm); text-decoration: none; background: transparent; color: var(--color-primary); border: 2px solid var(--color-primary); transition: all var(--transition-base);">Call (405) 535-4554</a>
+  <section class="section section--band-dark">
+    <div class="l-container section__header--centered">
+      <p class="section__eyebrow">Ready to Move?</p>
+      <h2 class="section__title">Book Your Stress-Free Move in Minutes</h2>
+      <p class="section__lead">Local, licensed, insured. Fair pricing, friendly crews.</p>
+      <div style="display:flex;gap:var(--space-md);justify-content:center;">
+        <a class="c-button c-button--accent c-button--large" href="#estimate">Get Free Estimate</a>
+        <a class="c-button c-button--ghost-light c-button--large" href="tel:+14055534554">Call (405) 553-4554</a>
       </div>
     </div>
   </section>
@@ -239,7 +240,7 @@ get_header();
 <main class="service-page" id="main-content" data-page="service-hub">
 
 	<!-- Hero Section -->
-	<section class="service-hero u-section">
+	<section class="section section--surface service-hero u-section">
 		<div class="l-container">
 			<div class="service-hero__wrap">
 
@@ -256,10 +257,10 @@ get_header();
 					</p>
 
 					<div class="service-hero__actions">
-						<a href="/contact/#estimate" class="c-button c-button--primary">
+						<a href="/contact/#estimate" class="c-button c-button--primary c-button--accent">
 							Get My Free Estimate
 						</a>
-						<a href="tel:<?php echo esc_attr(get_option('birddog_phone', '(405) 535-4554')); ?>" class="c-button c-button--ghost">
+						<a href="tel:<?php echo esc_attr(get_option('birddog_phone', '(405) 535-4554')); ?>" class="c-button c-button--ghost c-button--ghost-light">
 							Call <?php echo esc_html(get_option('birddog_phone', '(405) 535-4554')); ?>
 						</a>
 					</div>
@@ -277,7 +278,7 @@ get_header();
 	</section>
 
 	<!-- Services Grid -->
-	<section class="service-section u-section">
+	<section class="section section--surface service-section u-section">
 		<div class="l-container">
     <h2 class="service-overview__content about-team__title">Our Complete Moving Solutions</h2>
     <p class="service-overview__content">Moving isn’t one-size-fits-all. That’s why we tailor our approach to your specific needs. From careful packing to efficient transport, our team handles every detail. As local movers in OKC, we’re here to make your move stress-free.</p>
@@ -301,7 +302,7 @@ get_header();
 							<li>Flexible scheduling</li>
 						</ul>
 
-						<a href="/services/residential-moving/" class="c-button c-button--ghost" style="width: 100%; justify-content: center;">
+						<a href="/services/residential-moving/" class="c-button c-button--ghost c-button--ghost-light" style="width: 100%; justify-content: center;">
 							Learn More →
 						</a>
 					</div>
@@ -320,7 +321,7 @@ get_header();
 							<li>Minimal downtime</li>
 						</ul>
 
-						<a href="/services/commercial-moving/" class="c-button c-button--ghost" style="width: 100%; justify-content: center;">
+						<a href="/services/commercial-moving/" class="c-button c-button--ghost c-button--ghost-light" style="width: 100%; justify-content: center;">
 							Learn More →
 						</a>
 					</div>
@@ -339,7 +340,7 @@ get_header();
 							<li>Installation available</li>
 						</ul>
 
-						<a href="/services/local-delivery/" class="c-button c-button--ghost" style="width: 100%; justify-content: center;">
+						<a href="/services/local-delivery/" class="c-button c-button--ghost c-button--ghost-light" style="width: 100%; justify-content: center;">
 							Learn More →
 						</a>
 					</div>
@@ -350,7 +351,7 @@ get_header();
 		</div>
 	</section>
 <!-- TRUST SECTION -->
-<section class="bd-trust">
+<section class="section bd-trust">
   <div class="l-container service-why">
     <h2 class="service-why__title">Why Choose Bird Dog for Your Move?</h2>
     <div class="service-features__grid">
@@ -375,11 +376,23 @@ get_header();
 </section>
 	<!-- CTA Band -->
 <!-- CTA SECTION -->
-<section class="service-cta">
+<section class="section service-cta">
   <div class="service-cta__content">
     <h2 class="service-why__title">Ready to Get Started?</h2>
     <p class="service-why__title_text">Tell us a little about your move, and we’ll get back to you with a free, no-obligation estimate. Whether you need a full residential relocation or just a little help with the heavy lifting, the Bird Dog team is ready to make it happen. <a href="/contact/">Request your free moving estimate</a> today.</p>
     <a class="bd-btn" href="/contact/">Request Your Free Estimate Today</a>
+  </div>
+</section>
+
+<section id="estimate" class="section section--band-dark">
+  <div class="l-container section__header--centered">
+    <p class="section__eyebrow">Ready to Move?</p>
+    <h2 class="section__title">Book Your Stress-Free Move in Minutes</h2>
+    <p class="section__lead">Local, licensed, insured. Fair pricing, friendly crews.</p>
+    <div style="display:flex;gap:var(--space-md);justify-content:center;">
+      <a class="c-button c-button--accent c-button--large" href="#estimate">Get Free Estimate</a>
+      <a class="c-button c-button--ghost-light c-button--large" href="tel:+14055534554">Call (405) 553-4554</a>
+    </div>
   </div>
 </section>
 

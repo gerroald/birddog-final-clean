@@ -24,6 +24,10 @@
             </picture>
         </a>
 
+        <a href="#estimate" class="header-cta-mobile" aria-label="Book Now" data-evt="cta_book_now_header">
+          BOOK NOW
+        </a>
+
 <!-- Primary Navigation -->
 <nav class="site-nav" id="site-nav" aria-label="Primary">
   <?php

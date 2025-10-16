@@ -8,7 +8,10 @@ get_header(); ?>
 <!-- Hero Section with Real Truck Background -->
 <section class="hero-v2 hero-v2--disciplined">
   <div class="hero-v2__background">
-    <div class="hero-v2__media hero-v2__media--svg">
+    <!-- Bulletproof fallback image layer -->
+    <div class="hero-v2__bg-fallback" style="background-image:url('<?php echo esc_url( get_stylesheet_directory_uri() . '/assets/img/bird-dog-moving-van-branded.jpg' ); ?>');"></div>
+
+    <div class="hero-v2__media hero-v2__media--svg" style="--hero-img: url('<?php echo esc_url( get_stylesheet_directory_uri() . '/assets/img/bird-dog-moving-van-branded.jpg' ); ?>');">
       <svg viewBox="0 0 800 400" preserveAspectRatio="xMidYMid slice" role="img" aria-label="Bird Dog Moving truck and crew in Oklahoma City" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
         <defs>
           <mask id="hero-v2-mask" maskUnits="userSpaceOnUse" x="0" y="0" width="800" height="400">
@@ -16,7 +19,7 @@ get_header(); ?>
           </mask>
         </defs>
         <g mask="url(#hero-v2-mask)">
-          <image xlink:href="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/bird-dog-moving-van-branded.jpg" href="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/bird-dog-moving-van-branded.jpg" x="0" y="0" width="800" height="400" preserveAspectRatio="xMidYMid slice" />
+          <image xlink:href="<?php echo esc_url( get_stylesheet_directory_uri() . '/assets/img/bird-dog-moving-van-branded.jpg' ); ?>" href="<?php echo esc_url( get_stylesheet_directory_uri() . '/assets/img/bird-dog-moving-van-branded.jpg' ); ?>" x="0" y="0" width="800" height="400" preserveAspectRatio="xMidYMid slice" />
         </g>
       </svg>
     </div>
@@ -71,7 +74,7 @@ get_header(); ?>
 
     <!-- Form Side -->
     <aside class="hero-v2__form">
-      <div class="estimate-card">
+      <div id="estimate" class="estimate-card">
         <h3 class="estimate-card__title">Get Your Free Estimate</h3>
         <p class="estimate-card__subtitle">Quick estimate in under 2 minutes</p>
         <?php echo do_shortcode('[wpforms id="248"]'); ?>
@@ -107,9 +110,9 @@ document.addEventListener('DOMContentLoaded', () => {
     <div class="proof-bar__content">
       <p class="proof-bar__text">Trusted by Oklahoma City families since 2015</p>
       <div class="proof-bar__badges">
-        <img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/badges/google.svg" alt="Google" class="proof-badge">
-        <img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/badges/bbb.svg" alt="BBB A+" class="proof-badge">
-        <img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/badges/yelp.svg" alt="Yelp" class="proof-badge">
+        <img src="<?php echo esc_url( get_stylesheet_directory_uri() . '/assets/img/badges/google.svg' ); ?>" alt="Google" class="proof-badge" loading="lazy">
+        <img src="<?php echo esc_url( get_stylesheet_directory_uri() . '/assets/img/badges/bbb.svg' ); ?>" alt="BBB A+" class="proof-badge" loading="lazy">
+        <img src="<?php echo esc_url( get_stylesheet_directory_uri() . '/assets/img/badges/yelp.svg' ); ?>" alt="Yelp" class="proof-badge" loading="lazy">
       </div>
     </div>
   </div>
@@ -127,7 +130,7 @@ document.addEventListener('DOMContentLoaded', () => {
     <div class="service-showcase">
       <article class="service-showcase__item">
         <div class="service-showcase__visual">
-          <img src="<?php echo get_stylesheet_directory_uri(); ?>assets/img/couple-packing-room.png" alt="Residential moving illustration">
+          <img src="<?php echo esc_url( get_stylesheet_directory_uri() . '/assets/img/couple-packing-room.png' ); ?>" alt="Residential moving illustration" loading="lazy" width="1232" height="928">
         </div>
         <div class="service-showcase__content">
           <h3 class="service-showcase__title">Residential Moving</h3>
@@ -150,7 +153,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
       <article class="service-showcase__item service-showcase__item--reverse">
         <div class="service-showcase__visual">
-          <img src="<?php echo get_stylesheet_directory_uri(); ?>assets/img/office-with-packed-boxes.png" alt="Office moving illustration">
+          <img src="<?php echo esc_url( get_stylesheet_directory_uri() . '/assets/img/office-with-packed-boxes.png' ); ?>" alt="Office moving illustration" loading="lazy" width="1232" height="928">
         </div>
         <div class="service-showcase__content">
           <h3 class="service-showcase__title">Office & Commercial</h3>
@@ -173,7 +176,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
       <article class="service-showcase__item">
         <div class="service-showcase__visual">
-          <img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/moving-equipment-pads-dollies.jpg" alt="Specialty moving equipment">
+          <img src="<?php echo esc_url( get_stylesheet_directory_uri() . '/assets/img/moving-equipment-pads-dollies.jpg' ); ?>" alt="Specialty moving equipment" loading="lazy" width="1920" height="1920">
         </div>
         <div class="service-showcase__content">
           <h3 class="service-showcase__title">Specialty & Delivery</h3>
@@ -264,7 +267,7 @@ document.addEventListener('DOMContentLoaded', () => {
       </div>
       
       <div class="why-choose__image">
-        <img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/bird-dog-box-truck-classic.jpg" alt="Bird Dog Moving truck">
+        <img src="<?php echo esc_url( get_stylesheet_directory_uri() . '/assets/img/bird-dog-box-truck-classic.jpg' ); ?>" alt="Bird Dog Moving truck" loading="lazy" width="1920" height="1440">
       </div>
     </div>
   </div>
@@ -381,14 +384,14 @@ document.addEventListener('DOMContentLoaded', () => {
       <h2 class="cta-final__title">Ready to Move Without the Stress?</h2>
       <p class="cta-final__subtitle">Get your free estimate today and see why 500+ OKC families trusted us this year.</p>
       <div class="cta-final__actions">
-        <a href="<?php echo esc_url(home_url('/contact/#estimate')); ?>" class="c-button c-button--primary c-button--large">
+        <a href="<?php echo esc_url(home_url('/contact/#estimate')); ?>" class="c-button c-button--accent c-button--large">
           Get My Free Estimate
           <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
             <line x1="5" y1="12" x2="19" y2="12"></line>
             <polyline points="12 5 19 12 12 19"></polyline>
           </svg>
         </a>
-        <a href="tel:+14055354554" class="c-button c-button--ghost-dark c-button--large">
+        <a href="tel:+14055354554" class="c-button c-button--ghost-light c-button--large">
           <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
             <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
           </svg>
@@ -396,6 +399,18 @@ document.addEventListener('DOMContentLoaded', () => {
         </a>
       </div>
       <p class="cta-final__note">Book this week and save $50 on your move</p>
+    </div>
+  </div>
+</section>
+
+<section class="section section--band-dark">
+  <div class="l-container section__header--centered">
+    <p class="section__eyebrow">Ready to Move?</p>
+    <h2 class="section__title">Book Your Stress-Free Move in Minutes</h2>
+    <p class="section__lead">Local, licensed, insured. Fair pricing, friendly crews.</p>
+    <div style="display:flex;gap:var(--space-md);justify-content:center;">
+      <a class="c-button c-button--accent c-button--large" href="#estimate">Get Free Estimate</a>
+      <a class="c-button c-button--ghost-light c-button--large" href="tel:+14055534554">Call (405) 553-4554</a>
     </div>
   </div>
 </section>

@@ -5,6 +5,8 @@ Template Name: Live Prod Version Pricing
 
 get_header(); ?>
 
+<section class="section section--surface">
+  <div class="l-container">
 <section class="moving-pricing" id="moving-pricing">
   <style>
     @import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap");
@@ -616,10 +618,11 @@ get_header(); ?>
     }
   </style>
 
-  <div class="mp-hero">
-    <h1>Transparent, Simple Pricing</h1>
-    <p>No Hidden Fees. No Surprises. Just Honest Moving.</p>
-  </div>
+  <header class="section__header--centered pricing-intro mp-hero">
+    <p class="section__eyebrow">Transparent Pricing</p>
+    <h1 class="section__title">Simple, Up-Front Rates with No Surprises</h1>
+    <p class="section__lead">Pick your plan. We handle the heavy lifting.</p>
+  </header>
 
   <div class="mp-tabs">
     <button type="button" class="mp-tab-button is-active" data-tab="residential">Residential</button>
@@ -629,25 +632,25 @@ get_header(); ?>
 
   <div class="mp-tab-panels">
     <div class="mp-tab-panel is-active" data-panel="residential">
-      <div class="mp-crew-grid">
-        <div class="mp-crew-card is-active" data-crew-size="2" data-crew-rate="137.5" data-crew-base="275" data-popular="true">
+      <div class="mp-crew-grid pricing-grid">
+        <div class="mp-crew-card card plan-card is-active" data-crew-size="2" data-crew-rate="137.5" data-crew-base="275" data-popular="true">
           <div class="mp-badge">Most Popular</div>
           <div class="mp-crew-size">2-Man Crew</div>
-          <div class="mp-crew-rate">$137.50 <span class="mp-per-hour">/hr</span></div>
+          <div class="mp-crew-rate plan-price">$137.50 <span class="mp-per-hour">/hr</span></div>
           <div class="mp-crew-minimum">2-hour minimum: $275</div>
-          <button type="button" class="mp-select-button is-active">Selected ✓</button>
+          <button type="button" class="mp-select-button plan-cta is-active">Selected ✓</button>
         </div>
-        <div class="mp-crew-card" data-crew-size="3" data-crew-rate="187.5" data-crew-base="375">
+        <div class="mp-crew-card card plan-card" data-crew-size="3" data-crew-rate="187.5" data-crew-base="375">
           <div class="mp-crew-size">3-Man Crew</div>
-          <div class="mp-crew-rate">$187.50 <span class="mp-per-hour">/hr</span></div>
+          <div class="mp-crew-rate plan-price">$187.50 <span class="mp-per-hour">/hr</span></div>
           <div class="mp-crew-minimum">2-hour minimum: $375</div>
-          <button type="button" class="mp-select-button">Select</button>
+          <button type="button" class="mp-select-button plan-cta">Select</button>
         </div>
-        <div class="mp-crew-card" data-crew-size="4" data-crew-rate="237.5" data-crew-base="475">
+        <div class="mp-crew-card card plan-card" data-crew-size="4" data-crew-rate="237.5" data-crew-base="475">
           <div class="mp-crew-size">4-Man Crew</div>
-          <div class="mp-crew-rate">$237.50 <span class="mp-per-hour">/hr</span></div>
+          <div class="mp-crew-rate plan-price">$237.50 <span class="mp-per-hour">/hr</span></div>
           <div class="mp-crew-minimum">2-hour minimum: $475</div>
-          <button type="button" class="mp-select-button">Select</button>
+          <button type="button" class="mp-select-button plan-cta">Select</button>
         </div>
       </div>
 
@@ -660,7 +663,7 @@ get_header(); ?>
         </div>
       </div>
 
-      <div class="mp-calculator">
+      <div id="estimate" class="mp-calculator">
         <h3>Estimate Your Move Cost</h3>
         <div class="mp-calc-row">
           <label for="mp-crew-select">Crew Size:</label>
@@ -698,7 +701,7 @@ get_header(); ?>
             <span id="mp-total-amount">$487.50</span>
           </div>
         </div>
-        <a class="mp-call-button" href="tel:405-535-4554">📞 Call 405-535-4554 to Book</a>
+        <a class="mp-call-button plan-cta" href="tel:+14055354554">📞 Call 405-535-4554 to Book</a>
       </div>
 
       <div class="mp-fine-print">
@@ -712,7 +715,7 @@ get_header(); ?>
     </div>
 
     <div class="mp-tab-panel" data-panel="commercial">
-      <div class="mp-commercial-card">
+      <div class="mp-commercial-card plan-card">
         <h2>Commercial &amp; Office Moves</h2>
         <div class="mp-commercial-features">
           <div>✓ Custom crew sizing</div>
@@ -721,10 +724,10 @@ get_header(); ?>
           <div>✓ Minimized business downtime</div>
         </div>
         <p>Every commercial move is unique. Let’s discuss your specific needs.</p>
-        <a class="mp-estimate-button" href="tel:405-535-4554">Request Free Estimate</a>
+        <a class="mp-estimate-button plan-cta" href="tel:+14055354554">Request Free Estimate</a>
       </div>
     </div>
-<section class="mp-diy-section">
+<section class="mp-diy-section section section--surface">
   <div class="mp-diy-container">
     <h2 class="mp-diy-title">DIY Moving Costs</h2>
     <p class="mp-diy-subtitle">Renting a truck and handling the move yourself can save money for smaller, simpler moves</p>
@@ -780,28 +783,55 @@ get_header(); ?>
   </div>
 </section>
     <div class="mp-tab-panel" data-panel="specialty">
-      <div class="mp-specialty-grid">
-        <div class="mp-specialty-card">
+      <div class="mp-specialty-grid pricing-grid">
+        <div class="mp-specialty-card plan-card">
           <h3>Junk Removal</h3>
           <p>Fast, efficient removal services</p>
-          <a class="mp-contact-button" href="tel:405-535-4554">Contact for Quote</a>
+          <a class="mp-contact-button plan-cta" href="tel:+14055354554">Contact for Quote</a>
         </div>
-        <div class="mp-specialty-card">
+        <div class="mp-specialty-card plan-card">
           <h3>Storage Services</h3>
           <p>Short &amp; long-term storage options</p>
-          <a class="mp-contact-button" href="tel:405-535-4554">Contact for Quote</a>
+          <a class="mp-contact-button plan-cta" href="tel:+14055354554">Contact for Quote</a>
         </div>
-        <div class="mp-specialty-card">
+        <div class="mp-specialty-card plan-card">
           <h3>Warehouse Moving</h3>
           <p>Heavy equipment &amp; inventory</p>
-          <a class="mp-contact-button" href="tel:405-535-4554">Contact for Quote</a>
+          <a class="mp-contact-button plan-cta" href="tel:+14055354554">Contact for Quote</a>
         </div>
-        <div class="mp-specialty-card">
+        <div class="mp-specialty-card plan-card">
           <h3>Furniture Services</h3>
           <p>Assembly, delivery &amp; placement</p>
-          <a class="mp-contact-button" href="tel:405-535-4554">Contact for Quote</a>
+          <a class="mp-contact-button plan-cta" href="tel:+14055354554">Contact for Quote</a>
         </div>
       </div>
+    </div>
+  </div>
+</section>
+  </div>
+</section>
+
+<section class="section section--surface">
+  <div class="l-container">
+    <div class="mp-fine-print">
+      <ul>
+        <li>2-hour minimum applies to all moves</li>
+        <li>$75 fuel charge covers all local metro trips for the day</li>
+        <li>Final cost based on actual time (billed by the hour after minimum)</li>
+        <li>Long-distance moves: fuel costs passed through at actual cost</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section class="section section--band-dark">
+  <div class="l-container section__header--centered">
+    <p class="section__eyebrow">Ready to Move?</p>
+    <h2 class="section__title">Book Your Stress-Free Move in Minutes</h2>
+    <p class="section__lead">Local, licensed, insured. Fair pricing, friendly crews.</p>
+    <div style="display:flex;gap:var(--space-md);justify-content:center;">
+      <a class="c-button c-button--accent c-button--large" href="#estimate">Get Free Estimate</a>
+      <a class="c-button c-button--ghost-light c-button--large" href="tel:+14055534554">Call (405) 553-4554</a>
     </div>
   </div>
 </section>
