@@ -1,0 +1,85 @@
+:root {
+  /* Backgrounds */
+  --bg-dark: #000000;   /* primary black */
+  --bg-light: #f7f7f7;  /* clean white/near-white */
+  --bg-alt:  #07393c;   /* deep teal (alt section) */
+
+  /* Text */
+  --text: #111111;      /* dark gray for light bg */
+  --text-inv: #ffffff;  /* white on dark bg */
+
+  /* Accents */
+  --accent-1: #ffd54a;  /* bold yellow (primary accent) */
+  --accent-2: #00b7b7;  /* teal (secondary accent) */
+
+  /* Optional neon alt for campaigns */
+  --accent-neon: #39ff14; /* sparing use (matches FB/GBP punch) */
+  --radius:14px;
+  --space-xs:.5rem;
+  --space-sm:.75rem;
+  --space-md:1rem;
+  --space-lg:1.5rem;
+  --space-xl:2.25rem;
+  --space-2xl:3.5rem;
+  --shadow:0 10px 30px rgba(0,0,0,.22);
+  --container: min(1200px, 92vw);
+}
+
+  
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg-light);color:var(--text);font:16px/1.55 system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,Cantarell}
+.container{width:var(--container);margin:0 auto;padding:0 var(--space-md)}
+.section{padding:var(--space-2xl) 0}
+.section--dark{background:linear-gradient(180deg,var(--bg-dark),#0d1530);color:var(--text-inv)}
+.section--light{background:var(--bg-light)}
+.section--alt{background:linear-gradient(180deg,#0e1328,var(--bg-alt));color:var(--text-inv)}
+.center{text-align:center}
+
+.h1{font-size:clamp(2rem,3.6vw,3rem);margin:.2em 0 .4em}
+.h2{font-size:clamp(1.5rem,2.6vw,2rem);margin:0 0 .6em}
+.lead{font-size:1.1rem;opacity:.9}
+.eyebrow{letter-spacing:.12em;text-transform:uppercase;font-size:.8rem;opacity:.8;margin:0 0 var(--space-sm)}
+
+.grid{display:grid;gap:var(--space-xl)}
+.grid--2{grid-template-columns:1.1fr .9fr}
+.grid--3{grid-template-columns:repeat(3,minmax(0,1fr))}
+@media (max-width:1000px){.grid--2,.grid--3{grid-template-columns:1fr}}
+
+.btn{display:inline-block;padding:.85rem 1.15rem;border-radius:999px;border:2px solid transparent;text-decoration:none;font-weight:700}
+.btn--primary{background:var(--accent-1);color:#fff}
+.btn--ghost{background:transparent;border-color:currentColor;color:inherit}
+.btn--small{font-size:.9rem;padding:.6rem .9rem;border-radius:999px;border:1px solid #999;color:inherit}
+.btn--full{width:100%}
+.btn-row{display:flex;gap:var(--space-md);flex-wrap:wrap}
+.btn-row.center{justify-content:center}
+
+.lp-header{padding:var(--space-md) 0;background:#0c0f1e;color:#fff;border-bottom:1px solid rgba(255,255,255,.08)}
+.lp-header .container{display:flex;justify-content:space-between;align-items:center}
+.brand{display:flex;align-items:center;gap:.7rem;color:#fff;text-decoration:none}
+.brand__logo{display:inline-grid;place-items:center;width:36px;height:36px;border-radius:10px;background:linear-gradient(45deg,var(--accent-1),var(--accent-2));font-weight:900}
+.brand__name{font-weight:800;letter-spacing:.2px}
+
+.lp-hero .grid{align-items:center}
+.lp-hero__card{background:#0f1734;border-radius:var(--radius);padding:var(--space-xl);box-shadow:var(--shadow);border:1px solid rgba(255,255,255,.08)}
+.card__title{margin:0 0 var(--space-md);font-size:1.25rem}
+.quote-form label{display:block;font-size:.92rem;margin:0 0 var(--space-sm)}
+.quote-form input,.quote-form select,.quote-form textarea{
+  width:100%;padding:.8rem;border-radius:12px;border:1px solid rgba(255,255,255,.16);background:rgba(255,255,255,.06);color:#fff;outline:none
+}
+.quote-form input::placeholder,.quote-form textarea::placeholder{color:rgba(255,255,255,.7)}
+.fineprint{opacity:.7;font-size:.8rem;margin-top:var(--space-sm)}
+
+.trust-list{display:flex;gap:var(--space-md);flex-wrap:wrap;margin:var(--space-md) 0 0;padding:0;list-style:none;opacity:.9}
+
+.badges{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:var(--space-md);list-style:none;margin:0;padding:0}
+.badge{background:#fff;border-radius:var(--radius);padding:var(--space-md);text-align:center;box-shadow:var(--shadow);font-weight:700}
+.section--light .badge{background:#fff;color:var(--text)}
+
+.cards .card{background:#121a3a;border-radius:var(--radius);padding:var(--space-lg);box-shadow:var(--shadow);border:1px solid rgba(255,255,255,.08)}
+.section--light .cards .card{background:#fff;color:var(--text);border:1px solid rgba(0,0,0,.06)}
+.card--service .card__title{margin:0 0 .25rem}
+
+.quotes .quote{padding:var(--space-lg);border-radius:var(--radius);background:#fff;color:var(--text);box-shadow:var(--shadow)}
+.section--light .quotes .quote{background:#fff}
+
+.lp-footer .nap a{color:inherit}
