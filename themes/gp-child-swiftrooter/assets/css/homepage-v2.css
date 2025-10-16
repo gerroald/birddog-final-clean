@@ -950,3 +950,430 @@
 @media (max-width:640px){ .hero-v2__trust{ grid-template-columns:repeat(2,1fr) } }
 .proof-badge{ min-height:44px; align-items:center; justify-content:center; opacity:.7; transition:opacity .2s }
 .proof-badge:hover{ opacity:1 }
+/* === HERO OVERLAY RESURRECTED (no markup required) ====================== */
+.hero-v2{ position:relative; isolation:isolate; }
+
+/* pseudo-overlay sits above media, below content */
+.hero-v2::before{
+  content:"";
+  position:absolute;
+  inset:0;
+  z-index:1;
+  pointer-events:none;
+  /* your disciplined gradient + solid fallback */
+  background:
+    radial-gradient(120% 120% at 70% 50%, rgba(15,23,42,0) 0%, rgba(15,23,42,.65) 55%, rgba(15,23,42,.95) 100%),
+    linear-gradient(135deg, rgba(15,23,42,.92) 0%, rgba(13,148,136,.75) 100%);
+  background-color:#0F172A;
+}
+
+/* ensure SVG stays underneath the overlay */
+.hero-v2__media--svg svg{ position:absolute; inset:0; width:100%; height:100%; z-index:0; }
+
+/* make sure text/form are above the overlay */
+.hero-v2__content, .estimate-card{ position:relative; z-index:2; }
+/* === FIX: HERO OVERLAY ABOVE SVG MASK =============================== */
+
+/* Ensure hero acts as a positioned parent */
+.hero-v2 {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+}
+
+/* Make sure the SVG stays in its layer below */
+.hero-v2__media--svg {
+  position: relative;
+  z-index: 0;
+}
+.hero-v2__media--svg svg {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+  z-index: 0;
+}
+
+/* Restore the actual overlay */
+.hero-v2__overlay {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  pointer-events: none;
+  background:
+    radial-gradient(120% 120% at 70% 40%, rgba(15,23,42,0) 0%, rgba(15,23,42,0.6) 55%, rgba(15,23,42,0.95) 100%),
+    linear-gradient(135deg, rgba(15,23,42,0.9) 0%, rgba(13,148,136,0.75) 100%);
+  background-color: #0F172A;
+  opacity: 1;
+  transition: opacity 0.4s ease;
+}
+
+/* Hero content above everything */
+.hero-v2__content,
+.estimate-card {
+  position: relative;
+  z-index: 2;
+}
+.hero-v2::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  pointer-events: none;
+  background:
+    radial-gradient(120% 120% at 70% 40%, rgba(15,23,42,0) 0%, rgba(15,23,42,0.6) 55%, rgba(15,23,42,0.95) 100%),
+    linear-gradient(135deg, rgba(15,23,42,0.9) 0%, rgba(13,148,136,0.75) 100%);
+  background-color: #0F172A;
+  opacity: 1;
+}
+/* === HERO: force media visible + bulletproof fallback =================== */
+.hero-v2{ position:relative; isolation:isolate; overflow:hidden; }
+
+/* SVG media layer */
+.hero-v2__media--svg{ position:relative; z-index:0; }
+.hero-v2__media--svg svg{
+  position:absolute; inset:0;
+  width:100%; height:100%;
+  display:block; visibility:visible; opacity:1;
+  z-index:0;
+}
+
+/* Fallback image (shows even if <image> fails to render) */
+.hero-v2__media--svg::before{
+  content:"";
+  position:absolute; inset:0;
+  background-image: var(--hero-img, none);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  z-index:0;
+}
+
+/* Overlay above media, below content */
+.hero-v2__overlay,
+.hero-v2::after{
+  position:absolute; inset:0; pointer-events:none; z-index:1;
+  background:
+    radial-gradient(120% 120% at 70% 40%, rgba(15,23,42,0) 0%, rgba(15,23,42,.65) 55%, rgba(15,23,42,.95) 100%),
+    linear-gradient(135deg, rgba(15,23,42,.90) 0%, rgba(13,148,136,.75) 100%);
+  background-color:#0F172A;
+}
+
+/* Content stays on top */
+.hero-v2__content, .estimate-card{ position:relative; z-index:2; }
+
+/* (Optional) If the overlay still feels too strong, nudge down slightly */
+@media (max-width:768px){
+  .hero-v2__overlay,
+  .hero-v2::after{
+    background:
+      radial-gradient(120% 140% at 72% 42%, rgba(15,23,42,0) 0%, rgba(15,23,42,.72) 54%, rgba(15,23,42,.96) 100%),
+      linear-gradient(135deg, rgba(15,23,42,.92) 0%, rgba(13,148,136,.78) 100%);
+  }
+}
+
+/* === HERO OVERLAY (FINAL, SVG-SAFE) ==================================== */
+.hero-v2 {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+}
+
+/* Base media/SVG layer */
+.hero-v2__media--svg { position: relative; z-index: 0; }
+.hero-v2__media--svg svg {
+  position: absolute; inset: 0;
+  width: 100%; height: 100%;
+  object-fit: cover;
+  display: block;
+  z-index: 0;
+}
+
+/* Overlay above SVG, below content */
+.hero-v2__overlay {
+  position: absolute; inset: 0;
+  z-index: 1; pointer-events: none;
+  background:
+    radial-gradient(120% 120% at 70% 40%, rgba(15,23,42,0) 0%, rgba(15,23,42,.65) 55%, rgba(15,23,42,.95) 100%),
+    linear-gradient(135deg, rgba(15,23,42,.9) 0%, rgba(13,148,136,.75) 100%);
+  background-color: #0F172A; /* fallback */
+  opacity: 1; transition: opacity .4s ease;
+}
+
+/* Content/form above overlay */
+.hero-v2__content, .estimate-card { position: relative; z-index: 2; }
+
+/* Mobile: slightly stronger overlay for text legibility */
+@media (max-width: 768px){
+  .hero-v2__overlay{
+    background:
+      radial-gradient(120% 140% at 72% 42%, rgba(15,23,42,0) 0%, rgba(15,23,42,.72) 54%, rgba(15,23,42,.96) 100%),
+      linear-gradient(135deg, rgba(15,23,42,.92) 0%, rgba(13,148,136,.78) 100%);
+  }
+}
+
+/* === LAUNCH POLISH – universal sections, cards, CTAs ===================== */
+.section{ padding-block: clamp(48px, 8vw, 96px); }
+.section--surface{ background: var(--color-surface-alt); }
+.section--band-dark{
+  background: linear-gradient(180deg, rgba(15,23,42,1) 0%, rgba(15,23,42,.96) 100%);
+  color:#fff;
+}
+.section__header--centered{ text-align:center; max-width:70ch; margin-inline:auto; }
+.section__eyebrow{
+  display:inline-block; font: var(--fw-semibold) var(--text-xs)/1 var(--font-sans);
+  letter-spacing:.12em; text-transform:uppercase; color: var(--color-primary);
+  margin-bottom: var(--space-xs);
+}
+.section__title{ font-size: var(--fs-800) }
+.section__lead{ color: var(--color-text-muted) }
+.section--band-dark .section__lead{ color: rgba(255,255,255,.82) }
+.card,.c-card{
+  background: var(--color-surface);
+  border:1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-card);
+}
+.section--band-dark .card{ background: rgba(255,255,255,.04); border-color: rgba(255,255,255,.12) }
+.c-button--accent{
+  background: var(--color-accent); color:#111;
+  border:1px solid var(--color-accent-hover);
+}
+.c-button--accent:hover{ background: var(--color-accent-hover) }
+.c-button--ghost-light{
+  background: transparent; color:#fff; border:1px solid rgba(255,255,255,.55);
+}
+.c-button--ghost-light:hover{ border-color:#fff }
+.c-button--large{ padding: var(--space-md) var(--space-lg); font-size: var(--fs-600); }
+
+/* Pricing helpers */
+.pricing-intro{ text-align:center; max-width:72ch; margin:0 auto var(--space-xl); }
+.pricing-grid{ display:grid; gap:var(--space-lg); grid-template-columns:repeat(3,minmax(0,1fr)); }
+@media (max-width:980px){ .pricing-grid{ grid-template-columns:1fr; } }
+.plan-card .plan-price{ font-size: clamp(1.75rem,3vw,2.25rem); font-weight: var(--fw-bold); }
+.plan-card .plan-cta{ margin-top: var(--space-md); }
+
+/* === Bulletproof hero layer stack ======================================= */
+/* parent as stacking root */
+.hero-v2__background{ position:relative; isolation:isolate; }
+
+/* 0: fallback image (always paints) */
+.hero-v2__bg-fallback{
+  position:absolute; inset:0;
+  background-size:cover; background-position:center; background-repeat:no-repeat;
+  z-index:0;
+}
+
+/* 1: SVG media (masked image) */
+.hero-v2__media--svg{ position:relative; z-index:1; }
+.hero-v2__media--svg svg{
+  position:absolute; inset:0; width:100%; height:100%;
+  display:block; visibility:visible; opacity:1;
+}
+
+/* 2: overlay gradient */
+.hero-v2__overlay{ position:absolute; inset:0; z-index:2; pointer-events:none;
+  background:
+    radial-gradient(120% 120% at 70% 40%, rgba(15,23,42,0) 0%, rgba(15,23,42,.65) 55%, rgba(15,23,42,.95) 100%),
+    linear-gradient(135deg, rgba(15,23,42,.9) 0%, rgba(13,148,136,.75) 100%);
+  background-color:#0F172A;
+}
+
+/* 3: content/form */
+.hero-v2__content, .estimate-card{ position:relative; z-index:3; }
+
+/* === Conversion polish standardizations =================================== */
+.section{
+  padding: clamp(3rem, 6vw, 5.5rem) 0;
+  position: relative;
+}
+.section + .section{
+  margin-top: 0;
+}
+.section--surface{
+  background: var(--color-surface, #ffffff);
+}
+.section--band-dark{
+  background: radial-gradient(160% 160% at 70% 0%, rgba(13,148,136,0.45) 0%, rgba(15,23,42,0.92) 55%, rgba(15,23,42,1) 100%);
+  color: #fff;
+}
+.section--band-dark .section__eyebrow,
+.section--band-dark .section__title,
+.section--band-dark .section__lead{
+  color: #fff;
+}
+.section__header--centered{
+  text-align: center;
+  margin: 0 auto clamp(1.5rem, 4vw, 3rem);
+  max-width: 68ch;
+}
+.section__eyebrow{
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.35rem;
+  font-size: var(--fs-200, 0.85rem);
+  font-weight: var(--fw-semibold, 600);
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: var(--color-accent, #0D9488);
+  margin-bottom: var(--space-xs, 0.5rem);
+}
+.section__title{
+  font-size: clamp(2rem, 5vw, 3.25rem);
+  line-height: 1.08;
+  margin-bottom: var(--space-sm, 0.75rem);
+}
+.section__lead{
+  font-size: clamp(1.05rem, 2.4vw, 1.35rem);
+  color: var(--color-text-muted, #64748b);
+  margin: 0 auto;
+  max-width: 60ch;
+}
+.section--band-dark .section__lead{
+  color: rgba(255,255,255,0.82);
+}
+.card,
+.c-card,
+.plan-card,
+.mp-commercial-card,
+.mp-specialty-card{
+  background: var(--color-surface, #ffffff);
+  border-radius: var(--radius-lg, 1.125rem);
+  border: 1px solid rgba(15,23,42,0.08);
+  box-shadow: 0 18px 40px rgba(15,23,42,0.08);
+  padding: clamp(1.75rem, 3vw, 2.5rem);
+}
+.card > * + *,
+.c-card > * + *,
+.plan-card > * + *{
+  margin-top: var(--space-sm, 0.75rem);
+}
+.c-button--accent{
+  background: var(--color-accent, #0D9488);
+  color: #fff;
+  border-color: transparent;
+}
+.c-button--accent:hover,
+.c-button--accent:focus-visible{
+  background: var(--color-accent-strong, #0B7C72);
+  color: #fff;
+}
+.c-button--ghost-light{
+  background: rgba(255,255,255,0.08);
+  color: #fff;
+  border-color: rgba(255,255,255,0.35);
+}
+.section:not(.section--band-dark) .c-button--ghost-light{
+  background: rgba(15,23,42,0.06);
+  color: var(--color-text, #0f172a);
+  border-color: rgba(15,23,42,0.16);
+}
+.c-button--ghost-light:hover,
+.c-button--ghost-light:focus-visible{
+  border-color: rgba(255,255,255,0.6);
+  color: #fff;
+}
+.section:not(.section--band-dark) .c-button--ghost-light:hover,
+.section:not(.section--band-dark) .c-button--ghost-light:focus-visible{
+  background: rgba(15,23,42,0.12);
+  color: var(--color-text, #0f172a);
+}
+.c-button--large{
+  min-height: 3.125rem;
+  padding: 0 var(--space-xl, 2.5rem);
+  font-weight: var(--fw-semibold, 600);
+  gap: var(--space-xs, 0.5rem);
+}
+.pricing-grid{
+  display: grid;
+  gap: var(--space-lg, 2rem);
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  align-items: stretch;
+}
+@media (max-width: 980px){
+  .pricing-grid{
+    grid-template-columns: 1fr;
+  }
+}
+.plan-card .plan-price{
+  font-size: clamp(2rem, 4vw, 2.75rem);
+  color: var(--color-accent, #0D9488);
+  font-weight: var(--fw-bold, 700);
+}
+.plan-card .plan-cta{
+  margin-top: var(--space-md, 1rem);
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+.hero-v2__trust{
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: var(--space-sm, 0.75rem);
+  margin-top: var(--space-lg, 2rem);
+}
+.hero-v2__trust .trust-stat{
+  border-radius: var(--radius-md, 0.75rem);
+  background: rgba(15,23,42,0.66);
+  padding: var(--space-md, 1.1rem);
+  text-align: center;
+  color: #fff;
+}
+.hero-v2__trust .trust-stat strong{
+  display: block;
+  font-size: 1.5rem;
+}
+@media (max-width: 1024px){
+  .hero-v2__trust{
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+@media (max-width: 640px){
+  .hero-v2__trust{
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+input:not([type="checkbox"]):not([type="radio"]),
+select,
+textarea{
+  border: 1px solid rgba(15,23,42,0.16);
+  border-radius: var(--radius-md, 0.75rem);
+  padding: 0.85rem 1rem;
+  font-size: 1rem;
+  background-color: #fff;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+input:not([type="checkbox"]):not([type="radio"]):focus,
+select:focus,
+textarea:focus{
+  border-color: var(--color-accent, #0D9488);
+  box-shadow: 0 0 0 3px rgba(13,148,136,0.15);
+  outline: none;
+}
+textarea{
+  min-height: 160px;
+  resize: vertical;
+}
+.hero-v2__background{ position:relative; isolation:isolate; }
+.hero-v2__bg-fallback{ position:absolute; inset:0; background-size:cover; background-position:center; background-repeat:no-repeat; z-index:0; }
+.hero-v2__media--svg{ position:relative; z-index:1; }
+.hero-v2__media--svg svg{ position:absolute; inset:0; width:100%; height:100%; display:block; opacity:1; visibility:visible; }
+.hero-v2__overlay{
+  position:absolute;
+  inset:0;
+  z-index:2;
+  pointer-events:none;
+  background:
+    radial-gradient(120% 120% at 70% 40%, rgba(15,23,42,0) 0%, rgba(15,23,42,0.65) 55%, rgba(15,23,42,0.95) 100%),
+    linear-gradient(135deg, rgba(15,23,42,0.9) 0%, rgba(13,148,136,0.75) 100%);
+  background-color:#0F172A;
+}
+.hero-v2__content,
+.estimate-card{
+  position:relative;
+  z-index:3;
+}

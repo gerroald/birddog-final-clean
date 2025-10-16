@@ -2,8 +2,10 @@
 require_once get_stylesheet_directory() . '/business-info.php';
 
 add_action('wp_enqueue_scripts', function () {
-  wp_enqueue_style('tokens-3', get_stylesheet_directory_uri().'/assets/css/tokens-3.css', [], '1.0');
-  wp_enqueue_style('homepage-v2', get_stylesheet_directory_uri().'/assets/css/homepage-v2.css', ['tokens-3'], '1.0');
+  $dir = get_stylesheet_directory();
+  $uri = get_stylesheet_directory_uri();
+  wp_enqueue_style('tokens-3', $uri.'/assets/css/tokens-3.css', [], filemtime("$dir/assets/css/tokens-3.css"));
+  wp_enqueue_style('homepage-v2', $uri.'/assets/css/homepage-v2.css', ['tokens-3'], filemtime("$dir/assets/css/homepage-v2.css"));
 }, 20);
 
 add_action('wp_enqueue_scripts', function () {
@@ -50,7 +52,8 @@ add_action('wp_enqueue_scripts', function () {
     }
 // Homepage V2 (visual redesign)
     if (is_page_template('page-templates/page-home-v2.php')) {
-        wp_enqueue_style('sr-homepage-v2', get_stylesheet_directory_uri().'/assets/css/homepage-v2.css', ['sr-site'], '1.0.0');
+        $ver = file_exists(get_stylesheet_directory().'/assets/css/homepage-v2.css') ? filemtime(get_stylesheet_directory().'/assets/css/homepage-v2.css') : '1.0.0';
+        wp_enqueue_style('sr-homepage-v2', get_stylesheet_directory_uri().'/assets/css/homepage-v2.css', ['sr-site'], $ver);
     }
 	
   // Child scripts with defer

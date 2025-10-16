@@ -19,7 +19,7 @@ get_header();
 <main id="main" class="bd-page bd-page--about" data-page="about">
 
   <!-- HERO: Tight, centered -->
-  <section class="bd-hero bd-hero--tight" aria-labelledby="hero-title" style="background: var(--color-bg-dark); color: var(--color-text-inverse); padding: var(--space-3xl) var(--space-md);">
+  <section class="section section--band-dark bd-hero bd-hero--tight" aria-labelledby="hero-title" style="background: var(--color-bg-dark); color: var(--color-text-inverse); padding: var(--space-3xl) var(--space-md);">
     <div class="bd-container" style="max-width: 1100px; margin: 0 auto; text-align: center;">
       <div class="bd-hero__content">
         <h1 id="hero-title" class="bd-hero__title" style="font-size: var(--fs-900); line-height: var(--lh-tight); font-weight: var(--fw-bold); color: var(--color-text-inverse); margin: 0 0 var(--space-md);">
@@ -29,15 +29,15 @@ get_header();
           Making your move as effortless as possible since 2005—licensed, insured, and proud to call OKC home.
         </p>
         <div class="bd-hero__actions" style="display: flex; gap: var(--space-md); justify-content: center; flex-wrap: wrap;">
-          <a class="bd-btn bd-btn--primary" href="/pricing/" style="display: inline-block; padding: var(--space-sm) var(--space-xl); font-weight: var(--fw-bold); border-radius: var(--radius-sm); text-decoration: none; background: var(--color-accent); color: var(--color-text); border: none; box-shadow: var(--shadow-card); transition: all var(--transition-base);">Get Free Quote</a>
-          <a class="bd-btn bd-btn--ghost" href="tel:+14055354554" style="display: inline-block; padding: var(--space-sm) var(--space-xl); font-weight: var(--fw-bold); border-radius: var(--radius-sm); text-decoration: none; background: transparent; color: var(--color-text-inverse); border: 1px solid var(--alias-alnp-border-ghost); transition: all var(--transition-base);">Call (405) 535-4554</a>
+          <a class="bd-btn bd-btn--primary c-button c-button--accent c-button--large" href="/pricing/" style="display: inline-block; padding: var(--space-sm) var(--space-xl); font-weight: var(--fw-bold); border-radius: var(--radius-sm); text-decoration: none; background: var(--color-accent); color: var(--color-text); border: none; box-shadow: var(--shadow-card); transition: all var(--transition-base);">Get Free Quote</a>
+          <a class="bd-btn bd-btn--ghost c-button c-button--ghost-light c-button--large" href="tel:+14055354554" style="display: inline-block; padding: var(--space-sm) var(--space-xl); font-weight: var(--fw-bold); border-radius: var(--radius-sm); text-decoration: none; background: transparent; color: var(--color-text-inverse); border: 1px solid var(--alias-alnp-border-ghost); transition: all var(--transition-base);">Call (405) 535-4554</a>
         </div>
       </div>
     </div>
   </section>
 
   <!-- SECTION 1: Trust Stats (White bg) -->
-  <section class="bd-section bd-section--pad" aria-labelledby="stats-title" style="background: var(--color-surface); color: var(--color-text); padding: var(--alias-alnp-section-padding-y) var(--space-md);">
+  <section class="section section--surface bd-section bd-section--pad" aria-labelledby="stats-title" style="background: var(--color-surface); color: var(--color-text); padding: var(--alias-alnp-section-padding-y) var(--space-md);">
     <div class="bd-container" style="max-width: 1100px; margin: 0 auto;">
       <header class="bd-section__header" style="text-align: center; margin-bottom: var(--space-2xl);">
         <h2 id="stats-title" class="bd-section__title" style="font-size: var(--fs-800); line-height: var(--lh-tight); font-weight: var(--fw-bold); color: var(--color-text); margin: 0 0 var(--space-sm);">Proven Track Record You Can Trust</h2>
@@ -64,7 +64,7 @@ get_header();
   </section>
 
   <!-- SECTION 2: Our Story (Light gray bg) -->
-  <section class="bd-section bd-section--alt" aria-labelledby="story-title" style="background: var(--color-bg); color: var(--color-text); padding: var(--alias-alnp-section-padding-y) var(--space-md);">
+  <section class="section bd-section bd-section--alt" aria-labelledby="story-title" style="background: var(--color-bg); color: var(--color-text); padding: var(--alias-alnp-section-padding-y) var(--space-md);">
     <div class="bd-container" style="max-width: 1100px; margin: 0 auto;">
       <header class="bd-section__header" style="text-align: center; margin-bottom: var(--space-2xl);">
         <h2 id="story-title" class="bd-section__title" style="font-size: var(--fs-800); line-height: var(--lh-tight); font-weight: var(--fw-bold); color: var(--color-text); margin: 0 0 var(--space-sm);">Neighbors You Can Trust</h2>
@@ -91,7 +91,7 @@ get_header();
   </section>
 
   <!-- SECTION 3: What Makes Us Different (White bg) -->
-  <section class="bd-section bd-section--pad" aria-labelledby="different-title" style="background: var(--color-surface); color: var(--color-text); padding: var(--alias-alnp-section-padding-y) var(--space-md);">
+  <section class="section section--surface bd-section bd-section--pad" aria-labelledby="different-title" style="background: var(--color-surface); color: var(--color-text); padding: var(--alias-alnp-section-padding-y) var(--space-md);">
     <div class="bd-container" style="max-width: 1100px; margin: 0 auto;">
       <header class="bd-section__header" style="text-align: center; margin-bottom: var(--space-2xl);">
         <h2 id="different-title" class="bd-section__title" style="font-size: var(--fs-800); line-height: var(--lh-tight); font-weight: var(--fw-bold); color: var(--color-text); margin: 0 0 var(--space-sm);">What Makes Bird Dog Stand Out</h2>
@@ -127,7 +127,7 @@ get_header();
   </section>
 
   <!-- SECTION 4: What We Move (Light gray bg) -->
-  <section class="bd-section bd-section--alt" aria-labelledby="services-title" style="background: var(--color-bg); color: var(--color-text); padding: var(--alias-alnp-section-padding-y) var(--space-md);">
+  <section class="section bd-section bd-section--alt" aria-labelledby="services-title" style="background: var(--color-bg); color: var(--color-text); padding: var(--alias-alnp-section-padding-y) var(--space-md);">
     <div class="bd-container" style="max-width: 1100px; margin: 0 auto;">
       <header class="bd-section__header" style="text-align: center; margin-bottom: var(--space-2xl);">
         <h2 id="services-title" class="bd-section__title" style="font-size: var(--fs-800); line-height: var(--lh-tight); font-weight: var(--fw-bold); color: var(--color-text); margin: 0 0 var(--space-sm);">What We Move</h2>
@@ -159,7 +159,7 @@ get_header();
   </section>
 
   <!-- SECTION 5: Our Promise (White bg) -->
-  <section class="bd-section bd-section--pad" aria-labelledby="promise-title" style="background: var(--color-surface); color: var(--color-text); padding: var(--alias-alnp-section-padding-y) var(--space-md);">
+  <section class="section section--surface bd-section bd-section--pad" aria-labelledby="promise-title" style="background: var(--color-surface); color: var(--color-text); padding: var(--alias-alnp-section-padding-y) var(--space-md);">
     <div class="bd-container" style="max-width: 1100px; margin: 0 auto;">
       <header class="bd-section__header" style="text-align: center; margin-bottom: var(--space-2xl);">
         <h2 id="promise-title" class="bd-section__title" style="font-size: var(--fs-800); line-height: var(--lh-tight); font-weight: var(--fw-bold); color: var(--color-text); margin: 0 0 var(--space-sm);">Our Promise to Oklahoma City</h2>
@@ -186,7 +186,7 @@ get_header();
   </section>
 
   <!-- SECTION 6: FAQ (Light gray bg) -->
-  <section class="bd-section bd-section--alt" aria-labelledby="faq-title" style="background: var(--color-bg); color: var(--color-text); padding: var(--alias-alnp-section-padding-y) var(--space-md);">
+  <section class="section bd-section bd-section--alt" aria-labelledby="faq-title" style="background: var(--color-bg); color: var(--color-text); padding: var(--alias-alnp-section-padding-y) var(--space-md);">
     <div class="bd-container" style="max-width: 900px; margin: 0 auto;">
       <header class="bd-section__header" style="text-align: center; margin-bottom: var(--space-2xl);">
         <h2 id="faq-title" class="bd-section__title" style="font-size: var(--fs-800); line-height: var(--lh-tight); font-weight: var(--fw-bold); color: var(--color-text); margin: 0 0 var(--space-sm);">Getting to Know Bird Dog Moving</h2>
@@ -240,13 +240,14 @@ get_header();
   </section>
 
   <!-- FINAL CTA -->
-  <section class="bd-final-cta" style="background: var(--color-accent-light); color: var(--color-text); padding: var(--space-3xl) var(--space-md); text-align: center;">
-    <div class="bd-container" style="max-width: 900px; margin: 0 auto;">
-      <h2 class="bd-final-cta__title" style="font-size: var(--fs-800); line-height: var(--lh-tight); font-weight: var(--fw-bold); color: var(--color-text); margin: 0 0 var(--space-md);">Experience the Bird Dog Difference</h2>
-      <p class="bd-final-cta__subtitle" style="font-size: var(--fs-500); color: var(--color-text-muted); margin: 0 0 var(--space-xl);">Your next move is as smooth as a wagging tail. Let's make it happen together.</p>
-      <div class="bd-final-cta__actions" style="display: flex; gap: var(--space-md); justify-content: center; flex-wrap: wrap;">
-        <a class="bd-btn bd-btn--primary" href="/pricing/" style="display: inline-block; padding: var(--space-sm) var(--space-xl); font-weight: var(--fw-bold); border-radius: var(--radius-sm); text-decoration: none; background: var(--color-accent); color: var(--color-text); border: none; box-shadow: var(--shadow-card); transition: all var(--transition-base);">Get Your Free Quote</a>
-        <a class="bd-btn bd-btn--secondary" href="tel:+14055354554" style="display: inline-block; padding: var(--space-sm) var(--space-xl); font-weight: var(--fw-bold); border-radius: var(--radius-sm); text-decoration: none; background: transparent; color: var(--color-primary); border: 2px solid var(--color-primary); transition: all var(--transition-base);">Call (405) 535-4554</a>
+  <section id="estimate" class="section section--band-dark">
+    <div class="l-container section__header--centered">
+      <p class="section__eyebrow">Ready to Move?</p>
+      <h2 class="section__title">Book Your Stress-Free Move in Minutes</h2>
+      <p class="section__lead">Local, licensed, insured. Fair pricing, friendly crews.</p>
+      <div style="display:flex;gap:var(--space-md);justify-content:center;">
+        <a class="c-button c-button--accent c-button--large" href="#estimate">Get Free Estimate</a>
+        <a class="c-button c-button--ghost-light c-button--large" href="tel:+14055534554">Call (405) 553-4554</a>
       </div>
     </div>
   </section>
