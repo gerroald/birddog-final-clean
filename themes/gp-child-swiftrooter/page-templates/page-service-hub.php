@@ -1,6 +1,6 @@
 <?php
 /**
- * Template Name: Service Hub
+ * Template Name: Primary Pillar Service Hub (Residential, Commercial, Specialty)
  * Description: Main services overview page with grid of service cards
  *
  * @package Bird_Dog_Moving

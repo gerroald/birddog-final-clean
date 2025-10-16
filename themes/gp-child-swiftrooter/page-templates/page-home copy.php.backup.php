@@ -1,6 +1,6 @@
 <?php
 /*
-Template Name: Home – Black/Yellow/Teal
+Template Name: Live Prod Version Home – 
 */
 
 get_header(); ?>

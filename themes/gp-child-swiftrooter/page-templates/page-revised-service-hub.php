@@ -1,6 +1,6 @@
 <?php
 /**
- * Template Name: Revised Service Hub
+ * Template Name: Live Prod Version Revised Service Hub
  * Description: Main services overview page with grid of service cards
  *
  * @package Bird_Dog_Moving

@@ -1,6 +1,6 @@
 <?php
 /*
-Template Name: Pricing & Estimates
+Template Name: Live Prod Version Pricing	
 */
 
 get_header(); ?>

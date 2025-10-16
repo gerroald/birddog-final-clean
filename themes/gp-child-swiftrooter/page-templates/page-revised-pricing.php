@@ -1,6 +1,6 @@
 <?php
 /*
-Template Name: Pricing & Estimates
+Template Name: Integrated SEO Longform Pricing & Estimates
 */
 
 get_header(); ?>

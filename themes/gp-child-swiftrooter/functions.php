@@ -38,6 +38,15 @@ add_action('wp_enqueue_scripts', function () {
     // Styling for the graphite theme
     wp_enqueue_style('sr-graphite', get_stylesheet_directory_uri().'/assets/css/graphite.css', ['sr-site'], '1.0.0');
 
+// Homepage (cleaned version)
+    if (is_page_template('page-templates/page-home-CLEANED.php')) {
+        wp_enqueue_style('sr-homepage', get_stylesheet_directory_uri().'/assets/css/homepage.css', ['sr-site'], '1.0.0');
+    }
+// Homepage V2 (visual redesign)
+    if (is_page_template('page-templates/page-home-v2.php')) {
+        wp_enqueue_style('sr-homepage-v2', get_stylesheet_directory_uri().'/assets/css/homepage-v2.css', ['sr-site'], '1.0.0');
+    }
+	
   // Child scripts with defer
   wp_enqueue_script('sr-site', get_stylesheet_directory_uri().'/assets/js/site.js', [], '1.0.1', true);
   // wp_enqueue_script('sr-simple-theme-switcher', get_stylesheet_directory_uri().'/assets/js/simple-theme-switcher.js', [], '1.0.1', true);
