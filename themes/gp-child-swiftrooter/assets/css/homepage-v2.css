@@ -1,13 +1,34 @@
-/* ============================================
-   HOMEPAGE V2 - VISUAL REDESIGN
-   ============================================ */
-/* === Token Shim: align homepage-v2.css naming with your token file === */
+
+/* === HERO OVERLAY RESURRECTED (no markup required) ====================== */
+.hero-v2{ position:relative; isolation:isolate; }
+
+/* pseudo-overlay sits above media, below content */
+.hero-v2::before{
+  content:"";
+  position:absolute;
+  inset:0;
+  z-index:1;
+  pointer-events:none;
+  /* your disciplined gradient + solid fallback */
+  background:
+    radial-gradient(120% 120% at 70% 50%, rgba(15,23,42,0) 0%, rgba(15,23,42,.65) 55%, rgba(15,23,42,.95) 100%),
+    linear-gradient(135deg, rgba(15,23,42,.92) 0%, rgba(13,148,136,.75) 100%);
+  background-color:#0F172A;
+}
+
+/* ensure SVG stays underneath the overlay */
+.hero-v2__media--svg svg{ position:absolute; inset:0; width:100%; height:100%; z-index:0; }
+
+/* make sure text/form are above the overlay */
+.hero-v2__content, .estimate-card{ position:relative; z-index:2; }
+
+/* === Token Shim: map homepage-v2 names to tokens-3 variables === */
 :root{
   /* color aliases */
   --color-white: #fff;
   --color-text-body: var(--color-text, #0F172A);
   --color-brand: var(--color-brand-black, #0F172A);
-  /* type scale aliases (map text-* to fs-*) */
+  /* type scale aliases */
   --text-2xl: var(--fs-800);
   --text-xl:  var(--fs-700);
   --text-lg:  var(--fs-600);
@@ -51,7 +72,8 @@
 .hero-v2__overlay {
   position: absolute;
   inset: 0;
-  background: linear-gradient(
+  background-color: var(--color-brand, #0F172A);
+  background-image: linear-gradient(
     135deg,
     rgba(15, 23, 42, 0.95) 0%,
     rgba(13, 148, 136, 0.85) 100%
@@ -622,40 +644,27 @@
   --hero-vignette: radial-gradient(120% 120% at 70% 50%, rgba(15,23,42,0) 0%, rgba(15,23,42,.65) 55%, rgba(15,23,42,.95) 100%);
 }
 .hero-v2__overlay{
-  /* calmer, more legible blend */
   background:
     var(--hero-vignette),
     linear-gradient(135deg, rgba(15,23,42,.92) 0%, rgba(13,148,136,.75) 100%);
 }
-
-/* lock grid widths so text doesn't crash into form */
 .hero-v2__container{
   grid-template-columns:minmax(0, 1.05fr) minmax(0, .95fr);
   align-items:center;
 }
-
-/* badge: reduce noise, keep swagger */
 .hero-v2__badge{
   background: rgba(245,158,11,.12);
   border-color: rgba(245,158,11,.55);
   font-weight: var(--fw-semibold);
 }
-
-/* title: 3 lines max, crisp rhythm */
 .hero-v2__title{
   margin-bottom: var(--space-sm);
   line-height: 1.08;
   word-wrap: anywhere;
 }
 .hero-v2__title-accent{ letter-spacing:.2px }
-
-/* lead: narrower for scanability */
 .hero-v2__lead{ max-width: 46ch }
-
-/* actions: tighter spacing on mobile */
 @media (max-width:768px){ .hero-v2__actions{ gap: var(--space-sm) } }
-
-/* trust row: equal columns, calmer sizing */
 .hero-v2__trust{
   gap: clamp(12px, 2.2vw, 28px);
   border-top: 1px solid rgba(255,255,255,.18);
@@ -663,8 +672,6 @@
 .trust-stat strong{
   font-size: clamp(1.125rem, 2.1vw, 1.375rem);
 }
-
-/* form card: reduce glow, add subtle border */
 .estimate-card{
   border: 1px solid rgba(15,23,42,.08);
   box-shadow: var(--shadow-lg);
@@ -677,16 +684,13 @@
   border-radius: var(--radius-sm);
   padding: .7rem .8rem;
 }
-
-/* proof bar: quieter logos */
 .proof-badge{ opacity:.6 }
 .proof-badge:hover{ opacity:.9 }
 
-/* === Reusable polish for “homepage-v2.css the other pages” === */
-/* section headers */
-.section__header--centered{
-  text-align:center; max-width:70ch; margin-inline:auto;
-}
+/* === Reusable page polish === */
+.section{ padding-block: clamp(48px, 8vw, 96px) }
+.section--surface{ background: var(--color-surface-alt) }
+.section__header--centered{ text-align:center; max-width:70ch; margin-inline:auto; }
 .section__eyebrow{
   display:inline-block; font: var(--fw-semibold) var(--text-xs)/1 var(--font-sans);
   color: var(--color-primary); letter-spacing:.12em; text-transform:uppercase;
@@ -694,16 +698,12 @@
 }
 .section__title{ font-size: var(--fs-800) }
 .section__lead{ color: var(--color-text-muted) }
-
-/* content cards */
 .card, .c-card{
   background: var(--color-surface);
   border:1px solid var(--color-border);
   border-radius: var(--radius-lg);
   box-shadow: var(--shadow-card);
 }
-
-/* buttons (inherit your brand tokens) */
 .c-button--accent{
   background: var(--color-accent); color: #111;
   border:1px solid var(--color-accent-hover);
@@ -713,15 +713,240 @@
   background: transparent; color:#fff; border:1px solid rgba(255,255,255,.5);
 }
 .c-button--ghost-light:hover{ border-color:#fff }
-
-/* spacing rhythm for sections */
-.section{ padding-block: clamp(48px, 8vw, 96px) }
-.section--surface{ background: var(--color-surface-alt) }
-
-/* services two-col fixes on tablet */
 @media (max-width:968px){
   .service-showcase__content{ padding: 0 }
 }
-
-/* “areas we serve” hover restraint */
 .area-card-v2:hover{ transform: translateY(-1px) }
+/* ==== HERO FINISHING PACK ================================================= */
+
+/* 1) Zero CLS: reserve space for the hero media even before image loads */
+.hero-v2__bg,
+.hero-v2__bg,
+.hero-v2__media--svg {
+  min-height: clamp(300px, 45vw, 580px);
+}
+.hero-v2__media--svg {
+  position: relative;
+  width:100%;
+  aspect-ratio: 16 / 9;
+  overflow:hidden;
+  display:block;
+}
+.hero-v2__media--svg svg {
+  position:absolute;
+  inset:0;
+  width:100%;
+  height:100%;
+  object-fit:cover;
+}
+.hero-v2__media--svg image,
+.hero-v2__bg img{
+  width:100%; height:100%; object-fit:cover; display:block;
+}
+
+/* 2) Overlay focus variants (choose one with a modifier class only) */
+.hero-v2--focus-left  .hero-v2__overlay{
+  background:
+    radial-gradient(120% 120% at 30% 50%, rgba(15,23,42,0) 0%, rgba(15,23,42,.65) 55%, rgba(15,23,42,.95) 100%),
+    linear-gradient(135deg, rgba(15,23,42,.92) 0%, rgba(13,148,136,.75) 100%);
+}
+.hero-v2--focus-right .hero-v2__overlay{
+  background:
+    radial-gradient(120% 120% at 70% 50%, rgba(15,23,42,0) 0%, rgba(15,23,42,.65) 55%, rgba(15,23,42,.95) 100%),
+    linear-gradient(135deg, rgba(15,23,42,.92) 0%, rgba(13,148,136,.75) 100%);
+}
+/* default already set in your disciplined block; these just give you switches */
+
+/* 3) Trust row—grid guardrails so it never looks crowded */
+.hero-v2__trust{
+  grid-template-columns: repeat(4, minmax(0,1fr));
+}
+@media (max-width:900px){
+  .hero-v2__trust{ grid-template-columns: repeat(3,minmax(0,1fr)); }
+}
+@media (max-width:640px){
+  .hero-v2__trust{ grid-template-columns: repeat(2,minmax(0,1fr)); }
+}
+.proof-badge{ min-height:44px; align-items:center; justify-content:center }
+
+/* 4) Motion respect (keeps the swagger, chills the seasick) */
+@media (prefers-reduced-motion: reduce){
+  *{ animation-duration:.01ms !important; animation-iteration-count:1 !important; transition-duration:.01ms !important; }
+}
+
+/* ==== BANDED SECTIONS (to “homepage-v2.css” your other pages) ============ */
+.section--band-dark{
+  background: linear-gradient(180deg, rgba(15,23,42,1) 0%, rgba(15,23,42,.96) 100%);
+  color: var(--color-white);
+}
+.section--band-dark .section__lead{ color: rgba(255,255,255,.82) }
+.section--band-dark .card{ background: rgba(255,255,255,.04); border-color: rgba(255,255,255,.12) }
+.section--band-dark .c-button--ghost-light{ border-color: rgba(255,255,255,.6) }
+.section--band-dark .c-button--accent{ color:#111 }
+
+/* ==== SMALL UTILITIES ===================================================== */
+.sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
+/* === HERO: zero-CLS, fixed ratio, no chaos =============================== */
+/* Works whether your hero image is a plain <img> or inside an <svg> mask. */
+
+.hero-v2{ position: relative; isolation:isolate; }
+
+/* 1) Reserve height BEFORE the media loads */
+.hero-v2__bg,
+.hero-v2__media {            /* covers both IMG and SVG setups */
+  position: relative;
+  display: block;
+  width: 100%;
+  aspect-ratio: 16 / 9;      /* change if your crop is different */
+  min-height: clamp(320px, 45vw, 580px);
+  overflow: hidden;
+}
+
+/* 2) Make the media fill the box without stretching */
+.hero-v2__bg img{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* If you’re using an SVG mask, this pins it to the reserved box */
+.hero-v2__media svg{
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+}
+
+/* 3) Overlay sits on top, provides contrast even before image shows */
+.hero-v2__overlay{
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background:
+    radial-gradient(120% 120% at 70% 50%, rgba(15,23,42,0) 0%, rgba(
+/* === SVG HERO FIX ========================================================= */
+
+/* Keeps the hero height steady before SVG renders */
+.hero-v2__media.hero-v2__media--svg {
+  position: relative;
+  display: block;
+  width: 100%;
+  aspect-ratio: 16 / 9;            /* adjust if your mask shape is taller */
+  min-height: clamp(320px, 45vw, 580px);
+  overflow: hidden;
+  isolation: isolate;
+}
+
+/* Pins the SVG and makes it fill the box exactly */
+.hero-v2__media--svg svg {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+}
+
+/* Optional: solid background so no flash before image loads */
+.hero-v2__background {
+  background-color: #0F172A;
+}
+
+/* Overlay stays above the SVG */
+.hero-v2__overlay {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  pointer-events: none;
+  background:
+    radial-gradient(120% 120% at 70% 50%, rgba(15,23,42,0) 0%, rgba(15,23,42,.65) 55%, rgba(15,23,42,.95) 100%),
+    linear-gradient(135deg, rgba(15,23,42,.92) 0%, rgba(13,148,136,.75) 100%);
+  background-color: #0F172A;
+}
+
+/* Trust row: keeps icons from crowding */
+.hero-v2__trust {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: clamp(12px, 2vw, 28px);
+}
+@media (max-width:900px){ .hero-v2__trust{ grid-template-columns: repeat(3,1fr);} }
+@media (max-width:640px){ .hero-v2__trust{ grid-template-columns: repeat(2,1fr);} }
+
+/* Respect reduced motion preference */
+@media (prefers-reduced-motion: reduce){
+  *{animation-duration:.01ms!important;transition-duration:.01ms!important;}
+}
+/* === HERO FADE-IN + VIGNETTE SYNC ======================================= */
+
+/* fade both layers together on first paint */
+.hero-v2__media--svg svg,
+.hero-v2__overlay {
+  opacity: 0;
+  animation: heroFadeIn 1s ease-out forwards;
+}
+
+@keyframes heroFadeIn {
+  0%   { opacity: 0; transform: scale(1.02); }
+  70%  { opacity: 1; transform: scale(1); }
+  100% { opacity: 1; transform: none; }
+}
+
+/* hold overlay until the image is visible */
+.hero-v2__overlay {
+  animation-delay: 0.3s;
+}
+
+/* motion-safe: users who prefer reduced motion see no animation */
+@media (prefers-reduced-motion: reduce) {
+  .hero-v2__media--svg svg,
+  .hero-v2__overlay {
+    animation: none !important;
+    opacity: 1 !important;
+    transform: none !important;
+  }
+}
+/* === Launch Polish: de-dupe + normalize ================================ */
+
+/* Keep exactly one eyebrow style (use the tokenized, lighter one) */
+.section__eyebrow{ 
+  display:inline-block; 
+  font: var(--fw-semibold) var(--text-xs)/1 var(--font-sans);
+  letter-spacing:.12em; 
+  text-transform:uppercase; 
+  color: var(--color-primary);
+  margin-bottom: var(--space-xs);
+}
+
+/* Remove earlier conflicting .section__eyebrow rules (if any) by lowering noise */
+.section__eyebrow--light{ color: var(--color-accent); }
+
+/* Fix accidental duplicate line and ensure hero bg selectors are clean */
+.hero-v2__bg{ position:relative; display:block; width:100%; }
+.hero-v2__bg img{ width:100%; height:100%; object-fit:cover; display:block; }
+
+/* Button sizing harmony site-wide */
+.c-button--large{ padding: var(--space-md) var(--space-lg); font-size: var(--fs-600); }
+
+/* Cards/sections consistent rhythm (safe on every page) */
+.section{ padding-block: clamp(48px, 8vw, 96px); }
+.section--surface{ background: var(--color-surface-alt); }
+.card,.c-card{ background:var(--color-surface); border:1px solid var(--color-border); border-radius:var(--radius-lg); box-shadow:var(--shadow-card); }
+
+/* Ghost/Accent buttons finalized */
+.c-button--ghost-light{ background:transparent; color:#fff; border:1px solid rgba(255,255,255,.55); }
+.c-button--ghost-light:hover{ border-color:#fff; }
+.c-button--accent{ background:var(--color-accent); color:#111; border:1px solid var(--color-accent-hover); }
+.c-button--accent:hover{ background:var(--color-accent-hover); }
+
+/* ‘Band’ variant to breathe long pages */
+.section--band-dark{ background: linear-gradient(180deg, rgba(15,23,42,1) 0%, rgba(15,23,42,.96) 100%); color:#fff; }
+.section--band-dark .section__lead{ color: rgba(255,255,255,.82) }
+.section--band-dark .card{ background: rgba(255,255,255,.04); border-color: rgba(255,255,255,.12) }
+.section--band-dark .c-button--ghost-light{ border-color: rgba(255,255,255,.6) }
+.section--band-dark .c-button--accent{ color:#111 }
+
+/* Trust row guardrails (prevents crowding) */
+.hero-v2__trust{ grid-template-columns:repeat(4,minmax(0,1fr)); gap: clamp(12px, 2.2vw, 28px); border-top:1px solid rgba(255,255,255,.18) }
+@media (max-width:900px){ .hero-v2__trust{ grid-template-columns:repeat(3,1fr) } }
+@media (max-width:640px){ .hero-v2__trust{ grid-template-columns:repeat(2,1fr) } }
+.proof-badge{ min-height:44px; align-items:center; justify-content:center; opacity:.7; transition:opacity .2s }
+.proof-badge:hover{ opacity:1 }

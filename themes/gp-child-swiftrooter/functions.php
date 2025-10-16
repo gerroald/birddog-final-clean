@@ -1,5 +1,11 @@
 <?php
 require_once get_stylesheet_directory() . '/business-info.php';
+
+add_action('wp_enqueue_scripts', function () {
+  wp_enqueue_style('tokens-3', get_stylesheet_directory_uri().'/assets/css/tokens-3.css', [], '1.0');
+  wp_enqueue_style('homepage-v2', get_stylesheet_directory_uri().'/assets/css/homepage-v2.css', ['tokens-3'], '1.0');
+}, 20);
+
 add_action('wp_enqueue_scripts', function () {
   // Parent styles
   wp_enqueue_style('generatepress', get_template_directory_uri().'/style.css', [], null);
@@ -598,6 +604,15 @@ add_shortcode('bd_modern_header', function(){
         <a href="#estimate" class="c-button c-button--primary">Get Free Quote</a>
       </div>
     </div>
+	<!-- Fonts: no FOUT + faster paint -->
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preload" as="style" href="/assets/fonts/your-font.css">
+<link rel="stylesheet" href="/assets/fonts/your-font.css" media="print" onload="this.media='all'">
+<noscript><link rel="stylesheet" href="/assets/fonts/your-font.css"></noscript>
+
+<!-- Preload hero image to kill the last flash -->
+<link rel="preload" as="image" href="<?php echo esc_url( get_stylesheet_directory_uri().'/assets/img/bird-dog-moving-van-branded.jpg' ); ?>">
+
   </header>
   <?php return ob_get_clean();
 });
@@ -713,6 +728,5 @@ add_filter('nav_menu_item_title', function($title, $item) {
   }
   return $title;
 }, 10, 2);
-
 
 

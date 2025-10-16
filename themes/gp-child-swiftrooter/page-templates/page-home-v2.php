@@ -8,7 +8,18 @@ get_header(); ?>
 <!-- Hero Section with Real Truck Background -->
 <section class="hero-v2 hero-v2--disciplined">
   <div class="hero-v2__background">
-    <img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/bird-dog-moving-van-branded.jpg" alt="Bird Dog Moving truck" class="hero-v2__bg-image">
+    <div class="hero-v2__media hero-v2__media--svg">
+      <svg viewBox="0 0 800 400" preserveAspectRatio="xMidYMid slice" role="img" aria-label="Bird Dog Moving truck and crew in Oklahoma City" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+        <defs>
+          <mask id="hero-v2-mask" maskUnits="userSpaceOnUse" x="0" y="0" width="800" height="400">
+            <rect width="800" height="400" fill="#fff"></rect>
+          </mask>
+        </defs>
+        <g mask="url(#hero-v2-mask)">
+          <image xlink:href="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/bird-dog-moving-van-branded.jpg" href="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/bird-dog-moving-van-branded.jpg" x="0" y="0" width="800" height="400" preserveAspectRatio="xMidYMid slice" />
+        </g>
+      </svg>
+    </div>
     <div class="hero-v2__overlay"></div>
   </div>
   
@@ -73,6 +84,21 @@ get_header(); ?>
       </div>
     </aside>
   </div>
+ <script>
+document.addEventListener('DOMContentLoaded', () => {
+  const hero = document.querySelector('.hero-v2');
+  const img = hero?.querySelector('.hero-v2__media--svg image');
+
+  if (!img) return;
+
+  const preload = new Image();
+  const src = img.getAttribute('href') || img.getAttribute('xlink:href');
+
+  preload.onload = () => hero.classList.add('hero--ready');
+  preload.src = src;
+});
+</script>
+
 </section>
 
 <!-- Social Proof Bar -->
@@ -112,7 +138,7 @@ get_header(); ?>
             <li>Protection for floors, walls, and doorways</li>
             <li>Same-day service available</li>
           </ul>
-          <a href="<?php echo esc_url(home_url('/services/local-moving/')); ?>" class="c-button c-button--secondary">
+          <a href="<?php echo esc_url(home_url('/services/residential-moving-services/')); ?>" class="c-button c-button--secondary">
             Learn More
             <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
               <line x1="5" y1="12" x2="19" y2="12"></line>
@@ -135,7 +161,7 @@ get_header(); ?>
             <li>Modular furniture expertise</li>
             <li>Minimal business disruption</li>
           </ul>
-          <a href="<?php echo esc_url(home_url('/services/commercial-moving/')); ?>" class="c-button c-button--secondary">
+          <a href="<?php echo esc_url(home_url('/services/office-commercial-moving-services')); ?>" class="c-button c-button--secondary">
             Learn More
             <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
               <line x1="5" y1="12" x2="19" y2="12"></line>
@@ -158,7 +184,7 @@ get_header(); ?>
             <li>Restaurant fixture installation</li>
             <li>Junk & haul-away services</li>
           </ul>
-          <a href="<?php echo esc_url(home_url('/services/specialty-moving/')); ?>" class="c-button c-button--secondary">
+          <a href="<?php echo esc_url(home_url('/services/specialty-moving-services/')); ?>" class="c-button c-button--secondary">
             Learn More
             <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
               <line x1="5" y1="12" x2="19" y2="12"></line>
