@@ -1,6 +1,6 @@
 <?php
 /*
-Template Name: Home – Black/Yellow/Teal
+Template Name: Home – Long Form Bottom SEO Teal Gradient Hero
 */
 
 get_header(); ?>

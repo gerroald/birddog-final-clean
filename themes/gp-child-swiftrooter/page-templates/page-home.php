@@ -1,6 +1,6 @@
 <?php
 /*
-Template Name: Home – Black/Yellow/Teal
+Template Name: 	Home WITH Teal Gradient BG Hero With Watermark
 */
 
 get_header(); ?>
