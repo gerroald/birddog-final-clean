@@ -133,6 +133,17 @@
   });
 })();
 </script>
+<script>
+(function(){
+  var here = location.pathname.replace(/\/+$/,'') || '/';
+  document.querySelectorAll('.hdr-classic .main-navigation a, .hdr-classic .wp-block-navigation a')
+    .forEach(function(a){
+      var p = (a.pathname || '').replace(/\/+$/,'') || '/';
+      if (p === here) a.classList.add('is-active');
+    });
+})();
+</script>
+
 <?php wp_footer(); ?>
 </body>
 </html>

@@ -10,3 +10,4 @@ backups-dup-pro/
 wp-content/uploads/
 *.zip
 *.log
+.DS_Store
