@@ -1,100 +1,64 @@
 /* SwiftRooter Site JavaScript */
 
 document.addEventListener('DOMContentLoaded', function() {
-    const header = document.querySelector('.header--stuck');
-    const hamburger = document.querySelector('.hamburger');
-    const drawer = document.getElementById('drawer');
+    const navToggle = document.querySelector('.nav-toggle');
+    const body = document.body;
+    const navMenu = document.querySelector('.site-nav');
+    const navLinks = document.querySelectorAll('.site-nav a');
 
-    const lockScroll = (shouldLock) => {
-        document.documentElement.classList.toggle('no-scroll', shouldLock);
-    };
+    if (!navToggle || !navMenu) return;
 
-    const closeDrawer = () => {
-        if (!hamburger || !drawer) return;
-        hamburger.setAttribute('aria-expanded', 'false');
-        drawer.classList.remove('is-open');
-        drawer.setAttribute('aria-hidden', 'true');
-        drawer.querySelectorAll('.accordion > button').forEach(btn => {
-            btn.setAttribute('aria-expanded', 'false');
-            const panel = btn.nextElementSibling;
-            if (panel) {
-                panel.setAttribute('aria-hidden', 'true');
-            }
-        });
-        lockScroll(false);
-    };
+    // Toggle mobile menu
+    navToggle.addEventListener('click', function() {
+        const isOpen = body.classList.contains('is-nav-open');
+        
+        if (isOpen) {
+            closeMenu();
+        } else {
+            openMenu();
+        }
+    });
 
-    const openDrawer = () => {
-        if (!hamburger || !drawer) return;
-        hamburger.setAttribute('aria-expanded', 'true');
-        drawer.classList.add('is-open');
-        drawer.setAttribute('aria-hidden', 'false');
-        lockScroll(true);
-    };
+    // Close menu when clicking nav links
+    navLinks.forEach(link => {
+        link.addEventListener('click', closeMenu);
+    });
 
-    if (hamburger && drawer) {
-        hamburger.addEventListener('click', () => {
-            const isOpen = hamburger.getAttribute('aria-expanded') === 'true';
-            isOpen ? closeDrawer() : openDrawer();
-        });
+    // Close menu on Escape key
+    document.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape' && body.classList.contains('is-nav-open')) {
+            closeMenu();
+        }
+    });
 
-        drawer.querySelectorAll('a').forEach(link => {
-            link.addEventListener('click', closeDrawer);
-        });
+    // Close menu when clicking outside
+    document.addEventListener('click', function(e) {
+        if (body.classList.contains('is-nav-open') && 
+            !navMenu.contains(e.target) && 
+            !navToggle.contains(e.target)) {
+            closeMenu();
+        }
+    });
 
-        document.addEventListener('keydown', (event) => {
-            if (event.key === 'Escape' && hamburger.getAttribute('aria-expanded') === 'true') {
-                closeDrawer();
-            }
-        });
-
-        const mq = window.matchMedia('(min-width: 901px)');
-        if (mq.addEventListener) {
-            mq.addEventListener('change', e => { if (e.matches) closeDrawer(); });
-        } else if (mq.addListener) { // Safari fallback
-            mq.addListener(e => { if (e.matches) closeDrawer(); });
+    function openMenu() {
+        body.classList.add('is-nav-open');
+        navToggle.setAttribute('aria-expanded', 'true');
+        navToggle.setAttribute('aria-label', 'Close menu');
+        
+        // Trap focus in mobile menu
+        const firstFocusable = navMenu.querySelector('a');
+        if (firstFocusable) {
+            firstFocusable.focus();
         }
     }
 
-    const desktopToggles = document.querySelectorAll('.hdr-nav .menu-item.has-submenu > .menu-toggle');
-    if (desktopToggles.length) {
-        desktopToggles.forEach(btn => {
-            btn.addEventListener('click', () => {
-                const item = btn.closest('.menu-item');
-                const expanded = item.getAttribute('aria-expanded') === 'true';
-
-                desktopToggles.forEach(other => {
-                    const otherItem = other.closest('.menu-item');
-                    if (otherItem && otherItem !== item) {
-                        otherItem.setAttribute('aria-expanded', 'false');
-                        other.setAttribute('aria-expanded', 'false');
-                    }
-                });
-
-                const nextState = expanded ? 'false' : 'true';
-                item.setAttribute('aria-expanded', nextState);
-                btn.setAttribute('aria-expanded', nextState);
-            });
-        });
-    }
-
-    const drawerAccordions = drawer ? drawer.querySelectorAll('.accordion > button') : [];
-    drawerAccordions.forEach(btn => {
-        btn.addEventListener('click', () => {
-            const expanded = btn.getAttribute('aria-expanded') === 'true';
-            const nextState = expanded ? 'false' : 'true';
-            btn.setAttribute('aria-expanded', nextState);
-            const panel = btn.nextElementSibling;
-            if (panel) {
-                panel.setAttribute('aria-hidden', expanded ? 'true' : 'false');
-            }
-        });
-    });
-
-    if (header) {
-        const syncScrolled = () => header.classList.toggle('is-scrolled', window.scrollY > 8);
-        syncScrolled();
-        window.addEventListener('scroll', syncScrolled, { passive: true });
+    function closeMenu() {
+        body.classList.remove('is-nav-open');
+        navToggle.setAttribute('aria-expanded', 'false');
+        navToggle.setAttribute('aria-label', 'Open menu');
+        
+        // Return focus to toggle button
+        navToggle.focus();
     }
 });
 
@@ -134,6 +98,15 @@ document.addEventListener('DOMContentLoaded', function() {
         const el = document.querySelector('#estimate'); 
         if (el) el.scrollIntoView({behavior:'smooth'});
     }
+})();
+
+// Elevate header on scroll (if not already added)
+(function(){
+  const header = document.querySelector('.site-header');
+  if (!header) return;
+  const onScroll = () => document.body.classList.toggle('is-scrolled', window.scrollY > 8);
+  window.addEventListener('scroll', onScroll, {passive:true});
+  onScroll();
 })();
 
 // Sticky callbar padding helper

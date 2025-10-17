@@ -1,0 +1,167 @@
+/**
+ * Bird Dog Moving - Design Token System (v3)
+ * Mirrors tokens.css to support homepage-v2 shim.
+ */
+
+:root {
+  /* ========================================
+     BACKGROUNDS
+     ======================================== */
+
+  /* Light theme backgrounds (default) */
+  --color-bg: #F5F7FA;
+  --color-surface: #FFFFFF;
+  --color-surface-alt: #F9FAFB;
+
+  /* Dark theme backgrounds */
+  --color-bg-dark: #0F172A;
+  --color-surface-dark: #1E293B;
+
+  /* Header/Footer */
+  --color-header-bg: #0F172A;
+  --color-footer-bg: #0F172A;
+
+  /* ========================================
+     TEXT COLORS
+     ======================================== */
+
+  --color-text: #0F172A;
+  --color-text-muted: #5B6574;
+  --color-text-subtle: #9CA3AF;
+  --color-text-inverse: #FFFFFF;
+  --color-text-inverse-muted: #CBD5E1;
+  --color-text-light: #FFFFFF;
+  --color-text-on-dark: #F8FAFC;
+  --color-muted: #5B6574;
+  --color-muted-on-dark: #CBD5E1;
+
+  /* ========================================
+     BRAND COLORS
+     ======================================== */
+
+  --color-primary: #0D9488;
+  --color-primary-hover: #0FA09A;
+  --color-primary-light: #99F6E4;
+  --color-accent: #F59E0B;
+  --color-accent-hover: #D97706;
+  --color-accent-light: #FEF3C7;
+  --color-accent-2: #0D9488;
+  --color-brand-black: #0F172A;
+  --color-brand-yellow: #FFD60A;
+
+  /* ========================================
+     BORDERS & DIVIDERS
+     ======================================== */
+
+  --color-border: #E3E8EF;
+  --color-border-muted: #F1F5F9;
+  --color-border-dark: #475569;
+
+  /* ========================================
+     STATE COLORS
+     ======================================== */
+
+  --color-success: #10B981;
+  --color-danger: #EF4444;
+  --color-warning: #F59E0B;
+  --color-info: #14B8A6;
+
+  /* ========================================
+     LINK COLORS
+     ======================================== */
+
+  --color-link: #0D9488;
+  --color-link-hover: #0FA09A;
+  --color-link-visited: #0D9488;
+
+  /* ========================================
+     FOCUS & INTERACTION
+     ======================================== */
+
+  --focus-ring: 0 0 0 3px rgba(13, 148, 136, 0.30);
+  --focus-ring-amber: 0 0 0 3px rgba(245, 158, 11, 0.30);
+
+  /* ========================================
+     TYPOGRAPHY
+     ======================================== */
+
+  --font-sans: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
+  --font-serif: Georgia, "Times New Roman", serif;
+  --font-mono: "SF Mono", Monaco, "Cascadia Code", "Roboto Mono", Consolas, monospace;
+
+  --fs-900: clamp(2.2rem, 4vw, 3rem);
+  --fs-800: clamp(1.8rem, 3vw, 2.5rem);
+  --fs-700: clamp(1.35rem, 2vw, 1.9rem);
+  --fs-600: clamp(1.1rem, 1.5vw, 1.25rem);
+  --fs-500: 1.0625rem;
+  --fs-400: 0.9375rem;
+  --fs-300: 0.875rem;
+
+  --lh-tight: 1.2;
+  --lh-normal: 1.6;
+  --lh-relaxed: 1.8;
+
+  --fw-normal: 400;
+  --fw-medium: 500;
+  --fw-semibold: 600;
+  --fw-bold: 700;
+  --fw-black: 800;
+
+  /* ========================================
+     SPACING
+     ======================================== */
+
+  --space-2xs: 0.25rem;
+  --space-xs: 0.5rem;
+  --space-sm: 0.75rem;
+  --space-md: 1rem;
+  --space-lg: 1.5rem;
+  --space-xl: 2rem;
+  --space-2xl: 3rem;
+  --space-3xl: 4.5rem;
+  --space-4xl: 6rem;
+
+  /* ========================================
+     BORDER RADIUS
+     ======================================== */
+
+  --radius-sm: 0.5rem;
+  --radius-md: 0.75rem;
+  --radius-lg: 1rem;
+  --radius-xl: 1.5rem;
+  --radius-full: 9999px;
+
+  /* ========================================
+     SHADOWS
+     ======================================== */
+
+  --shadow-sm: 0 2px 8px rgba(16, 24, 40, 0.08);
+  --shadow-md: 0 8px 20px rgba(16, 24, 40, 0.10);
+  --shadow-lg: 0 14px 30px rgba(16, 24, 40, 0.16);
+  --shadow-card: 0 2px 8px rgba(16, 24, 40, 0.08);
+  --shadow-dark-sm: 0 2px 8px rgba(0, 0, 0, 0.3);
+  --shadow-dark-md: 0 8px 20px rgba(0, 0, 0, 0.4);
+  --shadow-dark-lg: 0 14px 30px rgba(0, 0, 0, 0.5);
+
+  /* ========================================
+     TRANSITIONS
+     ======================================== */
+
+  --transition-fast: 0.15s ease;
+  --transition-base: 0.2s ease;
+  --transition-slow: 0.3s ease;
+  --transition-smooth: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+
+  /* ========================================
+     Z-INDEX SCALE
+     ======================================== */
+
+  --z-base: 1;
+  --z-dropdown: 100;
+  --z-sticky: 200;
+  --z-fixed: 300;
+  --z-overlay: 400;
+  --z-modal: 500;
+  --z-popover: 600;
+  --z-tooltip: 700;
+}

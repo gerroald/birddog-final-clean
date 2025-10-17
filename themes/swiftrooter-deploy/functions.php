@@ -1,246 +1,73 @@
 <?php
 require_once get_stylesheet_directory() . '/business-info.php';
 
-if (!class_exists('BirdDog_Header_Walker')) {
-  class BirdDog_Header_Walker extends Walker_Nav_Menu {
-    public function start_lvl(&$output, $depth = 0, $args = null) {
-      $indent = str_repeat("\t", $depth);
-      $output .= "\n$indent<ul class=\"submenu\" role=\"menu\">\n";
-    }
-
-    public function end_lvl(&$output, $depth = 0, $args = null) {
-      $indent = str_repeat("\t", $depth);
-      $output .= "$indent</ul>\n";
-    }
-
-    public function start_el(&$output, $item, $depth = 0, $args = null, $id = 0) {
-      $indent = ($depth) ? str_repeat("\t", $depth) : '';
-      $classes = empty($item->classes) ? [] : (array) $item->classes;
-      $classes[] = 'menu-item';
-      $classes[] = 'menu-item-' . $item->ID;
-      $has_children = in_array('menu-item-has-children', $classes, true);
-
-      if ($has_children && $depth === 0) {
-        $classes[] = 'has-submenu';
-      }
-
-      if (in_array('current-menu-item', $classes, true) || in_array('current-menu-ancestor', $classes, true)) {
-        $classes[] = 'is-current';
-      }
-
-      $classes = apply_filters('nav_menu_css_class', array_filter($classes), $item, $args, $depth);
-      $class_names = implode(' ', array_map('sanitize_html_class', array_unique($classes)));
-      $class_names = apply_filters('nav_menu_css_class_string', $class_names, $item, $args, $depth);
-      $item_id = apply_filters('nav_menu_item_id', 'menu-item-' . $item->ID, $item, $args, $depth);
-      $aria = $has_children && $depth === 0 ? ' aria-expanded="false"' : '';
-      $id_attribute = $item_id ? ' id="' . esc_attr($item_id) . '"' : '';
-      $output .= $indent . '<li' . $id_attribute . ' class="' . esc_attr($class_names) . '"' . $aria . '>';
-
-      $atts = [];
-      $atts['title']  = !empty($item->attr_title) ? $item->attr_title : '';
-      $atts['target'] = !empty($item->target) ? $item->target : '';
-      $atts['rel']    = !empty($item->xfn) ? $item->xfn : '';
-      $atts['href']   = !empty($item->url) ? $item->url : '';
-
-      $link_classes = 'hdr-nav__link';
-      if (in_array('current-menu-item', $classes, true) || in_array('current-menu-ancestor', $classes, true)) {
-        $link_classes .= ' is-active';
-      }
-      $atts['class'] = $link_classes;
-
-      if ($has_children && $depth === 0) {
-        $atts['aria-haspopup'] = 'true';
-      }
-
-      $attributes = '';
-      foreach ($atts as $attr => $value) {
-        if (!empty($value)) {
-          $value = ('href' === $attr) ? esc_url($value) : esc_attr($value);
-          $attributes .= ' ' . $attr . '="' . $value . '"';
-        }
-      }
-
-      $title = apply_filters('the_title', $item->title, $item->ID);
-      $title = apply_filters('nav_menu_item_title', $title, $item, $args, $depth);
-
-      $item_output  = '<a' . $attributes . '>' . $title . '</a>';
-
-      if ($has_children && $depth === 0) {
-        $item_output .= '<button class="menu-toggle" type="button" aria-expanded="false"><span class="menu-toggle__icon" aria-hidden="true">▾</span><span class="sr-only">' . esc_html(sprintf(__('Toggle %s submenu', 'gp-child-swiftrooter'), $item->title)) . '</span></button>';
-      }
-
-      $output .= apply_filters('walker_nav_menu_start_el', $item_output, $item, $depth, $args);
-    }
-
-    public function end_el(&$output, $item, $depth = 0, $args = null) {
-      $output .= "</li>\n";
-    }
-  }
-}
-
-function bird_dog_render_mobile_menu() {
-  if (!has_nav_menu('primary')) {
-    return;
-  }
-
-  $locations = get_nav_menu_locations();
-  $menu_id = $locations['primary'] ?? null;
-
-  if (!$menu_id) {
-    return;
-  }
-
-  $items = wp_get_nav_menu_items($menu_id, ['order' => 'ASC']);
-  if (!$items) {
-    return;
-  }
-
-  $indexed = [];
-  foreach ($items as $item) {
-    $item->children = [];
-    $indexed[$item->ID] = $item;
-  }
-
-  foreach ($items as $item) {
-    if ($item->menu_item_parent && isset($indexed[$item->menu_item_parent])) {
-      $indexed[$item->menu_item_parent]->children[] = $item;
-    }
-  }
-
-  foreach ($items as $item) {
-    if ((int) $item->menu_item_parent !== 0) {
-      continue;
-    }
-
-    $title = apply_filters('the_title', $item->title, $item->ID);
-
-    if (!empty($item->children)) {
-      echo '<div class="accordion">';
-      echo '<button type="button" aria-expanded="false">' . esc_html($title) . '</button>';
-      echo '<div class="panel" aria-hidden="true">';
-      foreach ($item->children as $child) {
-        $child_title = apply_filters('the_title', $child->title, $child->ID);
-        $child_url   = !empty($child->url) ? esc_url($child->url) : '#';
-        echo '<a href="' . $child_url . '">' . esc_html($child_title) . '</a>';
-      }
-      echo '</div>';
-      echo '</div>';
-    } else {
-      $url = !empty($item->url) ? esc_url($item->url) : '#';
-      echo '<a class="drawer__link" href="' . $url . '">' . esc_html($title) . '</a>';
-    }
-  }
-}
-
 add_action('wp_enqueue_scripts', function () {
   $dir = get_stylesheet_directory();
   $uri = get_stylesheet_directory_uri();
+  wp_enqueue_style('tokens-3', $uri.'/assets/css/tokens-3.css', [], filemtime("$dir/assets/css/tokens-3.css"));
+  wp_enqueue_style('homepage-v2', $uri.'/assets/css/homepage-v2.css', ['tokens-3'], filemtime("$dir/assets/css/homepage-v2.css"));
+}, 20);
 
-  // Parent theme base
-  wp_enqueue_style('generatepress', get_template_directory_uri() . '/style.css', [], null);
+add_action('wp_enqueue_scripts', function () {
+  // Parent styles
+  wp_enqueue_style('generatepress', get_template_directory_uri().'/style.css', [], null);
 
-  $tokens_path = "$dir/assets/css/tokens.css";
-  if (file_exists($tokens_path)) {
-    wp_enqueue_style('tokens', $uri . '/assets/css/tokens.css', [], filemtime($tokens_path));
-  }
+    // Child styles - tokens first, then professional themes, then site styles
+    wp_enqueue_style('sr-tokens', get_stylesheet_directory_uri().'/assets/css/tokens.css', [], '1.0.1');
+    // wp_enqueue_style('sr-professional-themes', get_stylesheet_directory_uri().'/assets/css/professional-themes.css', ['sr-tokens'], '1.0.1');
+    wp_enqueue_style('sr-site', get_stylesheet_directory_uri().'/assets/css/site.css', ['sr-tokens'], '1.0.1');
 
-  $tokens3_path = "$dir/assets/css/tokens-3.css";
-  if (file_exists($tokens3_path)) {
-    wp_enqueue_style('tokens-3', $uri . '/assets/css/tokens-3.css', ['tokens'], filemtime($tokens3_path));
-  }
+    // Header styles (loaded after site.css to override)
+    wp_enqueue_style('sr-header', get_stylesheet_directory_uri().'/assets/css/header.css', ['sr-site'], '1.0.0');
 
-  $site_path = "$dir/assets/css/site.css";
-  $base_deps = ['tokens-3'];
-  if (file_exists($site_path)) {
-    wp_enqueue_style('sr-site', $uri . '/assets/css/site.css', ['tokens-3'], filemtime($site_path));
-    $base_deps = ['sr-site'];
-  }
-
-  $header_path = "$dir/assets/css/header.css";
-  if (file_exists($header_path)) {
-    wp_enqueue_style('sr-header', $uri . '/assets/css/header.css', $base_deps, filemtime($header_path));
-  }
-
-  // Ancillary styles
-  $wpforms_path = "$dir/assets/css/wpforms-custom.css";
-  if (file_exists($wpforms_path)) {
-    wp_enqueue_style('sr-wpforms-custom', $uri . '/assets/css/wpforms-custom.css', $base_deps, filemtime($wpforms_path));
-  }
-
-  $cards_path = "$dir/assets/css/cards.css";
-  if (file_exists($cards_path)) {
-    wp_enqueue_style('sr-cards', $uri . '/assets/css/cards.css', $base_deps, filemtime($cards_path));
-  }
-
-  $graphite_path = "$dir/assets/css/graphite.css";
-  if (file_exists($graphite_path)) {
-    wp_enqueue_style('sr-graphite', $uri . '/assets/css/graphite.css', $base_deps, filemtime($graphite_path));
-  }
-
-  // Template specific
-  if (is_page_template('page-templates/page-service-hub.php') ||
-      is_page_template('page-templates/page-service-detail.php') ||
-      is_page_template('page-templates/page-service-area.php')) {
-    $services_path = "$dir/assets/css/templates/services.css";
-    if (file_exists($services_path)) {
-      wp_enqueue_style('sr-services', $uri . '/assets/css/templates/services.css', $base_deps, filemtime($services_path));
+    // Service page templates (only load on service pages)
+    if (is_page_template('page-templates/page-service-hub.php') ||
+        is_page_template('page-templates/page-service-detail.php') ||
+        is_page_template('page-templates/page-service-area.php')) {
+        wp_enqueue_style('sr-services', get_stylesheet_directory_uri().'/assets/css/templates/services.css', ['sr-site'], '1.0.0');
     }
-  }
 
-  if (is_page_template('page-templates/page-blog.php') || is_single() || is_home() || is_archive()) {
-    $blog_path = "$dir/assets/css/templates/blog.css";
-    if (file_exists($blog_path)) {
-      wp_enqueue_style('sr-blog', $uri . '/assets/css/templates/blog.css', $base_deps, filemtime($blog_path));
+    // Blog templates (blog page and single posts)
+    if (is_page_template('page-templates/page-blog.php') || is_single() || is_home() || is_archive()) {
+        wp_enqueue_style('sr-blog', get_stylesheet_directory_uri().'/assets/css/templates/blog.css', ['sr-site'], '1.0.0');
     }
-  }
 
-  if (is_page_template('page-templates/page-about.php') || is_page_template('page-templates/page-contact.php')) {
-    $about_path = "$dir/assets/css/templates/about-contact.css";
-    if (file_exists($about_path)) {
-      wp_enqueue_style('sr-about-contact', $uri . '/assets/css/templates/about-contact.css', $base_deps, filemtime($about_path));
+    // About & Contact pages
+    if (is_page_template('page-templates/page-about.php') || is_page_template('page-templates/page-contact.php')) {
+        wp_enqueue_style('sr-about-contact', get_stylesheet_directory_uri().'/assets/css/templates/about-contact.css', ['sr-site'], '1.0.0');
     }
-  }
 
-  if (is_page_template('page-templates/page-home-CLEANED.php')) {
-    $home_clean_path = "$dir/assets/css/homepage.css";
-    if (file_exists($home_clean_path)) {
-      wp_enqueue_style('sr-homepage', $uri . '/assets/css/homepage.css', $base_deps, filemtime($home_clean_path));
+    // WPForms custom styling to match HTML forms
+    wp_enqueue_style('sr-wpforms-custom', get_stylesheet_directory_uri().'/assets/css/wpforms-custom.css', ['sr-site'], '1.0.8');
+	
+    // Custom styling for cards
+    wp_enqueue_style('sr-cards', get_stylesheet_directory_uri().'/assets/css/cards.css', ['sr-site'], '1.0.0');
+	
+    // Styling for the graphite theme
+    wp_enqueue_style('sr-graphite', get_stylesheet_directory_uri().'/assets/css/graphite.css', ['sr-site'], '1.0.0');
+
+// Homepage (cleaned version)
+    if (is_page_template('page-templates/page-home-CLEANED.php')) {
+        wp_enqueue_style('sr-homepage', get_stylesheet_directory_uri().'/assets/css/homepage.css', ['sr-site'], '1.0.0');
     }
-  }
+// Homepage V2 (visual redesign)
+    if (is_page_template('page-templates/page-home-v2.php')) {
+        $ver = file_exists(get_stylesheet_directory().'/assets/css/homepage-v2.css') ? filemtime(get_stylesheet_directory().'/assets/css/homepage-v2.css') : '1.0.0';
+        wp_enqueue_style('sr-homepage-v2', get_stylesheet_directory_uri().'/assets/css/homepage-v2.css', ['sr-site'], $ver);
+    }
+	
+  // Child scripts with defer
+  wp_enqueue_script('sr-site', get_stylesheet_directory_uri().'/assets/js/site.js', [], '1.0.1', true);
+  // wp_enqueue_script('sr-simple-theme-switcher', get_stylesheet_directory_uri().'/assets/js/simple-theme-switcher.js', [], '1.0.1', true);
 
-  $home_v2_path = "$dir/assets/css/homepage-v2.css";
-  if (file_exists($home_v2_path)) {
-    wp_enqueue_style('homepage-v2', $uri . '/assets/css/homepage-v2.css', ['tokens-3'], filemtime($home_v2_path));
-  }
+  // Header navigation script
+  wp_enqueue_script('sr-header', get_stylesheet_directory_uri().'/assets/js/header.js', [], '1.0.0', true);
 
-  // Core scripts
-  $site_js = "$dir/assets/js/site.js";
-  if (file_exists($site_js)) {
-    wp_enqueue_script('sr-site', $uri . '/assets/js/site.js', [], filemtime($site_js), true);
-  }
-
-  $header_js = "$dir/assets/js/header.js";
-  if (file_exists($header_js)) {
-    wp_enqueue_script('sr-header', $uri . '/assets/js/header.js', [], filemtime($header_js), true);
-  }
-
+  // Blog filtering script
   if (is_page_template('page-templates/page-blog.php')) {
-    $blog_js = "$dir/assets/js/blog.js";
-    if (file_exists($blog_js)) {
-      wp_enqueue_script('sr-blog', $uri . '/assets/js/blog.js', [], filemtime($blog_js), true);
-    }
+      wp_enqueue_script('sr-blog', get_stylesheet_directory_uri().'/assets/js/blog.js', [], '1.0.0', true);
   }
-}, 90);
-
-/* Enqueue Classic Header patch CSS last (priority 99) */
-add_action('wp_enqueue_scripts', function () {
-  $dir = get_stylesheet_directory();
-  $uri = get_stylesheet_directory_uri();
-  $patch_path = "$dir/assets/css/patch-p1.css";
-  if (file_exists($patch_path)) {
-    wp_enqueue_style('patch-p1', $uri . '/assets/css/patch-p1.css', [], filemtime($patch_path));
-  }
-}, 99);
+}, 999); // High priority to load after other styles
 
 add_action('after_setup_theme', function () {
   register_nav_menus([
@@ -762,7 +589,7 @@ return ob_get_clean();
 /* ---------- Modern header ---------- */
 add_shortcode('bd_modern_header', function(){
   ob_start(); ?>
-  <header class="modern-header bdm_header">
+  <header class="modern-header">
     <div class="modern-header__container l-container">
       <a class="modern-header__logo" href="<?php echo esc_url(home_url('/')); ?>">
         <span aria-hidden="true"></span> Bird Dog's Delivery &amp; Moving Service
@@ -904,3 +731,5 @@ add_filter('nav_menu_item_title', function($title, $item) {
   }
   return $title;
 }, 10, 2);
+
+

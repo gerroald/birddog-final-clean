@@ -1,0 +1,299 @@
+/**
+ * Bird Dog Moving - Design Token System
+ * Based on pricing page design (page-pricing.php)
+ * Black & Yellow brand with Teal accents
+ */
+
+:root {
+  /* ========================================
+     BACKGROUNDS
+     ======================================== */
+
+  /* Light theme backgrounds (default) */
+  --color-bg: #F5F7FA;           /* Light cool gray - main page background */
+  --color-surface: #FFFFFF;       /* Pure white - cards, panels, modals */
+  --color-surface-alt: #F9FAFB;  /* Alternate white (very slight gray) */
+
+  /* Dark theme backgrounds (optional - use with .bg-dark or .band--dark) */
+  --color-bg-dark: #0F172A;      /* Very dark slate - dark sections */
+  --color-surface-dark: #1E293B; /* Dark slate - cards on dark bg */
+
+  /* Header/Footer */
+  --color-header-bg: #0F172A;    /* Black header - Bird Dog brand */
+  --color-footer-bg: #0F172A;    /* Black footer */
+
+  /* ========================================
+     TEXT COLORS
+     ======================================== */
+
+  /* Text on light backgrounds */
+  --color-text: #0F172A;         /* Very dark slate - primary text */
+  --color-text-muted: #5B6574;   /* Medium gray - secondary text */
+  --color-text-subtle: #9CA3AF;  /* Light gray - tertiary text, captions */
+
+  /* Text on dark backgrounds */
+  --color-text-inverse: #FFFFFF;       /* Pure white - text on dark bg */
+  --color-text-inverse-muted: #CBD5E1; /* Light gray - muted on dark */
+
+  /* Legacy compatibility */
+  --color-text-light: #FFFFFF;   /* Alias for inverse text */
+  --color-text-on-dark: #F8FAFC; /* Alias for inverse text (slightly off-white) */
+  --color-muted: #5B6574;        /* Alias for text-muted */
+  --color-muted-on-dark: #CBD5E1; /* Alias for inverse-muted */
+
+  /* ========================================
+     BRAND COLORS
+     ======================================== */
+
+  /* Primary: Teal (interactive elements) */
+  --color-primary: #0D9488;      /* Teal - tabs, active states, links */
+  --color-primary-hover: #0FA09A; /* Lighter teal - hover state */
+  --color-primary-light: #99F6E4; /* Very light teal - backgrounds */
+
+  /* Accent: Amber/Yellow (CTAs, urgency) */
+  --color-accent: #F59E0B;       /* Warm amber - primary CTA buttons */
+  --color-accent-hover: #D97706; /* Darker amber - hover state */
+  --color-accent-light: #FEF3C7; /* Very light amber - backgrounds */
+
+  /* Secondary accent (for variety) */
+  --color-accent-2: #0D9488;     /* Teal - secondary buttons, links */
+
+  /* Black (Bird Dog core brand) */
+  --color-brand-black: #0F172A;  /* Primary brand color */
+
+  /* Yellow (Bird Dog core brand) */
+  --color-brand-yellow: #FFD60A; /* Secondary brand color (brighter than accent) */
+
+  /* ========================================
+     BORDERS & DIVIDERS
+     ======================================== */
+
+  --color-border: #E3E8EF;       /* Light border - on light backgrounds */
+  --color-border-muted: #F1F5F9; /* Very subtle border */
+  --color-border-dark: #475569;  /* Medium border - on dark backgrounds */
+
+  /* ========================================
+     STATE COLORS
+     ======================================== */
+
+  --color-success: #10B981;      /* Green - success messages */
+  --color-danger: #EF4444;       /* Red - errors, warnings */
+  --color-warning: #F59E0B;      /* Amber - warnings (same as accent) */
+  --color-info: #14B8A6;         /* Teal - info messages */
+
+  /* ========================================
+     LINK COLORS
+     ======================================== */
+
+  --color-link: #0D9488;         /* Teal - default links */
+  --color-link-hover: #0FA09A;   /* Lighter teal - link hover */
+  --color-link-visited: #0D9488; /* Same as default (no distinction) */
+
+  /* ========================================
+     FOCUS & INTERACTION
+     ======================================== */
+
+  --focus-ring: 0 0 0 3px rgba(13, 148, 136, 0.30); /* Teal focus ring */
+  --focus-ring-amber: 0 0 0 3px rgba(245, 158, 11, 0.30); /* Amber focus ring (for yellow buttons) */
+
+  /* ========================================
+     TYPOGRAPHY
+     ======================================== */
+
+  /* Font families */
+  --font-sans: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
+  --font-serif: Georgia, "Times New Roman", serif;
+  --font-mono: "SF Mono", Monaco, "Cascadia Code", "Roboto Mono", Consolas, monospace;
+
+  /* Font sizes (fluid responsive) */
+  --fs-900: clamp(2.2rem, 4vw, 3rem);      /* Hero headlines */
+  --fs-800: clamp(1.8rem, 3vw, 2.5rem);    /* Section titles */
+  --fs-700: clamp(1.35rem, 2vw, 1.9rem);   /* Card titles, h3 */
+  --fs-600: clamp(1.1rem, 1.5vw, 1.25rem); /* Large body, h4 */
+  --fs-500: 1.0625rem;                     /* Base body text (17px) */
+  --fs-400: 0.9375rem;                     /* Small body (15px) */
+  --fs-300: 0.875rem;                      /* Fine print, captions (14px) */
+
+  /* Line heights */
+  --lh-tight: 1.2;   /* Headlines */
+  --lh-normal: 1.6;  /* Body text */
+  --lh-relaxed: 1.8; /* Long-form content */
+
+  /* Font weights */
+  --fw-normal: 400;
+  --fw-medium: 500;
+  --fw-semibold: 600;
+  --fw-bold: 700;
+  --fw-black: 800;
+
+  /* ========================================
+     SPACING
+     ======================================== */
+
+  --space-2xs: 0.25rem;  /* 4px */
+  --space-xs: 0.5rem;    /* 8px */
+  --space-sm: 0.75rem;   /* 12px */
+  --space-md: 1rem;      /* 16px */
+  --space-lg: 1.5rem;    /* 24px */
+  --space-xl: 2rem;      /* 32px */
+  --space-2xl: 3rem;     /* 48px */
+  --space-3xl: 4.5rem;   /* 72px */
+  --space-4xl: 6rem;     /* 96px */
+
+  /* ========================================
+     BORDER RADIUS
+     ======================================== */
+
+  --radius-sm: 0.5rem;   /* 8px - buttons, inputs */
+  --radius-md: 0.75rem;  /* 12px - cards */
+  --radius-lg: 1rem;     /* 16px - large cards */
+  --radius-xl: 1.5rem;   /* 24px - hero sections */
+  --radius-full: 9999px; /* Pill buttons, badges */
+
+  /* ========================================
+     SHADOWS
+     ======================================== */
+
+  /* Light theme shadows (from pricing page) */
+  --shadow-sm: 0 2px 8px rgba(16, 24, 40, 0.08);
+  --shadow-md: 0 8px 20px rgba(16, 24, 40, 0.10);
+  --shadow-lg: 0 14px 30px rgba(16, 24, 40, 0.16);
+
+  /* Card-specific shadow */
+  --shadow-card: 0 2px 8px rgba(16, 24, 40, 0.08);
+
+  /* Dark theme shadows */
+  --shadow-dark-sm: 0 2px 8px rgba(0, 0, 0, 0.3);
+  --shadow-dark-md: 0 8px 20px rgba(0, 0, 0, 0.4);
+  --shadow-dark-lg: 0 14px 30px rgba(0, 0, 0, 0.5);
+
+  /* ========================================
+     TRANSITIONS
+     ======================================== */
+
+  --transition-fast: 0.15s ease;
+  --transition-base: 0.2s ease;
+  --transition-slow: 0.3s ease;
+  --transition-smooth: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+
+  /* ========================================
+     Z-INDEX SCALE
+     ======================================== */
+
+  --z-base: 1;
+  --z-dropdown: 100;
+  --z-sticky: 200;
+  --z-fixed: 300;
+  --z-overlay: 400;
+  --z-modal: 500;
+  --z-popover: 600;
+  --z-tooltip: 700;
+}
+
+/* ========================================
+   MINIMAL BASE STYLES
+   ======================================== */
+
+html {
+  color-scheme: light;
+}
+
+body {
+  margin: 0;
+  background: var(--color-bg);
+  color: var(--color-text);
+  font-family: var(--font-sans);
+  font-size: var(--fs-500);
+  line-height: var(--lh-normal);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+a {
+  color: var(--color-link);
+  text-decoration: none;
+  transition: color var(--transition-base);
+}
+
+a:hover {
+  color: var(--color-link-hover);
+  text-decoration: underline;
+}
+
+:focus-visible {
+  outline: 2px solid var(--color-primary);
+  outline-offset: 2px;
+  border-radius: var(--radius-sm);
+}
+
+h1, h2, h3, h4, h5, h6 {
+  color: var(--color-text);
+  margin: 0;
+  line-height: var(--lh-tight);
+  font-weight: var(--fw-bold);
+}
+
+p, li, span {
+  color: var(--color-text);
+}
+
+/* ========================================
+   UTILITY CLASSES FOR DARK BACKGROUNDS
+   ======================================== */
+
+/* Apply to sections that need dark bg with white cards */
+.bg-dark,
+.band--dark {
+  background: var(--color-bg-dark);
+  color: var(--color-text-inverse);
+}
+
+.bg-dark h1,
+.bg-dark h2,
+.bg-dark h3,
+.bg-dark h4,
+.bg-dark h5,
+.bg-dark h6,
+.band--dark h1,
+.band--dark h2,
+.band--dark h3,
+.band--dark h4,
+.band--dark h5,
+.band--dark h6 {
+  color: var(--color-text-inverse);
+}
+
+.bg-dark p,
+.bg-dark li,
+.bg-dark span,
+.band--dark p,
+.band--dark li,
+.band--dark span {
+  color: var(--color-text-inverse-muted);
+}
+
+/* White cards on dark backgrounds */
+.bg-dark .c-card,
+.band--dark .c-card,
+.bg-dark .card,
+.band--dark .card {
+  background: var(--color-surface);
+  color: var(--color-text);
+  border-color: var(--color-border);
+}
+
+.bg-dark .c-card h1,
+.bg-dark .c-card h2,
+.bg-dark .c-card h3,
+.band--dark .c-card h1,
+.band--dark .c-card h2,
+.band--dark .c-card h3 {
+  color: var(--color-text);
+}
+
+.bg-dark .c-card p,
+.bg-dark .c-card li,
+.band--dark .c-card p,
+.band--dark .c-card li {
+  color: var(--color-text-muted);
+}
