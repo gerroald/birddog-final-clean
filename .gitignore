@@ -4,3 +4,9 @@ backups-dup-pro/
 wp-content/uploads/
 *.zip
 *.log
+
+# backups & uploads
+backups-dup-pro/
+wp-content/uploads/
+*.zip
+*.log
