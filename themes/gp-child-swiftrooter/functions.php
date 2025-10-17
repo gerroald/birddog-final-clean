@@ -904,3 +904,61 @@ add_filter('nav_menu_item_title', function($title, $item) {
   }
   return $title;
 }, 10, 2);
+/* ==== BDM PROBE: proves functions.php is executing on the front-end ==== */
+add_action('wp_head', function () {
+  if (is_admin()) return;
+  echo "<!-- BDM-PROBE-ACTIVE from gp-child-swiftrooter/functions.php -->\n";
+}, 1);
+
+/* ==== BDM ROOT LOGGER: writes style order into WP root for easy pickup ==== */
+add_action('wp_print_styles', function () {
+  if (is_admin()) return;
+  $file = ABSPATH . 'bdm-style-handles.txt';   // writes to WordPress root
+  global $wp_styles;
+  if (empty($wp_styles) || empty($wp_styles->queue)) return;
+  $out = [];
+  $out[] = "=== STYLE ORDER: " . date('c') . " ===";
+  foreach ($wp_styles->queue as $h) {
+    $s = $wp_styles->registered[$h] ?? null;
+    $src = $s ? $s->src : '(unknown)';
+    $out[] = sprintf("STYLE %-28s -> %s", $h, $src);
+  }
+  $out[] = "===";
+  @file_put_contents($file, implode(PHP_EOL, $out) . PHP_EOL, FILE_APPEND);
+}, 99);
+
+/* ==== BDM INLINE CSS PROBE: hot-pink outline around header via patch-p1 handle ==== */
+add_action('wp_enqueue_scripts', function () {
+  if (function_exists('wp_add_inline_style')) {
+    wp_add_inline_style('patch-p1', '.hdr-classic{outline:3px solid #ff1493 !important;}');
+  }
+}, 1000);
+/* ==== BDM PROBE: proves functions.php is executing on the front-end ==== */
+add_action('wp_head', function () {
+  if (is_admin()) return;
+  echo "<!-- BDM-PROBE-ACTIVE from gp-child-swiftrooter/functions.php -->\n";
+}, 1);
+
+/* ==== BDM ROOT LOGGER: writes style order into WP root for easy pickup ==== */
+add_action('wp_print_styles', function () {
+  if (is_admin()) return;
+  $file = ABSPATH . 'bdm-style-handles.txt';   // writes to WordPress root
+  global $wp_styles;
+  if (empty($wp_styles) || empty($wp_styles->queue)) return;
+  $out = [];
+  $out[] = "=== STYLE ORDER: " . date('c') . " ===";
+  foreach ($wp_styles->queue as $h) {
+    $s = $wp_styles->registered[$h] ?? null;
+    $src = $s ? $s->src : '(unknown)';
+    $out[] = sprintf("STYLE %-28s -> %s", $h, $src);
+  }
+  $out[] = "===";
+  @file_put_contents($file, implode(PHP_EOL, $out) . PHP_EOL, FILE_APPEND);
+}, 99);
+
+/* ==== BDM INLINE CSS PROBE: hot-pink outline around header via patch-p1 handle ==== */
+add_action('wp_enqueue_scripts', function () {
+  if (function_exists('wp_add_inline_style')) {
+    wp_add_inline_style('patch-p1', '.hdr-classic{outline:3px solid #ff1493 !important;}');
+  }
+}, 1000);
