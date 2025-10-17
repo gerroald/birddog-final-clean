@@ -71,6 +71,68 @@
     </div>
 </footer>
 
+<div class="fab" aria-live="polite">
+  <button class="fab__main" aria-expanded="false" aria-controls="fab-menu" aria-label="Open quick actions">＋</button>
+  <ul id="fab-menu" class="fab__menu" hidden>
+    <li class="fab__item fab__item--text">
+      <button class="fab__action fab__action--text" type="button" aria-controls="fab-text" aria-expanded="false" data-evt="fab_text_open">
+        Text
+      </button>
+
+      <!-- Mini compose (initially hidden) -->
+      <form id="fab-text" class="fab-text" hidden aria-label="Send us a text message">
+        <label for="fab-text-input" class="sr-only">Your message</label>
+        <input id="fab-text-input" class="fab-text__input" type="text" maxlength="240" placeholder="Describe your move (optional)" />
+        <button class="fab-text__send" type="submit" data-evt="fab_text_send">Send</button>
+        <span class="fab-text__count" aria-live="polite">0/240</span>
+      </form>
+    </li>
+    <li><a class="fab__action fab__action--call" href="tel:+14055534554" aria-label="Call us" data-evt="fab_call">Call</a></li>
+    <li><a class="fab__action fab__action--email" href="mailto:hello@birddogmoving.com?subject=Move%20Quote" aria-label="Email us" data-evt="fab_email">Email</a></li>
+  </ul>
+</div>
+<script>
+(function(){
+  const hdr = document.querySelector('.hdr-classic.header--stuck');
+  if (hdr) addEventListener('scroll',()=> hdr.classList.toggle('is-scrolled', scrollY>8));
+
+  // Desktop: make parent link act as toggle without navigating (desktop only)
+  document.querySelectorAll('.hdr-classic .menu-item-has-children > a').forEach(a=>{
+    a.setAttribute('role','button'); a.setAttribute('aria-expanded','false');
+    a.addEventListener('click', (e)=>{
+      if (matchMedia('(min-width:901px)').matches) {
+        e.preventDefault();
+        const li = a.parentElement;
+        const open = li.getAttribute('aria-expanded')==='true';
+        li.setAttribute('aria-expanded', String(!open));
+        a.setAttribute('aria-expanded', String(!open));
+      }
+    });
+  });
+
+  // Mobile drawer
+  const ham = document.querySelector('.hdr-classic .hamburger');
+  const drawer = document.getElementById('drawer');
+  if (ham && drawer){
+    ham.addEventListener('click', ()=>{
+      const open = ham.getAttribute('aria-expanded')==='true';
+      ham.setAttribute('aria-expanded', String(!open));
+      drawer.classList.toggle('is-open', !open);
+      drawer.setAttribute('aria-hidden', String(open));
+      document.documentElement.classList.toggle('no-scroll', !open);
+      document.body.classList.toggle('no-scroll', !open);
+    });
+  }
+
+  // Mobile accordions
+  document.querySelectorAll('.hdr-classic .drawer .accordion > button').forEach(btn=>{
+    btn.addEventListener('click', ()=>{
+      const ex = btn.getAttribute('aria-expanded')==='true';
+      btn.setAttribute('aria-expanded', String(!ex));
+    });
+  });
+})();
+</script>
 <?php wp_footer(); ?>
 </body>
 </html>

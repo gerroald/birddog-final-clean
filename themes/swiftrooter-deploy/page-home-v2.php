@@ -10,9 +10,6 @@ get_header(); ?>
   <div class="hero-v2__background">
     <!-- Bulletproof fallback image layer -->
     <div class="hero-v2__bg-fallback" style="background-image:url('<?php echo esc_url( get_stylesheet_directory_uri() . '/assets/img/bird-dog-moving-van-branded.jpg' ); ?>');"></div>
-    <noscript>
-      <img src="<?php echo esc_url( get_stylesheet_directory_uri() . '/assets/img/bird-dog-moving-van-branded.jpg' ); ?>" alt="Bird Dog Moving truck" style="width:100%;height:auto;display:block">
-    </noscript>
 
     <div class="hero-v2__media hero-v2__media--svg" style="--hero-img: url('<?php echo esc_url( get_stylesheet_directory_uri() . '/assets/img/bird-dog-moving-van-branded.jpg' ); ?>');">
       <svg viewBox="0 0 800 400" preserveAspectRatio="xMidYMid slice" role="img" aria-label="Bird Dog Moving truck and crew in Oklahoma City" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
@@ -36,19 +33,16 @@ get_header(); ?>
         <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
           <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/>
         </svg>
-        Bird Dog Moving • Oklahoma City
+        OKC's #1 Rated Moving Company
       </div>
       
-      <h1 class="hero-v2__title hero-v2__content">The <br><span class="hero-v2__title-accent">Moving Company</span><span="hero-v2__content">In Oklahoma City</span><span class="hero-v2__title-accent">You Can Count On</span></h1>
+      <h1 class="hero-v2__title">Your Friendly<br>Neighborhood<br><span class="hero-v2__title-accent">Moving Pros</span></h1>
       
-      <ul class="">
-		  <li class="hero-v2__content">Hometown Team, Family-Owned</li>
-		  <li class="hero-v2__content">Licensed &amp; Insured</li>
-		  <li class="hero-v2__content">Focused on Keeping Your Move Simple</li>
-      </ul>
+      <p class="hero-v2__lead">Licensed, insured, and locally owned. We've helped 500+ OKC families move this year with zero surprises and 100% care.</p>
+      
       <div class="hero-v2__actions">
         <a class="c-button c-button--accent c-button--large" href="#estimate">
-          Get My Free Estimate Today
+          Get Free Estimate — Save $50
           <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
             <line x1="5" y1="12" x2="19" y2="12"></line>
             <polyline points="12 5 19 12 12 19"></polyline>
